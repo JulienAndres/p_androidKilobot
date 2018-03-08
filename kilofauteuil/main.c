@@ -1,6 +1,5 @@
 #include <kilolib.h>
 #include "main.h"
-#include "movement.h"
 
 #define STOP 0
 #define FORWARD 1
@@ -10,32 +9,30 @@
 data_t data;
 data_t *mydata = &data;
 
-
+int val = 80;
+int test = 1;
 void setup() {
 // put your setup code here, to be run only once
 //message.type = NORMAL;
 //message.crc = message_crc(&message);
-mydata->new_message = 0;
+mydata->curr_motion = STOP;
+
 }
 
 void loop() {
-	if (kilo_ticks > mydata->last_motion_update + 64){
-		mydata->last_motion_update = kilo_ticks;
-		if (mydata->new_message == 1){
-			set_random_direction();
-			mydata->new_message = 0;
-		} else {
-			set_color(RGB(1,1,1));
-			set_motion(STOP);
-		}
-	}
-	delay(2000);
-	//set_color(RGB(0,0,0));
+  if(test){
+    set_motors(val, val);
+    val += 10;
+    delay(10000);
+  }else{
+    set_motors(kilo_straight_left, kilo_straight_right);
+  }
+
 }
 
-void message_rx (message_t *message, distance_measurement_t *distance){
-    mydata->new_message = 1;
-}
+//void message_rx (message_t *message, distance_measurement_t *distance){
+//    mydata->new_message = 1;
+//}
 
 //message_t *message_tx(){
 //    return &message;
@@ -45,7 +42,7 @@ void message_rx (message_t *message, distance_measurement_t *distance){
 int main() {
     kilo_init();
 
-    kilo_message_rx = message_rx;
+    //kilo_message_rx = message_rx;
     //kilo_message_tx = message_tx;
     kilo_start(setup, loop);
 
