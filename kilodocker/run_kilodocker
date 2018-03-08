@@ -4,7 +4,7 @@ if [ $# -ne 1 ]; then
 echo "Incorrect number of parameters"
 echo "Usage to create the container : ./kilodocker directory_to_mount"
 else
-echo "Creation and start docker image with mount $1 in /root/work"
+echo "Creation and start docker image with mount "$(cd $1 ; pwd)" in /root/work"
 xhost +local:root
 docker run -t -i --privileged \
 -v /dev/bus/usb:/dev/bus/usb \
