@@ -12,6 +12,6 @@ docker run -t -i --privileged \
 -v /tmp/.X11-unix:/tmp/.X11-unix:rw \
 -e DISPLAY=:0 \
 -e QT_X11_NO_MITSHM=1 \
---name kilodocker \
-juandres/kilodocker
+--name kilodocker_lite \
+docker pull juandres/kilodocker_lite
 fi

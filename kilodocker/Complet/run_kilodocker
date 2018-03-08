@@ -1,9 +1,10 @@
 #!/bin/bash
 
 if [ $# -ne 1 ]; then
-echo "Incorrect number of parameters"
-echo "Usage to create the container : ./kilodocker directory_to_mount"
+	echo "Incorrect number of parameters"
+	echo "Usage to create the container : ./kilodocker directory_to_mount"
 else
+
 echo "Creation and start docker image with mount "$(cd $1 ; pwd)" in /root/work"
 xhost +local:root
 docker run -t -i --privileged \
@@ -13,5 +14,6 @@ docker run -t -i --privileged \
 -e DISPLAY=:0 \
 -e QT_X11_NO_MITSHM=1 \
 --name kilodocker \
-db776b7a6bbf
+juandres/kilodocker_full
+
 fi
