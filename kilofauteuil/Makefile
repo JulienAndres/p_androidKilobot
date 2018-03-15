@@ -1,8 +1,8 @@
-.PHONY: main clean
+.PHONY: kilofauteuil_46 clean
 KILOLIB = /root/kilolib/build/kilolib.a
 DIR_KILOLIB=/root/kilolib/
 
-main: build/main.hex # build/main.lss build/main.elf
+kilofauteuil_46: build/kilofauteuil_46.hex # build/kilofauteuil_46.lss build/kilofauteuil_46.elf
 
 CC = avr-gcc
 AVROC = avr-objcopy
@@ -26,12 +26,12 @@ EEPROM = -j .eeprom --set-section-flags=.eeprom="alloc,load" --change-section-lm
 
 %.hex: %.elf
 	$(AVROC) -O ihex $(FLASH) $< $@
-	rm build/main.elf
+	rm build/kilofauteuil_46.elf
 
 build:
 	mkdir -p $@
 
-build/main.elf: main.c $(KILOLIB) | build
+build/kilofauteuil_46.elf: kilofauteuil_46.c $(KILOLIB) | build
 	$(CC) $(CFLAGS) -o $@ $< $(KILOLIB) -I $(DIR_KILOLIB)
 
 clean:

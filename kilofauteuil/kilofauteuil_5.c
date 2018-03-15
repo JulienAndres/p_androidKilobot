@@ -1,13 +1,12 @@
 #include <kilolib.h>
-#include "main.h"
-#include "movement.h"
+
 
 #define STOP 0
 #define FORWARD 1
 #define LEFT 2
 #define RIGHT 3
 
-int val_g = 80;
+int val_g = 100;
 int val_d = 100;
 int down;
 void setup() {
