@@ -181,6 +181,7 @@ void message_rx (message_t *message, distance_measurement_t *distance){
 int main() {
     kilo_init();
 		debug_init();
+
     kilo_message_rx = message_rx;
     //kilo_message_tx = message_tx;
     kilo_start(setup, aggregation);
