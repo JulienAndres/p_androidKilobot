@@ -34,7 +34,7 @@ message_t messagerx;    //message recu
 uint8_t new_message=0;   //est mis à 1 si un message arrive
 uint8_t distance=-1;    //distance estimé du kilobot qui evoir le message
 
-
+uint8_t nb=1;
 void update_from_message(){
   /*
 Mise à jour de la liste des voisins en fonction du message recu
@@ -175,7 +175,7 @@ décide des comportement en fontion du nombre de voisin ou de tooClose()
     new_message=0;
   }
   //possible changement de direction toute les secondes
-    if (kilo_ticks>last_update+SECONDE) {
+    if (kilo_ticks>last_update+nb*SECONDE) {
       next_direction=(rand_hard()%3)+1;
       last_update=kilo_ticks;
     }
@@ -185,12 +185,17 @@ décide des comportement en fontion du nombre de voisin ou de tooClose()
     update_voisins(); //met a jour la liste de ses voisins
 
     if (tooClose() || nb_voisins==0){
+      if(next_direction!=STOP){
+        nb=1;
+      }
       printf("    tooclose or new voisins\n");
       update_motors(next_direction);//randomdirection
       set_color(RGB(1,0,0));
     }else{
+      nb=2;
       printf("    perfect distance\n");
       update_motors(STOP);
+      next_direction=STOP;
       set_color(RGB(1,1,1));
     }
 }

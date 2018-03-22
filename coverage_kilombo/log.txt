@@ -1,0 +1,1672 @@
+Reading simulator parameters from kilombo.json
+setup
+0
+setup
+1
+setup
+2
+setup
+3
+setup
+4
+setup
+5
+setup
+6
+setup
+7
+setup
+8
+setup
+9
+setup
+10
+setup
+11
+setup
+12
+setup
+13
+setup
+14
+setup
+15
+setup
+16
+setup
+17
+setup
+18
+setup
+19
+setup
+20
+setup
+21
+setup
+22
+setup
+23
+setup
+24
+setup
+25
+setup
+26
+setup
+27
+setup
+28
+setup
+29
+setup
+30
+setup
+31
+setup
+32
+setup
+33
+setup
+34
+setup
+35
+setup
+36
+setup
+37
+setup
+38
+setup
+39
+setup
+40
+setup
+41
+setup
+42
+setup
+43
+setup
+44
+setup
+45
+setup
+46
+setup
+47
+setup
+48
+setup
+49
+Size of kilobot structure : 248
+Size of USERDATA structure: 80
+Running 50 bots with timestep 0.032250 for total time 864000.000000
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+     0 s -      0 steps -      0 kilo_ticks    0.000 s.
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+    Nouveau message
+        message from 10
+mise a jour : id : 10 time : 0 distace : 41
+----------------------------------loop
+    mydata->nb_voisins1
+    update_voisins
+        liste : id: 10 time: 0 dist : 41 
+tooClose 1
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+    Nouveau message
+        message from 17
+mise a jour : id : 17 time : 0 distace : 86
+----------------------------------loop
+    mydata->nb_voisins1
+    update_voisins
+        liste : id: 17 time: 0 dist : 86 
+tooClose 0
+    perfect mydata->distance
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+    Nouveau message
+        message from 10
+mise a jour : id : 10 time : 0 distace : 79
+----------------------------------loop
+    mydata->nb_voisins1
+    update_voisins
+        liste : id: 10 time: 0 dist : 79 
+tooClose 0
+    perfect mydata->distance
+    Nouveau message
+        message from 17
+mise a jour : id : 17 time : 0 distace : 83
+----------------------------------loop
+    mydata->nb_voisins1
+    update_voisins
+        liste : id: 17 time: 0 dist : 83 
+tooClose 0
+    perfect mydata->distance
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+    Nouveau message
+        message from 17
+mise a jour : id : 17 time : 0 distace : 75
+----------------------------------loop
+    mydata->nb_voisins1
+    update_voisins
+        liste : id: 17 time: 0 dist : 75 
+tooClose 0
+    perfect mydata->distance
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins1
+    update_voisins
+        liste : id: 10 time: 0 dist : 41 
+tooClose 1
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins1
+    update_voisins
+        liste : id: 17 time: 0 dist : 86 
+tooClose 0
+    perfect mydata->distance
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins1
+    update_voisins
+        liste : id: 10 time: 0 dist : 79 
+tooClose 0
+    perfect mydata->distance
+----------------------------------loop
+    mydata->nb_voisins1
+    update_voisins
+        liste : id: 17 time: 0 dist : 83 
+tooClose 0
+    perfect mydata->distance
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins1
+    update_voisins
+        liste : id: 17 time: 0 dist : 75 
+tooClose 0
+    perfect mydata->distance
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+    Nouveau message
+        message from 2
+mise a jour : id : 2 time : 2 distace : 82
+----------------------------------loop
+    mydata->nb_voisins1
+    update_voisins
+        liste : id: 2 time: 2 dist : 82 
+tooClose 0
+    perfect mydata->distance
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+    Nouveau message
+        message from 2
+mise a jour : id : 2 time : 2 distace : 91
+----------------------------------loop
+    mydata->nb_voisins1
+    update_voisins
+        liste : id: 2 time: 2 dist : 91 
+tooClose 0
+    perfect mydata->distance
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins1
+    update_voisins
+        liste : id: 10 time: 0 dist : 41 
+tooClose 1
+    tooclose or new voisins
+    Nouveau message
+        message from 43
+mise a jour : id : 43 time : 2 distace : 77
+----------------------------------loop
+    mydata->nb_voisins1
+    update_voisins
+        liste : id: 43 time: 2 dist : 77 
+tooClose 0
+    perfect mydata->distance
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+    Nouveau message
+        message from 43
+mise a jour : id : 43 time : 2 distace : 68
+----------------------------------loop
+    mydata->nb_voisins1
+    update_voisins
+        liste : id: 43 time: 2 dist : 68 
+tooClose 0
+    perfect mydata->distance
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+    Nouveau message
+        message from 43
+mise a jour : id : 43 time : 2 distace : 32
+----------------------------------loop
+    mydata->nb_voisins1
+    update_voisins
+        liste : id: 43 time: 2 dist : 32 
+tooClose 1
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins1
+    update_voisins
+        liste : id: 17 time: 0 dist : 86 
+tooClose 0
+    perfect mydata->distance
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+    Nouveau message
+        message from 15
+mise a jour : id : 15 time : 2 distace : 56
+----------------------------------loop
+    mydata->nb_voisins1
+    update_voisins
+        liste : id: 15 time: 2 dist : 56 
+tooClose 0
+    perfect mydata->distance
+    Nouveau message
+        message from 3
+mise a jour : id : 3 time : 2 distace : 82
+----------------------------------loop
+    mydata->nb_voisins1
+    update_voisins
+        liste : id: 3 time: 2 dist : 82 
+tooClose 0
+    perfect mydata->distance
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins1
+    update_voisins
+        liste : id: 10 time: 0 dist : 79 
+tooClose 0
+    perfect mydata->distance
+    Nouveau message
+        message from 43
+mise a jour : id : 43 time : 2 distace : 99
+----------------------------------loop
+    mydata->nb_voisins2
+    update_voisins
+        liste : id: 43 time: 2 dist : 99 
+        liste : id: 17 time: 0 dist : 83 
+tooClose 0
+    perfect mydata->distance
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+    Nouveau message
+        message from 45
+mise a jour : id : 45 time : 2 distace : 52
+----------------------------------loop
+    mydata->nb_voisins1
+    update_voisins
+        liste : id: 45 time: 2 dist : 52 
+tooClose 0
+    perfect mydata->distance
+----------------------------------loop
+    mydata->nb_voisins1
+    update_voisins
+        liste : id: 17 time: 0 dist : 75 
+tooClose 0
+    perfect mydata->distance
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+    Nouveau message
+        message from 15
+mise a jour : id : 15 time : 2 distace : 77
+----------------------------------loop
+    mydata->nb_voisins1
+    update_voisins
+        liste : id: 15 time: 2 dist : 77 
+tooClose 0
+    perfect mydata->distance
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+    Nouveau message
+        message from 15
+mise a jour : id : 15 time : 2 distace : 67
+----------------------------------loop
+    mydata->nb_voisins1
+    update_voisins
+        liste : id: 15 time: 2 dist : 67 
+tooClose 0
+    perfect mydata->distance
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins1
+    update_voisins
+        liste : id: 2 time: 2 dist : 82 
+tooClose 0
+    perfect mydata->distance
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+    Nouveau message
+        message from 7
+mise a jour : id : 7 time : 3 distace : 82
+----------------------------------loop
+    mydata->nb_voisins1
+    update_voisins
+        liste : id: 7 time: 3 dist : 82 
+tooClose 0
+    perfect mydata->distance
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+    Nouveau message
+        message from 14
+mise a jour : id : 14 time : 3 distace : 41
+----------------------------------loop
+    mydata->nb_voisins1
+    update_voisins
+        liste : id: 14 time: 3 dist : 41 
+tooClose 1
+    tooclose or new voisins
+    Nouveau message
+        message from 7
+mise a jour : id : 7 time : 3 distace : 95
+----------------------------------loop
+    mydata->nb_voisins2
+    update_voisins
+        liste : id: 7 time: 3 dist : 95 
+        liste : id: 2 time: 2 dist : 91 
+tooClose 0
+    perfect mydata->distance
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins1
+    update_voisins
+        liste : id: 10 time: 0 dist : 41 
+tooClose 1
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins1
+    update_voisins
+        liste : id: 43 time: 2 dist : 77 
+tooClose 0
+    perfect mydata->distance
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins1
+    update_voisins
+        liste : id: 43 time: 2 dist : 68 
+tooClose 0
+    perfect mydata->distance
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins1
+    update_voisins
+        liste : id: 43 time: 2 dist : 32 
+tooClose 1
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins1
+    update_voisins
+        liste : id: 17 time: 0 dist : 86 
+tooClose 0
+    perfect mydata->distance
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins1
+    update_voisins
+        liste : id: 15 time: 2 dist : 56 
+tooClose 0
+    perfect mydata->distance
+----------------------------------loop
+    mydata->nb_voisins1
+    update_voisins
+        liste : id: 3 time: 2 dist : 82 
+tooClose 0
+    perfect mydata->distance
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+    Nouveau message
+        message from 7
+mise a jour : id : 7 time : 3 distace : 82
+----------------------------------loop
+    mydata->nb_voisins1
+    update_voisins
+        liste : id: 7 time: 3 dist : 82 
+tooClose 0
+    perfect mydata->distance
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins1
+    update_voisins
+        liste : id: 10 time: 0 dist : 79 
+tooClose 0
+    perfect mydata->distance
+----------------------------------loop
+    mydata->nb_voisins2
+    update_voisins
+        liste : id: 43 time: 2 dist : 99 
+        liste : id: 17 time: 0 dist : 83 
+tooClose 0
+    perfect mydata->distance
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins1
+    update_voisins
+        liste : id: 45 time: 2 dist : 52 
+tooClose 0
+    perfect mydata->distance
+    Nouveau message
+        message from 14
+mise a jour : id : 14 time : 3 distace : 72
+----------------------------------loop
+    mydata->nb_voisins2
+    update_voisins
+        liste : id: 14 time: 3 dist : 72 
+        liste : id: 17 time: 0 dist : 75 
+tooClose 0
+    perfect mydata->distance
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins1
+    update_voisins
+        liste : id: 15 time: 2 dist : 77 
+tooClose 0
+    perfect mydata->distance
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins1
+    update_voisins
+        liste : id: 15 time: 2 dist : 67 
+tooClose 0
+    perfect mydata->distance
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins
+----------------------------------loop
+    mydata->nb_voisins0
+    update_voisins
+        pas de voisins
+tooClose 0
+    tooclose or new voisins

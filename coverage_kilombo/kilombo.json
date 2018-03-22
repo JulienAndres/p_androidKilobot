@@ -1,0 +1,18 @@
+{
+	"randSeed" : 1,
+	"distributePercent" : 0.2,
+    "nBots" : 10,
+    "formation":"random",
+    "commsRadius" : 101,
+    "showCommsRadius" : 0,
+    "showComms" : 1,
+    "displayWidth_"  : 640,
+    "displayHeight_" : 424,
+    "displayWidth"  : 800,
+    "displayHeight" : 600,
+    "displayScale"  : 0.4,
+    "stepsPerFrame" : 5,
+    "stateFileSteps" : 0,
+    "colorscheme" : "bright",
+    "GUI" : 1
+}
