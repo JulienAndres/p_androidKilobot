@@ -1,0 +1,2 @@
+#!/bin/bash
+avrdude -p m328p -P usb -c avrispmkII -U "flash:w:bootloader.hex:i"

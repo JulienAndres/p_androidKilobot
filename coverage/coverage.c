@@ -1,36 +1,46 @@
 #include <kilolib.h>
+#define DEBUG
+#include <debug.h>
 
-#define MAXVOISIN 5
-#define SECONDE 32
-#define ASK 50
+#define MAXVOISIN 5 //nombre de voisins dans la liste
+#define SECONDE 32 //nombre de tick en 1 seconde
+#define ASK 50  //distance minimale entre 2 kilobots
 
 #define STOP 0
 #define STRAIGHT 1
 #define LEFT 2
 #define RIGHT 3
 
-#define DEBUG
-#include <debug.h>
 
 
-uint8_t nb_voisins;
 
-typedef struct{
-  uint32_t timestamp;
-  uint8_t dist;
-  uint16_t id;
+
+typedef struct{   //Sert à garder les parametres de chacun des voisins
+  uint32_t timestamp; //timestamp de la recetion du message de ce voisin
+  uint8_t dist;  //distance estimé de ce voisin au dernier timestamp
+  uint16_t id;  //id de ce voisin
 }voisins;
 
-voisins voisins_liste[MAXVOISIN];
-uint8_t previous_dir;
-message_t messagetx;
-message_t messagerx;
-uint8_t new_message=0;
-uint8_t distance=-1;
-int last_update;
+uint8_t nb_voisins;  //nombre de voisins dans la liste
+voisins voisins_liste[MAXVOISIN]; //liste des voisins
+
 uint8_t next_direction;
+uint8_t previous_dir;
+int last_update; //derniere update de la direction
+
+
+message_t messagetx;    //message transmis
+message_t messagerx;    //message recu
+uint8_t new_message=0;   //est mis à 1 si un message arrive
+uint8_t distance=-1;    //distance estimé du kilobot qui evoir le message
+
 
 void update_from_message(){
+  /*
+Mise à jour de la liste des voisins en fonction du message recu
+  ->ajout dans la liste s'il n esite pas
+  ->mise à jour des parametres si il est déjà dans la liste
+  */
   uint8_t ID=messagerx.data[0];
   //DEFINIR ID A PARTIR DU MESSAGE
   uint8_t found=0;
@@ -48,17 +58,20 @@ void update_from_message(){
     if (nb_voisins<MAXVOISIN){
       nb_voisins++;
     }
-
   }
   voisins_liste[i].id=ID;
   voisins_liste[i].timestamp=kilo_ticks;
-  voisins_liste[i].dist=distance;//METTRE DISTANCE A PARTIR DU MESSAGE
+  voisins_liste[i].dist=distance;
   printf("mise a jour : id : %d time : %d distace : %d\n", voisins_liste[i].id,voisins_liste[i].timestamp,voisins_liste[i].dist);
   distance=-1;
 
 }
 
 void update_voisins(){
+  /*
+Mise à jour de la liste des voisins tenu par le kilobot
+->on enleve un voisin si on a pas recu de message de lui depuis plus de 2 secondes
+  */
   printf("    update_voisins\n");
   if (nb_voisins==0){
     printf("        pas de voisins\n");
@@ -79,8 +92,9 @@ void update_voisins(){
 }
 
 void update_motors(uint8_t direction) {
-    // printf(" new direction %d\n",direction );
-    // printf("ancienne direction %d\n",previous_dir );
+/*
+Update des moteurs
+*/
     if (direction != previous_dir) {
         switch(direction) {
             case STRAIGHT:
@@ -115,8 +129,10 @@ void message_rx(message_t *message, distance_measurement_t *d)
     new_message = 1;
 }
 
-void setup()
-{
+void setup(){
+  /*
+Initialisation des variables globales et du message envoyé.
+  */
     printf("setup\n");
     printf("%d\n",kilo_uid );
     // Initialize message:
@@ -127,14 +143,13 @@ void setup()
     nb_voisins=0;
     last_update=kilo_ticks;
     next_direction=STOP;
-
-    //int i=0;
-    // for(;i<MAXVOISIN;i++){
-    //   voisins_liste[i]=NULL;
-    // }
 }
 
 uint8_t tooClose(){
+  /*
+Retourne 1 si tous les voisins sont trop pres (macro ASK)
+Retourne 0 sinon
+  */
   uint8_t i;
   uint8_t stop=0;
   for(i=0;i<nb_voisins;i++){
@@ -146,8 +161,12 @@ uint8_t tooClose(){
   return stop;
 }
 
-void loop()
-{
+void loop(){
+/*
+Traitement des messages
+décide des comportement en fontion du nombre de voisin ou de tooClose()
+*/
+
   //si un message est arrivé,le traiter
   if (new_message == 1)
   {
@@ -179,6 +198,9 @@ void loop()
 
 int main()
 {
+/*
+Initialise callback et lance la main loop
+*/
     debug_init();
     kilo_init();
     // Register the message_rx & message_tx callback function.
