@@ -1,10 +1,18 @@
 #include <kilombo.h>
-#include "coverage.h"
+#include "mEDEA.h"
 
 
 REGISTER_USERDATA(USERDATA)
 
+void update_liste_genome(){
+  return;
+}
 
+void emission(){
+	// Blink the LED magenta whenever a message is sent.
+  if (kilo_uid==0) set_color(RGB(0,0,1));
+  if (kilo_uid==1) set_color(RGB(0,1,0));
+}
 
 void update_from_message(){
   /*
@@ -12,15 +20,19 @@ Mise à jour de la liste des voisins en fonction du message recu
   ->ajout dans la liste s'il n esite pas
   ->mise à jour des parametres si il est déjà dans la liste
   */
+  if (mydata->messagerx.data[1]){
+    return update_blocs();
+  }
+  update_liste_genome();
   uint8_t ID=mydata->messagerx.data[0];
   //DEFINIR ID A PARTIR DU MESSAGE
   uint8_t found=0;
   uint8_t i=0;
-  printf("        message from %d\n", ID);
+  //printf("        message from %d\n", ID);
   while(i<mydata->nb_voisins && found==0){
     if (mydata->voisins_liste[i].id==ID){
       found=1;
-      printf("        deja dans la liste\n");
+      //printf("        deja dans la liste\n");
     }else{
       i++;
     }
@@ -33,33 +45,96 @@ Mise à jour de la liste des voisins en fonction du message recu
   mydata->voisins_liste[i].id=ID;
   mydata->voisins_liste[i].timestamp=kilo_ticks;
   mydata->voisins_liste[i].dist=mydata->distance;
-  printf("mise a jour : id : %d time : %d distace : %d\n", mydata->voisins_liste[i].id,mydata->voisins_liste[i].timestamp,mydata->voisins_liste[i].dist);
   mydata->distance=-1;
 
 }
 
+void update_blocs(){
+  uint8_t found=0;
+  uint8_t i=0;
+  uint8_t ID=mydata->messagerx.data[0];
+
+  if (mydata->messagerx.data[1]==1){ //si c est un bloc répulsion
+    while (i< mydata->nb_repuls && found ==0){
+      if (mydata->liste_blocs_repuls[i].id==ID){
+        found=1;
+      }else{
+        i++;
+      }
+    }
+    if (!found){
+      if (mydata->nb_repuls<MAXBLOCK){
+        mydata->nb_repuls++;
+      }
+    }
+
+    mydata->liste_blocs_repuls[i].id=ID;
+    mydata->liste_blocs_repuls[i].timestamp=kilo_ticks;
+    mydata->liste_blocs_repuls[i].dist=mydata->distance;
+
+  }else if (mydata->messagerx.data[1]==2){//si c est un bloc attraction
+
+    while (i< mydata->nb_attract && found ==0){
+      if (mydata->liste_blocs_attract[i].id==ID){
+        found=1;
+      }else{
+        i++;
+      }
+    }
+    if (!found){
+      if (mydata->nb_attract<MAXBLOCK){
+        mydata->nb_attract++;
+      }
+    }
+
+    mydata->liste_blocs_attract[i].id=ID;
+    mydata->liste_blocs_attract[i].timestamp=kilo_ticks;
+    mydata->liste_blocs_attract[i].dist=mydata->distance;
+  }
+  return;
+}
+
+void update_world(){
+  int cpt_voisin=0;
+  int i;
+  for (i = 0; i < mydata->nb_voisins; i++) {
+    cpt_voisin+=mydata->voisins_liste[i].dist;
+  }
+  int cpt_repuls=0;
+  for (i=0; i< mydata->nb_repuls;i++){
+    cpt_repuls+=mydata->liste_blocs_repuls[i].dist;
+  }
+  int cpt_attract=0;
+  for(i=0; i< mydata->nb_attract;i++){
+    cpt_attract+=mydata->liste_blocs_attract[i].dist;
+  }
+  mydata->world[0]=(mydata->nb_voisins) ? cpt_voisin/mydata->nb_voisins : 0 ; //moyenne des distances de ses voisins
+  mydata->world[1]=(mydata->nb_repuls) ? cpt_repuls/mydata->nb_repuls : 0 ; //moyenne des distances des blocks répulsions
+  mydata->world[2]=(mydata->nb_attract) ? cpt_attract/mydata->nb_attract : 0; //moyenne des distances des blocks attractions;
+  mydata->world[3]=get_ambientlight(); //niveau de luminosité actuelle
+  mydata->world[4]=1;
+}
 void update_voisins(){
   /*
 Mise à jour de la liste des voisins tenu par le kilobot
 ->on enleve un voisin si on a pas recu de message de lui depuis plus de 2 secondes
   */
-  printf("    update_voisins\n");
+  //printf("    update_voisins\n");
   if (mydata->nb_voisins==0){
-    printf("        pas de voisins\n");
+    //printf("        pas de voisins\n");
+    mydata->world[0]=0;//maj genome avec distance moyenne voisins
     return ;
   }
-      int8_t i;
+      int i;
 
       for (i = mydata->nb_voisins-1; i >= 0; i--){
-        printf("        liste : id: %d time: %d dist : %d \n",mydata->voisins_liste[i].id,mydata->voisins_liste[i].timestamp,mydata->voisins_liste[i].dist );
           if (kilo_ticks - mydata->voisins_liste[i].timestamp  > 2*SECONDE){  //this one is too old.
-            printf("kiloticks %d\n",kilo_ticks );
-            printf("        delete voisin %d\n", mydata->voisins_liste[i].id);
               mydata->voisins_liste[i]= mydata->voisins_liste[mydata->nb_voisins];
               mydata->voisins_liste[mydata->nb_voisins-1].id=-1;
               mydata->nb_voisins--;
             }
       }
+
 }
 
 void update_motors(uint8_t direction) {
@@ -90,7 +165,21 @@ Update des moteurs
 }
 message_t *message_tx()
 {
+    if (kilo_uid==0){
+      mydata->messagetx.data[1]=1; //1=expulsion
+      mydata->messagetx.crc = message_crc(&mydata->messagetx);
+
+    }
+    else if (kilo_uid==1){
+      mydata->messagetx.data[1]=2; //2=attraction
+      mydata->messagetx.crc = message_crc(&mydata->messagetx);
+
+    }
     return &mydata->messagetx;
+}
+
+void majmessage(){
+  return;
 }
 
 void message_rx(message_t *message, distance_measurement_t *d)
@@ -98,17 +187,19 @@ void message_rx(message_t *message, distance_measurement_t *d)
     mydata->messagerx= *message;
     mydata->distance= estimate_distance(d);
     mydata->new_message = 1;
+
 }
 
 void setup(){
   /*
 Initialisation des variables globales et du message envoyé.
   */
-    printf("setup\n");
-    printf("%d\n",kilo_uid );
+    //printf("setup\n");
+    //printf("%d\n",kilo_uid );
     // Initialize message:
     mydata->messagetx.type = NORMAL;
     mydata->messagetx.data[0]=kilo_uid;
+    mydata->messagetx.data[1]=0;
     mydata->messagetx.crc = message_crc(&mydata->messagetx);
     mydata->previous_dir=STOP;
     mydata->nb_voisins=0;
@@ -117,23 +208,11 @@ Initialisation des variables globales et du message envoyé.
     mydata->new_message=0;
     mydata->distance=-1;
     mydata->nb=1;
+    mydata->nb_repuls=0;
+    mydata->nb_attract=0;
 }
 
-uint8_t tooClose(){
-  /*
-Retourne 1 si tous les voisins sont trop pres (macro ASK)
-Retourne 0 sinon
-  */
-  uint8_t i;
-  uint8_t stop=0;
-  for(i=0;i<mydata->nb_voisins;i++){
-    if (mydata->voisins_liste[i].dist<ASK){
-      stop=1;
-    }
-  }
-  printf("tooClose %d\n",stop );
-  return stop;
-}
+
 
 void loop(){
 /*
@@ -142,9 +221,12 @@ décide des comportement en fontion du nombre de voisin ou de tooClose()
 */
 
   //si un message est arrivé,le traiter
+  if (kilo_uid==0 || kilo_uid==1){
+    emission();
+    return;
+  }
   if (mydata->new_message == 1)
   {
-    printf("    Nouveau message\n");
     update_from_message();
     mydata->new_message=0;
   }
@@ -153,25 +235,12 @@ décide des comportement en fontion du nombre de voisin ou de tooClose()
       mydata->next_direction=(rand_hard()%3)+1;
       mydata->last_update=kilo_ticks;
     }
-    printf("----------------------------------");
-    printf("loop\n");
-    printf("    mydata->nb_voisins%d\n",mydata->nb_voisins );
+    //printf("----------------------------------");
+    //printf("loop\n");
+    //printf("    mydata->nb_voisins%d\n",mydata->nb_voisins );
     update_voisins(); //met a jour la liste de ses voisins
 
-    if (tooClose() || mydata->nb_voisins==0){
-      if(mydata->next_direction!=STOP){
-        mydata->nb=1;
-      }
-      printf("    tooclose or new voisins\n");
-      update_motors(mydata->next_direction);//randomdirection
-      set_color(RGB(1,0,0));
-    }else{
-      mydata->nb=2;
-      printf("    perfect mydata->distance\n");
-      update_motors(STOP);
-      mydata->next_direction=STOP;
-      set_color(RGB(1,1,1));
-    }
+
 }
 
 

@@ -16,11 +16,11 @@ Mise à jour de la liste des voisins en fonction du message recu
   //DEFINIR ID A PARTIR DU MESSAGE
   uint8_t found=0;
   uint8_t i=0;
-  printf("        message from %d\n", ID);
+  //printf("        message from %d\n", ID);
   while(i<mydata->nb_voisins && found==0){
     if (mydata->voisins_liste[i].id==ID){
       found=1;
-      printf("        deja dans la liste\n");
+      //printf("        deja dans la liste\n");
     }else{
       i++;
     }
@@ -33,7 +33,7 @@ Mise à jour de la liste des voisins en fonction du message recu
   mydata->voisins_liste[i].id=ID;
   mydata->voisins_liste[i].timestamp=kilo_ticks;
   mydata->voisins_liste[i].dist=mydata->distance;
-  printf("mise a jour : id : %d time : %d distace : %d\n", mydata->voisins_liste[i].id,mydata->voisins_liste[i].timestamp,mydata->voisins_liste[i].dist);
+  //printf("mise a jour : id : %d time : %d distace : %d\n", mydata->voisins_liste[i].id,mydata->voisins_liste[i].timestamp,mydata->voisins_liste[i].dist);
   mydata->distance=-1;
 
 }
@@ -43,18 +43,18 @@ void update_voisins(){
 Mise à jour de la liste des voisins tenu par le kilobot
 ->on enleve un voisin si on a pas recu de message de lui depuis plus de 2 secondes
   */
-  printf("    update_voisins\n");
+  //printf("    update_voisins\n");
   if (mydata->nb_voisins==0){
-    printf("        pas de voisins\n");
+    //printf("        pas de voisins\n");
     return ;
   }
       int8_t i;
 
       for (i = mydata->nb_voisins-1; i >= 0; i--){
-        printf("        liste : id: %d time: %d dist : %d \n",mydata->voisins_liste[i].id,mydata->voisins_liste[i].timestamp,mydata->voisins_liste[i].dist );
+        //printf("        liste : id: %d time: %d dist : %d \n",mydata->voisins_liste[i].id,mydata->voisins_liste[i].timestamp,mydata->voisins_liste[i].dist );
           if (kilo_ticks - mydata->voisins_liste[i].timestamp  > 2*SECONDE){  //this one is too old.
-            printf("kiloticks %d\n",kilo_ticks );
-            printf("        delete voisin %d\n", mydata->voisins_liste[i].id);
+            //printf("kiloticks %d\n",kilo_ticks );
+            //printf("        delete voisin %d\n", mydata->voisins_liste[i].id);
               mydata->voisins_liste[i]= mydata->voisins_liste[mydata->nb_voisins];
               mydata->voisins_liste[mydata->nb_voisins-1].id=-1;
               mydata->nb_voisins--;
@@ -104,8 +104,8 @@ void setup(){
   /*
 Initialisation des variables globales et du message envoyé.
   */
-    printf("setup\n");
-    printf("%d\n",kilo_uid );
+    //printf("setup\n");
+    //printf("%d\n",kilo_uid );
     // Initialize message:
     mydata->messagetx.type = NORMAL;
     mydata->messagetx.data[0]=kilo_uid;
@@ -131,7 +131,7 @@ Retourne 0 sinon
       stop=1;
     }
   }
-  printf("tooClose %d\n",stop );
+  //printf("tooClose %d\n",stop );
   return stop;
 }
 
@@ -144,7 +144,7 @@ décide des comportement en fontion du nombre de voisin ou de tooClose()
   //si un message est arrivé,le traiter
   if (mydata->new_message == 1)
   {
-    printf("    Nouveau message\n");
+    //printf("    Nouveau message\n");
     update_from_message();
     mydata->new_message=0;
   }
@@ -153,21 +153,21 @@ décide des comportement en fontion du nombre de voisin ou de tooClose()
       mydata->next_direction=(rand_hard()%3)+1;
       mydata->last_update=kilo_ticks;
     }
-    printf("----------------------------------");
-    printf("loop\n");
-    printf("    mydata->nb_voisins%d\n",mydata->nb_voisins );
+    //printf("----------------------------------");
+    //printf("loop\n");
+    //printf("    mydata->nb_voisins%d\n",mydata->nb_voisins );
     update_voisins(); //met a jour la liste de ses voisins
 
     if (tooClose() || mydata->nb_voisins==0){
       if(mydata->next_direction!=STOP){
         mydata->nb=1;
       }
-      printf("    tooclose or new voisins\n");
+      //printf("    tooclose or new voisins\n");
       update_motors(mydata->next_direction);//randomdirection
       set_color(RGB(1,0,0));
     }else{
       mydata->nb=2;
-      printf("    perfect mydata->distance\n");
+      //printf("    perfect mydata->distance\n");
       update_motors(STOP);
       mydata->next_direction=STOP;
       set_color(RGB(1,1,1));
