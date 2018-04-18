@@ -1,12 +1,13 @@
 #ifndef AGGREGATION__H
     #define AGGREGATION__H
 
-    #define MAXVOISIN 5 //nombre de voisins dans la liste
-
+    #define MAXVOISIN 10
 
     void setup(void);
     void emission(void);
     //void loop(void);
+    void update_voisins();
+    void update_from_message();
     void aggregation(void);
     void searching(void);
     uint8_t found_to_aggregate(void);
@@ -17,29 +18,27 @@
     uint8_t is_too_close(void);
     void set_random_turning_direction(void);
     int lost_aggregate(void);
-    void update_voisins();
-    void update_from_message();
 
-    typedef struct{   //Sert à garder les parametres de chacun des voisins
-      uint32_t timestamp; //timestamp de la recetion du message de ce voisin
-      uint8_t dist;  //mydata->distance estimé de ce voisin au dernier timestamp
-      uint16_t id;  //id de ce voisin
-    }voisins;
+    typedef struct {
+      uint8_t dist;
+      uint16_t id;                /*!< the last known dist of the neighbor */
+      uint32_t timestamp;     /*!<the tick where the last information was received from this neighbor ) */
+    } Neighbor_t;
 
     typedef struct
     {
-
       uint8_t state;
-
-      uint8_t nb_voisins;
-      voisins voisins_liste[MAXVOISIN];
+      uint32_t nb_voisins;
+      Neighbor_t voisins_liste[MAXVOISIN];
 
     	uint8_t curr_motion;
     	uint32_t last_motion_update;
     	uint8_t new_message;
 
-      uint8_t distance;
+      uint8_t dist;
       uint8_t last_dist_update;
+
+      Neighbor_t toAggregate;
 
       message_t message;
       uint8_t broadcast;

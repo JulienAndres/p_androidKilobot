@@ -13,13 +13,15 @@ void setup() {
 	mydata->message.type = NORMAL;
 	mydata->message.data[0] = kilo_uid;
 	mydata->message.crc = message_crc(&mydata->message);
-	mydata->nb_voisins = 0;
+
 	mydata->new_message = 0;
 	mydata->last_dist_update = -1;
+	mydata->toAggregate.dist = -1;
 	mydata->state = SEARCHING;
 	mydata->broadcast = 0;
 	mydata->message_sent = 0;
 	mydata->last_motion_update=0;
+	mydata->nb_voisins=0;
 	//mydata->curr_motion = STOP;
 	set_motion(STOP);
 	printf("%d\n",kilo_uid );
@@ -40,15 +42,52 @@ void emission(){
 	}
 }
 
+void update_voisins(){
+	if (!mydata->nb_voisins){
+		return;
+	}
+	int i;
+	for(i=mydata->nb_voisins-1;i>=0;i--){
+		if (kilo_ticks-mydata->voisins_liste[i].timestamp > 2*SECONDE){
+		// if (kilo_uid==83)	printf("delete %d\n",mydata->voisins_liste[i].id );
+			mydata->voisins_liste[i]=mydata->voisins_liste[mydata->nb_voisins];
+			mydata->voisins_liste[mydata->nb_voisins-1].id=-1;
+			mydata->nb_voisins--;
+		}
+	}
+}
+
+void update_from_message(){
+	uint8_t found_id=0;
+	uint32_t distance=mydata->toAggregate.dist;
+	int ID=mydata->message.data[0];
+	int i=0;
+	while (i< mydata->nb_voisins && !found_id ){
+		if(mydata->voisins_liste[i].id ==ID){
+			found_id=1;
+		}else{
+			i++;
+		}
+	}
+	if (!found_id){
+		if (mydata->nb_voisins<MAXVOISIN){
+			mydata->nb_voisins++;
+		}
+		mydata->voisins_liste[i].id=ID;
+		mydata->voisins_liste[i].timestamp=kilo_ticks;
+		mydata->voisins_liste[i].dist=distance;
+	}
+	// if (kilo_uid==83) printf("%d %d nb %d\n",message->data[0],distance ,mydata->nb_voisins);
+}
+
 void aggregation() {
 	if (kilo_uid==0){
 		emission();
 		return;
 	}
-
-	if(mydata->new_message == 1){
+	update_voisins();
+	if(mydata->new_message==1){
 		update_from_message();
-		mydata->new_message = 0;
 	}
 	//printf("uid : %d last motion update %d \n",kilo_uid,mydata->last_motion_update);
 	if (kilo_ticks > mydata->last_motion_update + SECONDE){
@@ -67,7 +106,7 @@ void aggregation() {
 				break;
 		}
 	}
-	update_voisins();
+
 	set_motion(mydata->curr_motion);
 	//printf("MOTION : %d\n",mydata->curr_motion);
 	//("DISTANCE.toAggregate : %d\n",mydata->toAggregate.dist);
@@ -81,6 +120,7 @@ void searching(){
 	if(found_to_aggregate()){
 		mydata->state = CONVERGING;
 		set_motion(STRAIGHT);
+		mydata->last_dist_update = mydata->toAggregate.dist;
 	} else {
 		mydata->state = SEARCHING;
 		set_random_direction();
@@ -91,20 +131,10 @@ uint8_t found_to_aggregate(){
 	uint8_t found = 0;
 	if(mydata->new_message == 1){
 		mydata->new_message = 0;
+		mydata->toAggregate.timestamp = kilo_ticks;
 		found = 1;
 	}
 	return found;
-}
-
-uint8_t get_closest_neighbour_dist(){
-	uint8_t mindist = mydata->voisins_liste[0].dist;
-	uint8_t i;
-	for(i=0; i<mydata->nb_voisins; i++){
-		if(mydata->voisins_liste[i].dist < mindist){
-			mindist = mydata->voisins_liste[i].dist;
-		}
-	}
-	return mindist;
 }
 
 void converging(){
@@ -115,7 +145,7 @@ void converging(){
 		mydata->state = SLEEPING;
 		set_motion(STOP);
 	} else {
-		if(get_closest_neighbour_dist() >= mydata->last_dist_update){
+		if(mydata->toAggregate.dist >= mydata->last_dist_update){
 			// printf("IN TEST\n");
 			switch (mydata->curr_motion) {
 				case RIGHT:
@@ -133,7 +163,10 @@ void converging(){
 		if(!found_to_aggregate()){
 			mydata->state = SEARCHING;
 		}
+
+		mydata->last_dist_update = mydata->toAggregate.dist;
 	}
+
 }
 
 void sleeping(){
@@ -154,10 +187,18 @@ void sleeping(){
 uint8_t is_too_close(){
 	uint8_t stop = 0;
 	//printf("dist dans is_too_close %d\n", mydata->toAggregate.dist);
-	if(get_closest_neighbour_dist() <= DIST_TO_AGGREGATE){
+	if(mydata->toAggregate.dist <= DIST_TO_AGGREGATE){
 
 		stop = 1;
+		return stop;
 	}
+	int i=0;
+	for (;i<mydata->nb_voisins;i++){
+		if (mydata->voisins_liste[i].dist <= DIST_TO_AGGREGATE){
+			return 1;
+		}
+	}
+
 	return stop;
 }
 
@@ -218,65 +259,11 @@ int lost_aggregate(){
 	return lost;
 }
 
-void update_from_message(){
-  /*
-Mise à jour de la liste des voisins en fonction du message recu
-  ->ajout dans la liste s'il n esite pas
-  ->mise à jour des parametres si il est déjà dans la liste
-  */
-  uint8_t ID=mydata->message.data[0];
-  //DEFINIR ID A PARTIR DU MESSAGE
-  uint8_t found=0;
-  uint8_t i=0;
-  printf("        message from %d\n", ID);
-  while(i<mydata->nb_voisins && found==0){
-    if (mydata->voisins_liste[i].id==ID){
-      found=1;
-      printf("        deja dans la liste\n");
-    }else{
-      i++;
-    }
-  }
-  if (found==0){
-    if (mydata->nb_voisins<MAXVOISIN){
-      mydata->nb_voisins++;
-    }
-  }
-  mydata->voisins_liste[i].id=ID;
-  mydata->voisins_liste[i].timestamp=kilo_ticks;
-  mydata->voisins_liste[i].dist=mydata->distance;
-  printf("mise a jour : id : %d time : %d distace : %d\n", mydata->voisins_liste[i].id,mydata->voisins_liste[i].timestamp,mydata->voisins_liste[i].dist);
-  mydata->distance=-1;
-
-}
-
-void update_voisins(){
-  /*
-Mise à jour de la liste des voisins tenu par le kilobot
-->on enleve un voisin si on a pas recu de message de lui depuis plus de 2 secondes
-  */
-  printf("    update_voisins\n");
-  if (mydata->nb_voisins==0){
-    printf("        pas de voisins\n");
-    return ;
-  }
-      int8_t i;
-
-      for (i = mydata->nb_voisins-1; i >= 0; i--){
-        printf("        liste : id: %d time: %d dist : %d \n",mydata->voisins_liste[i].id,mydata->voisins_liste[i].timestamp,mydata->voisins_liste[i].dist );
-          if (kilo_ticks - mydata->voisins_liste[i].timestamp  > 2*SECONDE){  //this one is too old.
-            printf("kiloticks %d\n",kilo_ticks );
-            printf("        delete voisin %d\n", mydata->voisins_liste[i].id);
-              mydata->voisins_liste[i]= mydata->voisins_liste[mydata->nb_voisins];
-              mydata->voisins_liste[mydata->nb_voisins-1].id=-1;
-              mydata->nb_voisins--;
-            }
-      }
-}
 
 void message_rx (message_t *message, distance_measurement_t *distance){
     mydata->new_message = 1;
-		mydata->distance = estimate_distance(distance);
+		mydata->message=*message;
+		mydata->toAggregate.dist = estimate_distance(distance);
 		//if (kilo_uid==8) printf("DISTANCE.toAggregate : %d\n",mydata->toAggregate.dist);
 }
 
