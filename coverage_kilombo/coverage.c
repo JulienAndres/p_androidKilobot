@@ -9,7 +9,7 @@ REGISTER_USERDATA(USERDATA)
 void update_from_message(){
   /*
 Mise à jour de la liste des voisins en fonction du message recu
-  ->ajout dans la liste s'il n esite pas
+  ->ajout dans la liste s'il n existe pas
   ->mise à jour des parametres si il est déjà dans la liste
   */
   uint8_t ID=mydata->messagerx.data[0];
@@ -112,7 +112,7 @@ Initialisation des variables globales et du message envoyé.
     mydata->messagetx.crc = message_crc(&mydata->messagetx);
     mydata->previous_dir=STOP;
     mydata->nb_voisins=0;
-    mydata->last_update=kilo_ticks;
+    mydata->last_update=0;
     mydata->next_direction=STOP;
     mydata->new_message=0;
     mydata->distance=-1;
@@ -138,7 +138,7 @@ Retourne 0 sinon
 void loop(){
 /*
 Traitement des messages
-décide des comportement en fontion du nombre de voisin ou de tooClose()
+décide des comportements en fontion du nombre de voisin ou de tooClose()
 */
 
   //si un message est arrivé,le traiter
