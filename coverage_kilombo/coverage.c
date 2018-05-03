@@ -13,6 +13,7 @@ Mise à jour de la liste des voisins en fonction du message recu
   ->mise à jour des parametres si il est déjà dans la liste
   */
   uint8_t ID=mydata->messagerx.data[0];
+  uint8_t distance=mydata->distance;
   //DEFINIR ID A PARTIR DU MESSAGE
   uint8_t found=0;
   uint8_t i=0;
@@ -32,7 +33,7 @@ Mise à jour de la liste des voisins en fonction du message recu
   }
   mydata->voisins_liste[i].id=ID;
   mydata->voisins_liste[i].timestamp=kilo_ticks;
-  mydata->voisins_liste[i].dist=mydata->distance;
+  mydata->voisins_liste[i].dist=distance;
   //printf("mise a jour : id : %d time : %d distace : %d\n", mydata->voisins_liste[i].id,mydata->voisins_liste[i].timestamp,mydata->voisins_liste[i].dist);
   mydata->distance=-1;
 
@@ -52,42 +53,17 @@ Mise à jour de la liste des voisins tenu par le kilobot
 
       for (i = mydata->nb_voisins-1; i >= 0; i--){
         //printf("        liste : id: %d time: %d dist : %d \n",mydata->voisins_liste[i].id,mydata->voisins_liste[i].timestamp,mydata->voisins_liste[i].dist );
-          if (kilo_ticks - mydata->voisins_liste[i].timestamp  > 2*SECONDE){  //this one is too old.
+          if (kilo_ticks - mydata->voisins_liste[i].timestamp  > 2*SECONDE){  //trop vieux
             //printf("kiloticks %d\n",kilo_ticks );
             //printf("        delete voisin %d\n", mydata->voisins_liste[i].id);
-              mydata->voisins_liste[i]= mydata->voisins_liste[mydata->nb_voisins];
+              mydata->voisins_liste[i]= mydata->voisins_liste[mydata->nb_voisins-1];
               mydata->voisins_liste[mydata->nb_voisins-1].id=-1;
               mydata->nb_voisins--;
             }
       }
 }
 
-void update_motors(uint8_t direction) {
-/*
-Update des moteurs
-*/
-    if (direction != mydata->previous_dir) {
-        switch(direction) {
-            case STRAIGHT:
-                spinup_motors();
-                set_motors(kilo_straight_left, kilo_straight_right);
-                break;
-            case LEFT:
-                spinup_motors();
-                set_motors(kilo_turn_left,0);
-                break;
-            case RIGHT:
-                spinup_motors();
-                set_motors(0,kilo_turn_right);
-                break;
-            case STOP:
-            default:
-                set_motors(0,0);
-                break;
-        }
-        mydata->previous_dir = direction;
-      }
-}
+
 message_t *message_tx()
 {
     return &mydata->messagetx;
@@ -105,15 +81,17 @@ void setup(){
 Initialisation des variables globales et du message envoyé.
   */
     //printf("setup\n");
-    //printf("%d\n",kilo_uid );
+    printf("%d ",kilo_ticks );
+    printf("%d\n",kilo_uid );
     // Initialize message:
     mydata->messagetx.type = NORMAL;
     mydata->messagetx.data[0]=kilo_uid;
     mydata->messagetx.crc = message_crc(&mydata->messagetx);
+        mydata->last_update=kilo_ticks;
     mydata->previous_dir=STOP;
     mydata->nb_voisins=0;
-    mydata->last_update=0;
-    mydata->next_direction=STOP;
+
+    mydata->next_direction=rand_hard()%3+1;
     mydata->new_message=0;
     mydata->distance=-1;
     mydata->nb=1;
@@ -141,6 +119,7 @@ Traitement des messages
 décide des comportements en fontion du nombre de voisin ou de tooClose()
 */
 
+
   //si un message est arrivé,le traiter
   if (mydata->new_message == 1)
   {
@@ -148,33 +127,67 @@ décide des comportements en fontion du nombre de voisin ou de tooClose()
     update_from_message();
     mydata->new_message=0;
   }
+  update_voisins(); //met a jour la liste de ses voisins
+
   //possible changement de direction toute les secondes
-    if (kilo_ticks>mydata->last_update+mydata->nb*SECONDE) {
-      mydata->next_direction=(rand_hard()%3)+1;
+    if (kilo_ticks > mydata->last_update+SECONDE) {
       mydata->last_update=kilo_ticks;
-    }
+      set_color(RGB(1,0,0));
     //printf("----------------------------------");
     //printf("loop\n");
     //printf("    mydata->nb_voisins%d\n",mydata->nb_voisins );
-    update_voisins(); //met a jour la liste de ses voisins
 
     if (tooClose() || mydata->nb_voisins==0){
-      if(mydata->next_direction!=STOP){
-        mydata->nb=1;
-      }
       //printf("    tooclose or new voisins\n");
-      update_motors(mydata->next_direction);//randomdirection
+      set_random_direction();
+    //  update_motors(mydata->next_direction);//randomdirection
       set_color(RGB(1,0,0));
     }else{
-      mydata->nb=2;
       //printf("    perfect mydata->distance\n");
       update_motors(STOP);
       mydata->next_direction=STOP;
-      set_color(RGB(1,1,1));
+      set_color(RGB(0,1,0));
+    }}
+}
+
+void set_random_direction(){
+    uint8_t random_number = rand_hard()%4;
+    if ((random_number == 0) || (random_number == 3)){
+				update_motors(STRAIGHT);
+    }
+    else if(random_number == 1){
+				update_motors(LEFT);
+    }
+    else{
+				update_motors(RIGHT);
     }
 }
 
 
+
+void update_motors(uint8_t direction) {
+    if (direction != mydata->next_direction) {
+        switch(direction) {
+            case STRAIGHT:
+                spinup_motors();
+                set_motors(kilo_straight_left, kilo_straight_right);
+                break;
+            case LEFT:
+                spinup_motors();
+                set_motors(kilo_turn_left,0);
+                break;
+            case RIGHT:
+                spinup_motors();
+                set_motors(0,kilo_turn_right);
+                break;
+            case STOP:
+            default:
+                set_motors(0,0);
+                break;
+        }
+        mydata->next_direction = direction;
+      }
+}
 int main()
 {
 /*
