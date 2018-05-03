@@ -5,13 +5,8 @@
 
 /*
 TODO :
-mettre à jour le nombre de voisin que on a autour de nous //normalement déjà fait : mydata->nb_voisins
-envoyer ce nombre de voisins dans les messages
-
-Quand on recoit un message : mettre à jour le nombre de voisins de chaque voisin.
-Pour connaitre le meilleur voisin : Celui qui a le plus de voisins
-
-
+Rajouter un timer en mode repelling ? (genre 10s pour eveiter de faire n imp)
+Ajouter une fonction de proba qui donne une proba de leave en fonction du nombre de voisins que on a
 
 */
 
