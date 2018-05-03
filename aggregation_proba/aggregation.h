@@ -1,7 +1,7 @@
 #ifndef AGGREGATION__H
     #define AGGREGATION__H
 
-    #define MAXVOISIN 10
+    #define MAXVOISIN 30
 
     void setup(void);
     void emission(void);
@@ -9,6 +9,7 @@
     void update_voisins();
     void update_from_message();
     void aggregation(void);
+    void repelling();
     void searching(void);
     uint8_t found_to_aggregate(void);
     void converging(void);
@@ -17,12 +18,13 @@
     void set_random_direction(void);
     uint8_t is_too_close(void);
     void set_random_turning_direction(void);
-    int lost_aggregate(void);
+    uint8_t hasBestNeighbor(void);
 
     typedef struct {
       uint8_t dist;
       uint16_t id;                /*!< the last known dist of the neighbor */
       uint32_t timestamp;     /*!<the tick where the last information was received from this neighbor ) */
+      uint32_t nb_voisins;
     } Neighbor_t;
 
     typedef struct
@@ -40,8 +42,9 @@
       uint8_t last_dist_update;
 
       Neighbor_t toAggregate;
-
+      message_t msg_transmis;
       message_t message;
+      uint8_t message_dist;
       uint8_t broadcast;
       uint8_t message_sent;
 
@@ -57,7 +60,8 @@
     enum state {
     SEARCHING,             /*!< The robot is searching for an other robot */
     CONVERGING,          /*!< The robot is moving to a neighbor */
-    SLEEPING                /*!< The robot is sleeping */
+    SLEEPING,               /*!< The robot is sleeping */
+    REPELLING
     };
 
 #endif

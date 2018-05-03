@@ -4,7 +4,7 @@
 # configured below, these needs to be adapted to the system.
 
 #list of c files in this project
-SOURCES=aggregation.c
+SOURCES=aggregation.c proba.c
 
 #name of the executable file
 EXECUTABLE=aggregation

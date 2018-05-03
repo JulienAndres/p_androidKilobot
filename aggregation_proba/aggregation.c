@@ -26,15 +26,20 @@ REGISTER_USERDATA(USERDATA)
 
 void setup() {
 	// put your setup code here, to be run only once
-	mydata->message.type = NORMAL;
-	mydata->message.data[0] = kilo_uid;
-	mydata->message.crc = message_crc(&mydata->message);
+
+	mydata->msg_transmis.type = NORMAL;
+	mydata->msg_transmis.data[0] = kilo_uid;
+	mydata->msg_transmis.data[1] =0;
+	mydata->msg_transmis.crc = message_crc(&mydata->msg_transmis);
+
+	mydata->toAggregate.nb_voisins=0;
+	mydata->toAggregate.dist=-1;
 
 	mydata->new_message = 0;
 	mydata->last_dist_update = -1;
 	mydata->toAggregate.dist = -1;
 	mydata->state = SEARCHING;
-	mydata->broadcast = 0;
+	mydata->broadcast = 1;
 	mydata->message_sent = 0;
 	mydata->last_motion_update=0;
 	mydata->nb_voisins=0;
@@ -59,16 +64,19 @@ void emission(){
 	}
 }
 
+
+
 void update_voisins(){
 	if (!mydata->nb_voisins){
 		return;
 	}
 	int i;
 	for(i=mydata->nb_voisins-1;i>=0;i--){
-		if (kilo_ticks-mydata->voisins_liste[i].timestamp > 2*SECONDE){
+		if (kilo_ticks-mydata->voisins_liste[i].timestamp > SECONDE){
 		// if (kilo_uid==83)	printf("delete %d\n",mydata->voisins_liste[i].id );
 			mydata->voisins_liste[i]=mydata->voisins_liste[mydata->nb_voisins];
 			mydata->voisins_liste[mydata->nb_voisins-1].id=-1;
+
 			mydata->nb_voisins--;
 		}
 	}
@@ -76,8 +84,9 @@ void update_voisins(){
 
 void update_from_message(){
 	uint8_t found_id=0;
-	uint32_t distance=mydata->toAggregate.dist;
+	uint32_t distance=mydata->message_dist;
 	int ID=mydata->message.data[0];
+	int nb_voisins=mydata->message.data[1];
 	int i=0;
 	while (i< mydata->nb_voisins && !found_id ){
 		if(mydata->voisins_liste[i].id ==ID){
@@ -93,15 +102,18 @@ void update_from_message(){
 		mydata->voisins_liste[i].id=ID;
 		mydata->voisins_liste[i].timestamp=kilo_ticks;
 		mydata->voisins_liste[i].dist=distance;
+		mydata->voisins_liste[i].nb_voisins=nb_voisins;
+
+		mydata->new_message=0;
 	}
 	// if (kilo_uid==83) printf("%d %d nb %d\n",message->data[0],distance ,mydata->nb_voisins);
 }
 
 void aggregation() {
-	if (kilo_uid==0){
-		emission();
-		return;
-	}
+	// if (kilo_uid==0){
+	// 	emission();
+	// 	return;
+	// }
 	update_voisins();
 	if(mydata->new_message==1){
 		update_from_message();
@@ -122,6 +134,9 @@ void aggregation() {
 			case SLEEPING:
 				sleeping();
 				break;
+			case REPELLING:
+				repelling();
+				break;
 		}
 	}
 
@@ -135,7 +150,7 @@ void searching(){
 	set_color(RGB(1,0,0));
 	mydata->last_motion_update = kilo_ticks;
 //	printf("NEW MESSAGE : %d\n", mydata->new_message);
-	if(found_to_aggregate()){
+	if(hasBestNeighbor()){
 		mydata->state = CONVERGING;
 		set_motion(STRAIGHT);
 		mydata->last_dist_update = mydata->toAggregate.dist;
@@ -145,20 +160,48 @@ void searching(){
 	}
 }
 
-uint8_t found_to_aggregate(){
-	uint8_t found = 0;
-	if(mydata->new_message == 1){
-		mydata->new_message = 0;
-		mydata->toAggregate.timestamp = kilo_ticks;
-		found = 1;
-	}
-	return found;
+uint8_t hasBestNeighbor(){
+    int8_t i;
+		if(!mydata->nb_voisins){
+			return 0;
+		}
+    for (i = mydata->nb_voisins-1; i >= 0; i--) {
+        if (mydata->voisins_liste[i].nb_voisins >= mydata->toAggregate.nb_voisins){
+            mydata->toAggregate = mydata->voisins_liste[i];
+        }
+    }
+    return 1;
 }
 
+
 void repelling(){
+	printf("blanc %d\n",kilo_uid );
 	set_color(RGB(1,1,1));
-	if ((kilo_ticks>mydata->start_repelling+10*SECONDE)){//10 secondes pour se liberer
+	// if ((kilo_ticks>mydata->start_repelling+10*SECONDE)){//10 secondes pour se liberer
+	// 	mydata->state=SEARCHING;
+	// }
+
+	makeJoinDecision();
+	if (!mydata->nb_voisins){
 		mydata->state=SEARCHING;
+	}else{
+		if(mydata->toAggregate.dist <= mydata->last_dist_update){
+			// printf("IN TEST\n");
+			switch (mydata->curr_motion) {
+				case RIGHT:
+					set_motion(LEFT);
+					break;
+				case LEFT:
+					set_motion(RIGHT);
+					break;
+				case STRAIGHT:
+				default:
+					set_random_turning_direction();
+					break;
+			}
+		}
+
+		mydata->last_dist_update = mydata->toAggregate.dist;
 	}
 
 
@@ -188,7 +231,7 @@ void converging(){
 					break;
 			}
 		}
-		if(!found_to_aggregate()){
+		if(!hasBestNeighbor()){
 			mydata->state = SEARCHING;
 		}
 
@@ -200,34 +243,29 @@ void converging(){
 void sleeping(){
 	set_color(RGB(0,0,1));
 	set_motion(STOP);
-	mydata->broadcast = 1;
 	//enable_tx = 1;
-	if(!found_to_aggregate()){
+	if(!is_too_close()){
 		mydata->state = SEARCHING;
-		mydata->broadcast = 0;
 		//enable_tx = 0;
 		mydata->new_message = 0;
 	}
+	makeLeaveDecision();
 
 	//printf("broadcast : %d\n", mydata->broadcast);
 }
 
 uint8_t is_too_close(){
-	uint8_t stop = 0;
 	//printf("dist dans is_too_close %d\n", mydata->toAggregate.dist);
-	if(mydata->toAggregate.dist <= DIST_TO_AGGREGATE){
 
-		stop = 1;
-		return stop;
-	}
 	int i=0;
 	for (;i<mydata->nb_voisins;i++){
 		if (mydata->voisins_liste[i].dist <= DIST_TO_AGGREGATE){
+			//printf("tooclose\n");
 			return 1;
 		}
 	}
 
-	return stop;
+	return 0;
 }
 
 void set_motion(uint8_t motion){
@@ -279,31 +317,34 @@ void set_random_turning_direction(){
 	}
 }
 
-int lost_aggregate(){
-	uint8_t lost = 0;
-	if(mydata->new_message == 0){
-		lost = 1;
-	}
-	return lost;
-}
 
 
 void message_rx (message_t *message, distance_measurement_t *distance){
     mydata->new_message = 1;
 		mydata->message=*message;
-		mydata->toAggregate.dist = estimate_distance(distance);
+		mydata->message_dist=estimate_distance(distance);
+	//	mydata->toAggregate.dist = estimate_distance(distance);
 		//if (kilo_uid==8) printf("DISTANCE.toAggregate : %d\n",mydata->toAggregate.dist);
+}
+void setup_message(){
+	mydata->broadcast=0;//ne pas transmettre quand on change le message
+
+	mydata->msg_transmis.type = NORMAL;
+	mydata->msg_transmis.data[0] = kilo_uid; //on sait que le kilo_uid < 256 car on a pas autant de kilobot
+	mydata->msg_transmis.data[1] = mydata->nb_voisins;
+	mydata->msg_transmis.crc = message_crc(&mydata->msg_transmis);
+
+
+	mydata->broadcast=1;
+	return;
 }
 
 message_t *message_tx(){
 	if (kilo_uid==0){
-		return &mydata->message;
+		return &mydata->msg_transmis;
 	}
 	if(mydata->broadcast){
-		//printf("BROADCASTING %d\n",mydata->message.data[0]);
-		//return &mydata->message;
-		//printf("Adresse message : %d\n", &(mydata->message));
-		return &(mydata->message);
+		return &(mydata->msg_transmis);
 	} else {
   	return 0;
 	}
