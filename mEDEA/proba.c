@@ -8,31 +8,37 @@
 
 extern USERDATA * mydata;
 
-int probaBroadcast(uint8_t dist){//TODO proba en fonction de la distance
+double probaBroadcast(uint8_t dist){//TODO proba en fonction de la distance
   return 1;
 }
 
-int canBroadcast(){
+void canBroadcast(){
   if(kilo_ticks<mydata->last_allowed+2*SECONDE){
-    return mydata->msg_transmis.data[8];
+    return;
+    // return mydata->msg_transmis.data[8];
   }
   mydata->last_allowed=kilo_ticks;
   int i;
   for(i=0;i<mydata->nb_voisins;i++){
     if (mydata->voisins_liste[i].id==IDFOOD){
-      int proba=probaBroadcast(mydata->voisins_liste[i].dist);
+      double proba=probaBroadcast(mydata->voisins_liste[i].dist);
       int rd=rand();
+      printf("%d\n", RAND_MAX*(1-proba));
       if (rd> RAND_MAX*(1-proba)){
         share_genome_allowed();
-        return 1;
+        return;
+        // return 1;
       }
       else{
         share_genome_forbiden();
-        return 0;
+        return;
+        // return 0;
       }
     }
   }
-  return 0;
+  share_genome_forbiden();
+  return;
+  // return 0;
 }
 
 int arrondi(double n){

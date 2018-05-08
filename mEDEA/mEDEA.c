@@ -95,7 +95,6 @@ void loop() {
 		update_from_message();
 	}
 	if (kilo_ticks > mydata->last_genome_update + 60 * SECONDE){
-		printf("----------------------------------------------\n");
 			genome_alea();
 	}
 
@@ -106,14 +105,14 @@ void loop() {
 			set_color(RGB(0,0,0));
 			motion_dead();
 		}else{
-			printf("\n %d send?%d nb_voisin%d nb_genome%d\n",kilo_uid ,mydata->msg_transmis.data[8],mydata->nb_voisins,mydata->nb_genome);
-			for(int cpt=0;cpt<mydata->nb_genome;cpt++){
-				printf("%d ",mydata->genome_list[cpt].id );
-			}
-			printf("\nvoisins now\n");
-			for(int cpt=0;cpt<mydata->nb_voisins;cpt++){
-				printf("%d ",mydata->voisins_liste[cpt].id );
-			}
+			// printf("\n %d send?%d nb_voisin%d nb_genome%d\n",kilo_uid ,mydata->msg_transmis.data[8],mydata->nb_voisins,mydata->nb_genome);
+			// for(int cpt=0;cpt<mydata->nb_genome;cpt++){
+			// 	printf("%d ",mydata->genome_list[cpt].id );
+			// }
+			// printf("\nvoisins now\n");
+			// for(int cpt=0;cpt<mydata->nb_voisins;cpt++){
+			// 	printf("%d ",mydata->voisins_liste[cpt].id );
+			// }
 			genome_motion();//CONTROLLEUR
 
 		}

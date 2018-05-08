@@ -10,7 +10,7 @@
     "displayWidth"  : 800,
     "displayHeight" : 600,
     "displayScale"  : 0.4,
-    "stepsPerFrame" : 5,
+    "stepsPerFrame" : 10,
     "stateFileSteps" : 0,
     "colorscheme" : "bright",
     "GUI" : 1,

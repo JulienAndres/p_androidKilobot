@@ -1,8 +1,8 @@
 #ifndef PROBABILITY
     #define PROBABILITY
 
-int probaBroadcast(uint8_t dist);
-int canBroadcast();
+double probaBroadcast(uint8_t dist);
+void canBroadcast();
 int arrondi(double n);
 
 #endif

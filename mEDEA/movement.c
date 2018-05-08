@@ -75,8 +75,8 @@ void genome_motion(){//controlleur
 		moyenne/=mydata->nb_voisins;
 	}
 
-	double moteur_g=1.0*(mydata->genome[0]-1)+1.0*(mydata->genome[2]-1)*moyenne+1.0*(mydata->genome[4]-1)*mydata->nb_voisins; //biais + moyennevoisin+nb_voisin
-	double moteur_d=1.0*(mydata->genome[2]-1)+1.0*(mydata->genome[3]-1)*moyenne+1.0*(mydata->genome[5]-1)*mydata->nb_voisins; //distance moyenne des voisin
+	double moteur_g=1.0*(mydata->genome[0]-1)+1.0*(mydata->genome[2]-1)*moyenne+1.0*(mydata->genome[4]-1)*mydata->nb_voisins; //biais + moyenne_distance_des_voisin + nb_voisins
+	double moteur_d=1.0*(mydata->genome[2]-1)+1.0*(mydata->genome[3]-1)*moyenne+1.0*(mydata->genome[5]-1)*mydata->nb_voisins; //biais + moyenne_distance_des_voisin + nb_voisins
 	 moteur_g=1.0/(1.0+exp(-moteur_g));
 	 moteur_d=1.0/(1.0+exp(-moteur_d));
 
