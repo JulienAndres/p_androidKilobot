@@ -4,7 +4,7 @@
 # configured below, these needs to be adapted to the system.
 
 #list of c files in this project
-SOURCES=mEDEA.c
+SOURCES=mEDEA.c proba.c communication.c movement.c
 
 #name of the executable file
 EXECUTABLE=mEDEA

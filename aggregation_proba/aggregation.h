@@ -1,6 +1,8 @@
-#ifndef AGGREGATION__H
-    #define AGGREGATION__H
+#ifndef AGGREGATION
+    #define AGGREGATION
 
+    #define SECONDE 32
+    #define DIST_TO_AGGREGATE 50
     #define MAXVOISIN 30
 
     void setup(void);

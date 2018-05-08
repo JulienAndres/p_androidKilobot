@@ -1,55 +1,73 @@
+#ifndef MEDEA
+    #define MEDEA
 
-#define MAXVOISIN 5 //nombre de voisins dans la liste
-#define SECONDE 32 //nombre de tick en 1 seconde
-#define ASK 70  //mydata->distance minimale entre 2 kilobots
-#define MAXBLOCK 5
+    #define SECONDE 32
+    #define MAXVOISIN 30
+    #define GENOMEPARAM 6
+    #define MAXROBOT 100
+    #define IDFOOD 0
 
-#define STOP 0
-#define STRAIGHT 1
-#define LEFT 2
-#define RIGHT 3
-
-
-
-
-// declare variables
-void update_liste_genome();
-void update_from_message();
-void update_blocs();
-void update_world();
-void update_voisins();
-void update_motors(uint8_t direction) ;
-message_t *message_tx();
-void majmessage();
-void message_rx(message_t *message, distance_measurement_t *d);
 void setup();
+void genome_alea();
 void loop();
 int main();
 
-typedef struct{   //Sert à garder les parametres de chacun des voisins
-  uint32_t timestamp; //timestamp de la recetion du message de ce voisin
-  uint8_t dist;  //mydata->distance estimé de ce voisin au dernier timestamp
-  uint16_t id;  //id de ce voisin
-  uint16_t nb_voisins;//nb de voisins de ce voisin
-}voisins;
+
+    typedef struct {
+      uint8_t dist;
+      uint16_t id;
+      uint32_t timestamp;
+      uint32_t nb_voisins;
+    } Neighbor_t;
+
 
 typedef struct{
-  uint8_t nb_voisins;  //nombre de voisins dans la liste
-  voisins voisins_liste[MAXVOISIN]; //liste des voisins
-  uint8_t nb_repuls;
-  voisins liste_blocs_repuls[MAXBLOCK];//liste des blocks repulsions 1=expulsion
-  uint8_t nb_attract;
-  voisins liste_blocs_attract[MAXBLOCK];//liste blocs attraction 2=attraction
+  uint8_t genome[GENOMEPARAM];
+  uint8_t id;
+}Genome_t;
 
-  uint8_t next_direction;
-  uint8_t previous_dir;
-  int last_update; //derniere update de la direction
-  int world[10];//[dist_moyenne_des voisins,] //etat du monde tel que le kilobot le percois
+    typedef struct
+    {
+      uint8_t state;
+      uint32_t nb_voisins;
+      Neighbor_t voisins_liste[MAXVOISIN];
 
-  message_t messagetx;    //message transmis
-  message_t messagerx;    //message recu
-  uint8_t new_message;   //est mis à 1 si un message arrive
-  uint8_t distance;    //mydata->distance estimé du kilobot qui evoir le message
+    	uint8_t curr_motion;
+    	uint32_t last_motion_update;
+      uint32_t start_repelling;
+    	uint8_t new_message;
 
-  uint8_t nb;
-} USERDATA;
+      uint8_t dist;
+      uint8_t last_dist_update;
+
+      Neighbor_t toAggregate;
+      message_t msg_transmis;
+      message_t message;
+      uint8_t message_dist;
+      uint8_t broadcast;
+      uint8_t message_sent;
+      int genome[GENOMEPARAM];
+      uint16_t nb_genome;
+      Genome_t genome_list[MAXROBOT];
+      uint32_t last_genome_update;
+      uint8_t genome_setup;
+      uint8_t dead;
+      uint32_t last_allowed;
+
+    } USERDATA;
+
+    enum motion {
+      STOP,                /*!< The robot is stopped*/
+      LEFT,                 /*!< The robot is moving to the left */
+      RIGHT,               /*!< The robot is moving to the right */
+      STRAIGHT         /*!< The robot is moving straight */
+    };
+
+    enum state {
+    SEARCHING,             /*!< The robot is searching for an other robot */
+    CONVERGING,          /*!< The robot is moving to a neighbor */
+    SLEEPING,               /*!< The robot is sleeping */
+    REPELLING
+    };
+
+#endif

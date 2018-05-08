@@ -1,5 +1,5 @@
-#ifndef PROBABILITY_H
-    #define PROBABILITY_H
+#ifndef PROBABILITY
+    #define PROBABILITY
 
     #define PROBA_LEAVE 0.001
     #define PROBA_JOIN 0.001

@@ -2,19 +2,21 @@
 #include <stdio.h>
 #include "aggregation.h"
 #include "proba.h"
+#include "communication.h"
+#include "movement.h"
 
 /*
 TODO :
 Rajouter un timer en mode repelling ? (genre 10s pour eveiter de faire n imp)
 Ajouter une fonction de proba qui donne une proba de leave en fonction du nombre de voisins que on a
-
+Demander au prof stage
+Demander au prof comment mettre le bloc actif dans cet algo. -idée : faire comme sin il avait déjà 5 voisins (variable ?)-
 */
 
 //Idée de cahier des charges : mettre en avant l experimentation du bloc actif et de la modification des algos pour ces blocs actifs.
 
 
-#define SECONDE 32
-#define DIST_TO_AGGREGATE 50
+
 
 
 REGISTER_USERDATA(USERDATA)
@@ -43,65 +45,6 @@ void setup() {
 	set_motion(STOP);
 	printf("%d\n",kilo_uid );
 	//mydata->toAggregate = NULL;
-}
-
-void emission(){
-	// Blink the LED magenta whenever a message is sent.
-	if (mydata->message_sent == 1)
-	{
-		//printf("EMISSION %d\n",kilo_uid );
-		mydata->message_sent = 0;
-		set_color(RGB(0, 0, 1));
-			if (kilo_ticks>mydata->last_dist_update+(SECONDE/5)){
-				mydata->last_dist_update=kilo_ticks;
-
-			}
-	}
-}
-
-
-
-void update_voisins(){
-	if (!mydata->nb_voisins){
-		return;
-	}
-	int i;
-	for(i=mydata->nb_voisins-1;i>=0;i--){
-		if (kilo_ticks-mydata->voisins_liste[i].timestamp > SECONDE){
-		// if (kilo_uid==83)	printf("delete %d\n",mydata->voisins_liste[i].id );
-			mydata->voisins_liste[i]=mydata->voisins_liste[mydata->nb_voisins];
-			mydata->voisins_liste[mydata->nb_voisins-1].id=-1;
-
-			mydata->nb_voisins--;
-		}
-	}
-}
-
-void update_from_message(){
-	uint8_t found_id=0;
-	uint32_t distance=mydata->message_dist;
-	int ID=mydata->message.data[0];
-	int nb_voisins=mydata->message.data[1];
-	int i=0;
-	while (i< mydata->nb_voisins && !found_id ){
-		if(mydata->voisins_liste[i].id ==ID){
-			found_id=1;
-		}else{
-			i++;
-		}
-	}
-	if (!found_id){
-		if (mydata->nb_voisins<MAXVOISIN){
-			mydata->nb_voisins++;
-		}
-		mydata->voisins_liste[i].id=ID;
-		mydata->voisins_liste[i].timestamp=kilo_ticks;
-		mydata->voisins_liste[i].dist=distance;
-		mydata->voisins_liste[i].nb_voisins=nb_voisins;
-
-		mydata->new_message=0;
-	}
-	// if (kilo_uid==83) printf("%d %d nb %d\n",message->data[0],distance ,mydata->nb_voisins);
 }
 
 void aggregation() {
@@ -170,7 +113,6 @@ uint8_t hasBestNeighbor(){
 
 
 void repelling(){
-	printf("blanc %d\n",kilo_uid );
 	set_color(RGB(1,1,1));
 	// if ((kilo_ticks>mydata->start_repelling+10*SECONDE)){//10 secondes pour se liberer
 	// 	mydata->state=SEARCHING;
@@ -263,95 +205,8 @@ uint8_t is_too_close(){
 	return 0;
 }
 
-void set_motion(uint8_t motion){
-	if(mydata->curr_motion != motion){
-		switch(motion){
-			case LEFT:
-				spinup_motors();
-				set_motors(kilo_turn_left, 0);
-				break;
-			case RIGHT:
-				spinup_motors();
-				set_motors(0, kilo_turn_right);
-				break;
-			case STRAIGHT:
-				spinup_motors();
-				set_motors(kilo_straight_left, kilo_straight_right);
-				break;
-			case STOP:
-				default:
-				set_motors(0, 0);
-			break;
-		}
-		mydata->curr_motion = motion;
-	}
-}
-
-void set_random_direction(){
-    uint8_t random_number = rand_hard()%4;
-    //Compute the remainder of random_number when divided by 3.
-    // This gives a new random number in the set {0, 1, 2}. The value is incremented and returned.
-    if ((random_number == 0) || (random_number == 3)){
-				set_motion(STRAIGHT);
-    }
-    else if(random_number == 1){
-				set_motion(LEFT);
-    }
-    else{
-				set_motion(RIGHT);
-    }
-}
-
-void set_random_turning_direction(){
-	//printf("ici N?\n" );
-	uint8_t random_number = rand_hard()%2;
-	if(random_number == 0){
-		set_motion(LEFT);
-	} else {
-		set_motion(RIGHT);
-	}
-}
 
 
-
-void message_rx (message_t *message, distance_measurement_t *distance){
-    mydata->new_message = 1;
-		mydata->message=*message;
-		mydata->message_dist=estimate_distance(distance);
-	//	mydata->toAggregate.dist = estimate_distance(distance);
-		//if (kilo_uid==8) printf("DISTANCE.toAggregate : %d\n",mydata->toAggregate.dist);
-}
-void setup_message(){
-	mydata->broadcast=0;//ne pas transmettre quand on change le message
-
-	mydata->msg_transmis.type = NORMAL;
-	mydata->msg_transmis.data[0] = kilo_uid; //on sait que le kilo_uid < 256 car on a pas autant de kilobot
-	mydata->msg_transmis.data[1] = mydata->nb_voisins;
-	mydata->msg_transmis.crc = message_crc(&mydata->msg_transmis);
-
-
-	mydata->broadcast=1;
-	return;
-}
-
-message_t *message_tx(){
-	if (kilo_uid==0){
-		return &mydata->msg_transmis;
-	}
-	if(mydata->broadcast){
-		return &(mydata->msg_transmis);
-	} else {
-  	return 0;
-	}
-
-	//return &(mydata->message);
-}
-
-void message_tx_success()
-{
-    // Set the flag on message transmission.
-    mydata->message_sent = 1;
-}
 
 
 int main() {
