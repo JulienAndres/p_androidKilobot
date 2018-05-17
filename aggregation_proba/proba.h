@@ -7,5 +7,9 @@
     void makeJoinDecision();
     void makeLeaveDecision();
 
+    int uniform_proba();
+    int clusters_proba();
+    int clusters_proba2();
+
 
 #endif

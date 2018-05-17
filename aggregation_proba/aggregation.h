@@ -4,6 +4,7 @@
     #define SECONDE 32
     #define DIST_TO_AGGREGATE 50
     #define MAXVOISIN 30
+    #define CLUSTER_SIZE 5
 
     void setup(void);
     void emission(void);

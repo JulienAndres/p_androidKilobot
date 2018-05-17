@@ -117,6 +117,9 @@ void repelling(){
 	// if ((kilo_ticks>mydata->start_repelling+10*SECONDE)){//10 secondes pour se liberer
 	// 	mydata->state=SEARCHING;
 	// }
+	if(kilo_ticks>mydata->start_repelling + 10*SECONDE){
+		mydata->state=SEARCHING;
+	}
 
 	makeJoinDecision();
 	if (!mydata->nb_voisins){
