@@ -46,9 +46,17 @@ mydata->genome_setup=0;
 mydata->nb_genome=0;
 mydata->last_allowed=0;
 mydata->last_genome_update=0;
+for(int i=0;i<TIMEUPDATE;i++){
+	mydata->last_fitness[i]=0;
+}
+mydata->last_update_fitness=0;
+
+for(int i=1;i<9;i++){
+	mydata->msg_transmis.data[i]=0;
+}
+
 genome_alea();
 	set_motion(STRAIGHT);
-	printf("%d\n",kilo_uid );
 }
 
 void genome_alea(){
@@ -71,17 +79,58 @@ void genome_alea(){
 			mydata->last_genome_update=kilo_ticks;
 			return;
 		}
-		int i=rand_hard()%mydata->nb_genome;
-		int j;
-		for (j=0;j<GENOMEPARAM;j++){//pas de mutation pour le moment
-			mydata->genome[j]=mydata->genome_list[i].genome[j];
+		float bestfit=mydata->genome_list[0].fitness;
+		int best_indice=0;
+		for (int i=0;i<mydata->nb_genome;i++){
+			if (mydata->genome_list[i].fitness > bestfit){
+				bestfit=mydata->genome_list[i].fitness;
+				best_indice=i;
+
+			}
 		}
+		printf("best fit %d\n",bestfit );
+
+		for (int i=0;i<GENOMEPARAM; i++){
+			mydata->genome[i]=mydata->genome_list[best_indice].genome[i];
+			printf("%d ",mydata->genome[i] );
+		}
+		printf("apres mutation\n" );
+
+		//mutation
+		if (((float)rand_hard())/256 < PROBA_MUTATION){
+			int indice_change=rand_hard()/(256/GENOMEPARAM);
+			int chang=(rand_hard()/128)+1;
+			mydata->genome[indice_change]=(mydata->genome[indice_change]+chang)%3;
+
+		}
+		for (int i=0;i<GENOMEPARAM;i++){
+			printf("%d ",mydata->genome[i]);
+		}
+		printf("apres mutation\n" );
+		/* SI CHOIX RANDOM PARMIS TOUS LES GENOMES */
+		// int i=rand_hard()%mydata->nb_genome;
+		// int j;
+		// for (j=0;j<GENOMEPARAM;j++){//pas de mutation pour le moment
+		// 	mydata->genome[j]=mydata->genome_list[i].genome[j];
+		// }
 
 	}
 	mydata->last_genome_update=kilo_ticks;
 	mydata->nb_genome=0;//reset des genomes recus
 	setup_message();
 }
+
+float fitness(){
+	int i;
+	float toRet=0;
+	for (i=0;i<TIMEUPDATE;i++){
+		toRet+=mydata->last_fitness[i];
+	}
+	toRet/=TIMEUPDATE;
+	return toRet;
+}
+
+
 
 void loop() {
 	if (kilo_uid==IDFOOD){
@@ -91,6 +140,8 @@ void loop() {
 	}
 	// setup_message();
 	update_voisins();
+	update_fitness();
+	setup_message_fitness();
 	if(mydata->new_message==1){
 		update_from_message();
 	}
