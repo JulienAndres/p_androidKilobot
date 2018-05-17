@@ -24,7 +24,8 @@ void update_voisins(){
 }
 
 int is_feed(){
-	for(int i=0;i<mydata->nb_voisins;i++){
+	int i;
+	for( i=0;i<mydata->nb_voisins;i++){
 		if(mydata->voisins_liste[i].id==IDFOOD){
 			return 1;
 		}
@@ -123,7 +124,7 @@ void update_from_message(){
 				i--;
 			}
 		}
-			int j;
+			// int j;
 			// for (int k=0;k<9;k++){
 			// 	printf("%d ",mydata->message.data[k] );
 			// }
@@ -157,7 +158,8 @@ void update_from_message(){
 
 			mydata->genome_list[i].genome[7]=mydata->message.data[3]/10;
 
-
+			mydata->genome_list[i].fitness=mydata->message.data[8];
+			
 
 			// for(j=0;j<GENOMEPARAM;j++){
 			// 	printf("%d ",mydata->genome_list[i].genome[j]);
@@ -204,7 +206,8 @@ void setup_message(){
 	// 	mydata->msg_transmis.data[i+1]=mydata->genome[i];
 	// }
 	//genome est entre {-1,0,1}:
-	for(int i=0;i<GENOMEPARAM;i++){
+	int i=0;
+	for(i=0;i<GENOMEPARAM;i++){
 		printf("%d ",mydata->genome[i] );
 	}
 	printf("genome mydata\n" );
@@ -215,7 +218,8 @@ void setup_message(){
 	mydata->msg_transmis.data[2]=tmp2;
 	mydata->msg_transmis.data[3]=tmp3;
 	mydata->msg_transmis.data[8]=(int)(fitness()*100);
-	for(int i=0;i<9;i++){
+	i=0;
+	for(i=0;i<9;i++){
 		printf("%d ",mydata->msg_transmis.data[i]);
 	}
 	printf("genome transmis\n" );

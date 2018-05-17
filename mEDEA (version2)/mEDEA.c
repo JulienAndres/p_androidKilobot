@@ -46,12 +46,13 @@ mydata->genome_setup=0;
 mydata->nb_genome=0;
 mydata->last_allowed=0;
 mydata->last_genome_update=0;
-for(int i=0;i<TIMEUPDATE;i++){
+int i=0;
+for(i=0;i<TIMEUPDATE;i++){
 	mydata->last_fitness[i]=0;
 }
 mydata->last_update_fitness=0;
-
-for(int i=1;i<9;i++){
+i=0;
+for(i=1;i<9;i++){
 	mydata->msg_transmis.data[i]=0;
 }
 
@@ -81,16 +82,17 @@ void genome_alea(){
 		}
 		float bestfit=mydata->genome_list[0].fitness;
 		int best_indice=0;
-		for (int i=0;i<mydata->nb_genome;i++){
+		int i=0;
+		for (i=0;i<mydata->nb_genome;i++){
 			if (mydata->genome_list[i].fitness > bestfit){
 				bestfit=mydata->genome_list[i].fitness;
 				best_indice=i;
 
 			}
 		}
-		printf("best fit %d\n",bestfit );
-
-		for (int i=0;i<GENOMEPARAM; i++){
+		// printf("best fit %d\n",bestfit );
+		i=0;
+		for (i=0;i<GENOMEPARAM; i++){
 			mydata->genome[i]=mydata->genome_list[best_indice].genome[i];
 			printf("%d ",mydata->genome[i] );
 		}
@@ -103,7 +105,8 @@ void genome_alea(){
 			mydata->genome[indice_change]=(mydata->genome[indice_change]+chang)%3;
 
 		}
-		for (int i=0;i<GENOMEPARAM;i++){
+
+		for (i=0;i<GENOMEPARAM;i++){
 			printf("%d ",mydata->genome[i]);
 		}
 		printf("apres mutation\n" );
@@ -133,11 +136,11 @@ float fitness(){
 
 
 void loop() {
-	if (kilo_uid==IDFOOD){
-	set_color(RGB(1,0,0));
-	 	emission();
-		return;
-	}
+	// if (kilo_uid==IDFOOD){
+	// set_color(RGB(1,0,0));
+	//  	emission();
+	// 	return;
+	// }
 	// setup_message();
 	update_voisins();
 	update_fitness();

@@ -23,7 +23,7 @@ void canBroadcast(){
     if (mydata->voisins_liste[i].id==IDFOOD){
       double proba=probaBroadcast(mydata->voisins_liste[i].dist);
       int rd=rand();
-      printf("%d\n", RAND_MAX*(1-proba));
+      // printf("%d\n", RAND_MAX*(1-proba));
       if (rd> RAND_MAX*(1-proba)){
         share_genome_allowed();
         return;
