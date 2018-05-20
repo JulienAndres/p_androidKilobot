@@ -58,6 +58,9 @@ for(i=1;i<9;i++){
 
 genome_alea();
 	set_motion(STRAIGHT);
+
+
+	mydata->time_update_fitness=0;
 }
 
 void genome_alea(){
@@ -90,13 +93,13 @@ void genome_alea(){
 
 			}
 		}
-		// printf("best fit %d\n",bestfit );
+		printf("%d best fit %d\n",kilo_uid,bestfit );
 		i=0;
 		for (i=0;i<GENOMEPARAM; i++){
 			mydata->genome[i]=mydata->genome_list[best_indice].genome[i];
-			printf("%d ",mydata->genome[i] );
+			// printf("%d ",mydata->genome[i] );
 		}
-		printf("apres mutation\n" );
+		// printf("apres mutation\n" );
 
 		//mutation
 		if (((float)rand_hard())/256 < PROBA_MUTATION){
@@ -106,10 +109,10 @@ void genome_alea(){
 
 		}
 
-		for (i=0;i<GENOMEPARAM;i++){
-			printf("%d ",mydata->genome[i]);
-		}
-		printf("apres mutation\n" );
+		// for (i=0;i<GENOMEPARAM;i++){
+		// 	printf("%d ",mydata->genome[i]);
+		// }
+		// printf("apres mutation\n" );
 		/* SI CHOIX RANDOM PARMIS TOUS LES GENOMES */
 		// int i=rand_hard()%mydata->nb_genome;
 		// int j;
@@ -123,27 +126,46 @@ void genome_alea(){
 	setup_message();
 }
 
-float fitness(){
+int fitness(){
 	int i;
-	float toRet=0;
+	int fit=0;
 	for (i=0;i<TIMEUPDATE;i++){
-		toRet+=mydata->last_fitness[i];
+		fit+=mydata->last_fitness[i];
 	}
-	toRet/=TIMEUPDATE;
-	return toRet;
+	// toRet/=TIMEUPDATE;
+	// pri++){ntf("uid %d fit %d\n",kilo_uid,fit );
+	return fit;
 }
 
 
 
 void loop() {
-	// if (kilo_uid==IDFOOD){
-	// set_color(RGB(1,0,0));
-	//  	emission();
-	// 	return;
-	// }
-	// setup_message();
+	//52 loop par secondes sur simulateur
+//TEST
+// if (kilo_ticks>mydata->test+SECONDE){
+// 	printf("1 SECONDE\n" );
+// 	printf("%d \n",mydata->test2 );
+// 	mydata->test2=0;
+// 	mydata->test=kilo_ticks;
+// }else{
+// 	mydata->test2++;
+// }
+
+
+
+	if (kilo_uid==IDFOOD){
+	set_color(RGB(1,0,0));
+	 	emission();
+		return;
+	}
+	if(kilo_ticks>mydata->time_update_fitness+SECONDE/4){
+		update_fitness();
+		mydata->time_update_fitness=kilo_ticks;
+		printf("%d \n",mydata->last_update_fitness );
+	}
+
 	update_voisins();
-	update_fitness();
+	// update_fitness();
 	setup_message_fitness();
 	if(mydata->new_message==1){
 		update_from_message();
@@ -177,7 +199,51 @@ Initialise callback et lance la main loop
     kilo_message_tx = message_tx;
 		kilo_message_tx_success = message_tx_success;
 
+		SET_CALLBACK(obstacles, callback_obstacles);
+		SET_CALLBACK(botinfo, botinfo);
+
+
 		kilo_start(setup, loop);
 
     return 0;
 }
+#ifdef SIMULATOR
+static char botinfo_buffer[10000000];
+// provide a text string for the status bar, about this bot
+char *botinfo(void)
+{
+  int i;
+  char *p = botinfo_buffer;
+  p+= sprintf (p, "ID: %d \n", kilo_uid);
+
+  // p+= sprintf (p, "move: %d wait:%d turn:%d\n", mydata->move, mydata->wait, mydata->turn);
+  p+= sprintf (p, "genome: [%d,%d,%d,%d,%d,%d,%d,%d]  fitness: %d ",
+	       mydata->genome[0],mydata->genome[1],mydata->genome[2],mydata->genome[3],mydata->genome[4],mydata->genome[5],mydata->genome[6],mydata->genome[7],fitness() );
+
+  p += sprintf (p, "%d neighbors: \n", mydata->nb_voisins);
+	p+= sprintf(p,"%d genomes : ",mydata->nb_genome);
+  for (i = 0; i < mydata->nb_genome; i++)
+    //    p += sprintf (p, "%d ", mydata->neighbors[i].ID);
+    p += sprintf (p, "[id : %d,fit : %d]", mydata->genome_list[i].id, mydata->genome_list[i].fitness);
+
+
+  return botinfo_buffer;
+}
+
+#define MUR 750
+
+int16_t callback_obstacles(double x, double y, double *m1, double *m2){
+    if (x > MUR || x< -MUR || y>MUR|| y<-MUR){
+      if(x>MUR || x<-MUR){
+        *m1 = (x<0)? 1:-1;
+      }
+      if (y>MUR || y<-MUR){
+        *m2 = (y<0)? 1:-1;
+      }
+
+      return 1;
+    }
+
+    return 0;
+}
+#endif

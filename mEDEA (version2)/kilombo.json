@@ -1,7 +1,7 @@
 {
-	"distributePercent" : 1,
+	"distributePercent" : 0.4,
 	"seed" : 100,
-    "nBots" : 50,
+    "nBots" : 3,
     "commsRadius" : 100,
     "showCommsRadius" : 0,
     "showComms" : 1,
