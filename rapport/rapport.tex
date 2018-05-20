@@ -16,6 +16,7 @@
 \usepackage{wrapfig}
 
 \usepackage{tikz} %Tikz !
+\usetikzlibrary{arrows,automata,calc}
 
 \hypersetup{
 	urlcolor= blue,  %couleur des hyperliens
@@ -81,7 +82,7 @@ Un Kilobot est un robot miniature, créé par l'université d'Harvard. Ces robot
 	\end{center}
 \end{figure} \\
 Les comportements des robots sont écrits en C, en utilisant l'API kilolib et peut être transmis à l'ensemble des Kilobots  grâce à un contrôleur infrarouge.
-
+reçoit
 \subsection{Bloc Actif}
 Le bloc actif a été développé par l'ISIR dans le cadre de la recherche sur Kilobots. Elle permet d'interagir avec les robots en émettant un signal infrarouge. Le numéro du message et l'intensité du signal peuvent être modulé grâce à des boutons sur le bloc actif. Il fera office d'obstacle et de point de ralliement pour certains de nos algorithmes.\\
 PHOTO BLOC ACTIF intensité Max et min
@@ -96,8 +97,30 @@ SCREENSHOT ?
 \subsection{Algorithme}
 Cet algorithme est utilisé afin de couvrir la plus grande surface possible, tout en gardant un lien de communication entre les Kilobots.
 Il est composé de 3 comportements basique : L'éloignement (\textit{repel}), le déplacement aléatoire(\textit{searching}) et l'attente(\textit{wait})
-\paragraph{Le déplacement aléatoire} Ce comportement s'effectue lorsque le Kilobot ne détecte aucun voisin. Il bouge alors aléatoirement dans son environnement jusqu'a la détection d'un autre robot. Il passe alors en mode d'attente ou d'éloignement selon la distance à laquelle il est de ses voisins.
-\paragraph{L'éloignement}
+\paragraph{Le déplacement aléatoire} Ce comportement s'effectue lorsque le Kilobot ne détecte aucun voisin. Il bouge alors aléatoirement dans son environnement jusqu'à la détection d'un autre robot. Il passe alors en mode d'attente ou d'éloignement selon la distance à laquelle il est de ses voisins.
+\paragraph{L'éloignement} Si le Kilobot se trouve trop proche de ses voisins, il essayera de s'en éloigner. Soit en s'éloignant de son voisin le plus proche, soit en bougeant aléatoirement jusqu'à être à une distance désiré de tous ses voisins.
+\paragraph{L'attente} Le Kilobot entre en attente quand il se trouve à une distance supérieure ou égale à celle demandé de tous ses voisins. Il sort de ce comportement s'il ne capte plus aucun voisins ou si un Kilobot arrive trop proche.\\
+
+
+\begin{figure}[h!]
+\centering
+\begin{tikzpicture}[>=stealth',shorten >=1pt,auto,node distance=10cm]
+\node[state] (W)      {$Wait$};
+\node[state] (R) [right of=W]  {$Repel$};
+\node[state] at ($(W)!0.5!(R)$) [below =4cm] (S)  {$Searching$};
+
+
+\path[->]
+(W) edge  [bend left,sloped] node {Kilobot trop proche} (R)
+(R) edge   [sloped]node {Bonne distance} (W)
+(W) edge   [bend right,anchor=east]node {Plus de voisins} (S)
+(S) edge   [sloped,pos=0.4,align=right,anchor=south]node {Bonne distance} (W)
+(R) edge   [bend left]node {Plus de voisins} (S)
+(S) edge   [sloped,pos=0.8]node {Kilobot trop proche} (R);
+\end{tikzpicture}
+\caption{Couverture}
+\end{figure}
+
 \subsection{Résultats}
 \newpage
 \section{Agrégation}
@@ -111,7 +134,27 @@ Un Kilobot n'ayant pas de capteur de proximité, il lui est impossible de détec
 \paragraph{Le déplacement aléatoire} Quand le robot est seul dans l'environnement (aucun voisins), il bouge de façon aléatoire. Toute les secondes, il choisi une direction parmi les 3 disponibles (gauche, droite,tout droit) et la garde jusqu'à la prochaine actualisation. Dés qu'il détecte un voisin, il passe en comportement d'approche
 \paragraph{L'approche}Dans ce comportement, le robot décide de s'approcher du voisin le plus intéressant. Le voisin le plus intéressant est défini comme le celui ayant le plus de voisins à coté de lui. Si le Kilobot arrive à rejoindre le groupe, ce qui n'est pas obligatoire, à cause de l'absence de capteurs de proximités, il s'arrête et passe dans l'état d'attente.
 \paragraph{L'attente} Quand le robot est dans cet état, il fait partit d'un groupe composé d'au moins 2 individus. Il a cependant une probabilité de quitter ce groupe et d'entrer dans l'état d'éloignement à chaque seconde.
-\paragraph{L'éloignement}Ce comportement fait s'éloigner le robot du groupe auquel il était agrégé précédemment. Pendant toute la durée de cet éloignement, à chaque seconde, le Kilobot à une probabilité de revenir en mode d'approche et de rejoindre le groupe qu'il vient de quitter. Ce comportement s'arrête quand le robot est seul ou que 10 secondes se sont écoulées. Il revient en déplacement aléatoire.
+\paragraph{L'éloignement}Ce comportement fait s'éloigner le robot du groupe auquel il était agrégé précédemment. Pendant toute la durée de cet éloignement, à chaque seconde, le Kilobot à une probabilité de revenir en mode d'approche et de rejoindre le groupe qu'il vient de quitter. Ce comportement s'arrête quand le robot est seul ou que 10 secondes se sont écoulées. Il revient en déplacement aléatoire.\\
+\begin{figure}[h!]
+	\centering
+	\begin{tikzpicture}[>=stealth',shorten >=1pt,auto,node distance=10cm]
+	\node[state] (W)      {$Wait$};
+	\node[state] (R) [right of=W]  {$Repel$};
+	\node[state] [right of=W,below =4cm] (S)  {$Searching$};
+	\node[state] (A)  [below=4cm]{$Approach$};
+	
+	
+	\path[->]
+	(A) edge node {Tous les voisins sont proches}(W)
+	(S) edge [anchor=south]node {Un bon voisin est trouvé}(A)
+	(A) edge [bend right]node {La cible est perdue} (S)
+	(W) edge  [sloped] node {Proba de quitter} (R)
+	(R) edge   node {Plus de voisins} (S)
+	(R) edge node {Proba de revenir} (A)
+	;
+	\end{tikzpicture}
+	\caption{Agrégation probabiliste}
+\end{figure}
 \newpage
 \section{mEDEA}
 \subsection{Algorithme}
