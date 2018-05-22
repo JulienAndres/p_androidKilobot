@@ -2,43 +2,86 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-plt.subplot(111)
+#plt.subplot(111)
 
 
-###COVERAGE 
-ymoy=[6.5,6,8.25,20.25,25]
-ymin=[4,4,6,10,15]
-ymax=[13,9,11,35,34]
-x=[70,65,60,55,50]
+### COVERAGE 
+#ymoy=[6.5,6,8.25,20.25,25]
+#ymin=[4,4,6,10,15]
+#ymax=[13,9,11,35,34]
+#x=[70,65,60,55,50]
+#plt.scatter(x, ymoy,marker='o')
+#plt.scatter(x, ymin,marker='_')
+#plt.scatter(x, ymax,marker='_')
+#plt.ylabel("taille moyenne cluster")
+#plt.title("Couverture - taille max/moy/min cluster - distance demande")
+#plt.show()
+#
+#
+#
+#ymoy=[14,15.5,7.25,5.25,2]
+#ymin=[7,7,3,0,0]
+#ymax=[22,23,13,12,5]
+#x=[70,65,60,55,50]
+#plt.scatter(x, ymoy,marker='o')
+#plt.scatter(x, ymin,marker='_')
+#plt.scatter(x, ymax,marker='_')
+#plt.ylabel("Nombre de Kilobot perdu")
+#plt.title("Couverture - loss max/moy/min Kilobot - distance demande")
+#plt.show()
+#
+#ymoy=[10.5,9.25,7.75,3.75,3.5]
+#ymin=[7,7,6,2,2]
+#ymax=[14,14,11,6,7]
+#x=[70,65,60,55,50]
+#plt.scatter(x, ymoy,marker='o')
+#plt.scatter(x, ymin,marker='_')
+#plt.scatter(x, ymax,marker='_')
+#plt.ylabel("Nombre de cluster")
+#plt.title("Couverture - Nb max/moy/min Cluster - distance demande")
+#plt.show()
+
+## AGREGATION
+#avg_size
+ymoy = [5.5, 21, 7.25] 
+ymin = [4, 14, 4]
+ymax = [7, 35, 9]
+x = np.array([0,1,2])
+my_xticks = ['constant_proba','cluster_proba','cluster_proba_mix']
+plt.xticks(x, my_xticks)
 plt.scatter(x, ymoy,marker='o')
 plt.scatter(x, ymin,marker='_')
 plt.scatter(x, ymax,marker='_')
-plt.ylabel("taille moyenne cluster")
-plt.title("Couverture - taille max/moy/min cluster - distance demande")
+plt.ylabel("Taille du cluster")
+plt.title("Agrégation - Taille max/moy/min Cluster - méthode probabiliste")
 plt.show()
 
-
-
-ymoy=[14,15.5,7.25,5.25,2]
-ymin=[7,7,3,0,0]
-ymax=[22,23,13,12,5]
-x=[70,65,60,55,50]
+#nb_clusters
+ymoy = [9.75, 1.5, 9.25] 
+ymin = [9, 3, 7]
+ymax = [11, 1, 13]
+x = np.array([0,1,2])
+my_xticks = ['constant_proba','cluster_proba','cluster_proba_mix']
+plt.xticks(x, my_xticks)
 plt.scatter(x, ymoy,marker='o')
 plt.scatter(x, ymin,marker='_')
 plt.scatter(x, ymax,marker='_')
-plt.ylabel("Nombre de Kilobot perdu")
-plt.title("Couverture - loss max/moy/min Kilobot - distance demande")
+plt.ylabel("Nombre de clusters")
+plt.title("Agrégation - Nombre max/moy/min de clusters - méthode probabiliste")
 plt.show()
 
-ymoy=[10.5,9.25,7.75,3.75,3.5]
-ymin=[7,7,6,2,2]
-ymax=[14,14,11,6,7]
-x=[70,65,60,55,50]
+#nb_kilobots_clusters
+ymoy = [12.5, 41.25, 8.25] 
+ymin = [10, 35, 5]
+ymax = [15, 52, 11]
+x = np.array([0,1,2])
+my_xticks = ['constant_proba','cluster_proba','cluster_proba_mix']
+plt.xticks(x, my_xticks)
 plt.scatter(x, ymoy,marker='o')
 plt.scatter(x, ymin,marker='_')
 plt.scatter(x, ymax,marker='_')
-plt.ylabel("Nombre de cluster")
-plt.title("Couverture - Nb max/moy/min Cluster - distance demande")
+plt.ylabel("Nombre de kilobots par cluster")
+plt.title("Agrégation - Nombre max/moy/min de kilobots par cluster - méthode probabiliste")
 plt.show()
 
 #ymoy=[]
