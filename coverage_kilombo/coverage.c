@@ -4,7 +4,7 @@
 
 REGISTER_USERDATA(USERDATA)
 
-
+ 
 
 void update_from_message(){
   /*
@@ -95,6 +95,7 @@ Initialisation des variables globales et du message envoyé.
     mydata->new_message=0;
     mydata->distance=-1;
     mydata->nb=1;
+    mydata->state=SEARCHING;
 }
 
 uint8_t tooClose(){
@@ -139,10 +140,16 @@ décide des comportements en fontion du nombre de voisin ou de tooClose()
 
     if (tooClose() || mydata->nb_voisins==0){
       //printf("    tooclose or new voisins\n");
+      if (mydata->nb_voisins==0){
+        mydata->state=SEARCHING;
+      }else{
+        mydata->state=REPELLING;
+      }
       set_random_direction();
     //  update_motors(mydata->next_direction);//randomdirection
       set_color(RGB(1,0,0));
     }else{
+      mydata->state=SLEEPING;
       //printf("    perfect mydata->distance\n");
       update_motors(STOP);
       mydata->next_direction=STOP;
@@ -198,7 +205,35 @@ Initialise callback et lance la main loop
     kilo_message_rx = message_rx;
     kilo_message_tx=message_tx;
     //start loop
+    SET_CALLBACK(json_state, json_state);
+
     kilo_start(setup, loop);
 
     return 0;
 }
+#ifdef SIMULATOR
+
+json_t *json_state(){
+    //create the state object we return
+    json_t* state = json_object();
+
+    // store the gradient value
+    char *content;
+    switch(mydata->state){
+        case SEARCHING:
+            content = "SEARCHING";
+            break;
+        case REPELLING:
+            content = "REPELLING";
+            break;
+        case SLEEPING:
+            content = "SLEEPING";
+            break;
+
+    }
+    json_t* g = json_string(content);
+    json_object_set (state, "states", g);
+
+    return state;
+}
+#endif

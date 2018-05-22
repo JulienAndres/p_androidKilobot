@@ -4,7 +4,7 @@
     #define SECONDE 32
     #define DIST_TO_AGGREGATE 50
     #define MAXVOISIN 30
-    #define CLUSTER_SIZE 5
+    #define CLUSTER_SIZE 4
 
     void setup(void);
     void emission(void);
@@ -22,6 +22,7 @@
     uint8_t is_too_close(void);
     void set_random_turning_direction(void);
     uint8_t hasBestNeighbor(void);
+    json_t *json_state();
 
     typedef struct {
       uint8_t dist;

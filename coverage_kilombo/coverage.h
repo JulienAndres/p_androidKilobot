@@ -1,7 +1,7 @@
 
 #define MAXVOISIN 5 //nombre de voisins dans la liste
 #define SECONDE 32 //nombre de tick en 1 seconde
-#define ASK 50  //mydata->distance minimale entre 2 kilobots
+#define ASK 55  //mydata->distance minimale entre 2 kilobots
 
 #define STOP 0
 #define STRAIGHT 1
@@ -17,6 +17,7 @@ void message_rx(message_t *message, distance_measurement_t *d);
 message_t *message_tx();
 void update_voisins();
 void update_from_message();
+json_t *json_state();
 
 // declare variables
 
@@ -34,7 +35,7 @@ typedef struct{
   uint8_t next_direction;
   uint8_t previous_dir;
 
-
+  uint8_t state;
 
   message_t messagetx;    //message transmis
   message_t messagerx;    //message recu
@@ -43,3 +44,9 @@ typedef struct{
 
   uint8_t nb;
 } USERDATA;
+
+enum state {
+    SEARCHING,             /*!< The robot is searching for an other robot */
+    SLEEPING,                /*!< The robot is sleeping */
+    REPELLING               /*!< The robot is moving away from a neighbor */
+};

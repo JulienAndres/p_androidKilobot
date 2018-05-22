@@ -15,9 +15,79 @@
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}
 \usepackage{wrapfig}
 
+
 \usepackage{tikz} %Tikz !
 \usetikzlibrary{arrows,automata,calc}
 
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{darkWhite}{rgb}{0.94,0.94,0.94}
+\lstset{
+	aboveskip=3mm,
+	belowskip=-2mm,
+	backgroundcolor=\color{darkWhite},
+	basicstyle=\footnotesize,
+	breakatwhitespace=false,
+	breaklines=true,
+	captionpos=b,
+	commentstyle=\color{red},
+	deletekeywords={...},
+	escapeinside={\%*}{*)},
+	extendedchars=true,
+	framexleftmargin=16pt,
+	framextopmargin=3pt,
+	framexbottommargin=6pt,
+	frame=tb,
+	keepspaces=true,
+	keywordstyle=\color{blue},
+	language=C,
+	literate=
+	{²}{{\textsuperscript{2}}}1
+	{⁴}{{\textsuperscript{4}}}1
+	{⁶}{{\textsuperscript{6}}}1
+	{⁸}{{\textsuperscript{8}}}1
+	{€}{{\euro{}}}1
+	{é}{{\'e}}1
+	{è}{{\`{e}}}1
+	{ê}{{\^{e}}}1
+	{ë}{{\¨{e}}}1
+	{É}{{\'{E}}}1
+	{Ê}{{\^{E}}}1
+	{û}{{\^{u}}}1
+	{ù}{{\`{u}}}1
+	{â}{{\^{a}}}1
+	{à}{{\`{a}}}1
+	{á}{{\'{a}}}1
+	{ã}{{\~{a}}}1
+	{Á}{{\'{A}}}1
+	{Â}{{\^{A}}}1
+	{Ã}{{\~{A}}}1
+	{ç}{{\c{c}}}1
+	{Ç}{{\c{C}}}1
+	{õ}{{\~{o}}}1
+	{ó}{{\'{o}}}1
+	{ô}{{\^{o}}}1
+	{Õ}{{\~{O}}}1
+	{Ó}{{\'{O}}}1
+	{Ô}{{\^{O}}}1
+	{î}{{\^{i}}}1
+	{Î}{{\^{I}}}1
+	{í}{{\'{i}}}1
+	{Í}{{\~{Í}}}1,
+	morekeywords={*,...},
+	numbers=left,
+	numbersep=10pt,
+	numberstyle=\tiny\color{black},
+	rulecolor=\color{black},
+	showspaces=false,
+	showstringspaces=false,
+	showtabs=false,
+	stepnumber=1,
+	stringstyle=\color{gray},
+	tabsize=4,
+	title=\lstname,
+}
 \hypersetup{
 	urlcolor= blue,  %couleur des hyperliens
 	linkcolor= black, %couleur des liens internes
@@ -85,7 +155,21 @@ Les comportements des robots sont écrits en C, en utilisant l'API kilolib et pe
 reçoit
 \subsection{Bloc Actif}
 Le bloc actif a été développé par l'ISIR dans le cadre de la recherche sur Kilobots. Elle permet d'interagir avec les robots en émettant un signal infrarouge. Le numéro du message et l'intensité du signal peuvent être modulé grâce à des boutons sur le bloc actif. Il fera office d'obstacle et de point de ralliement pour certains de nos algorithmes.\\
-PHOTO BLOC ACTIF intensité Max et min
+\begin{figure}[h]
+	\begin{minipage}[c]{.46\linewidth}
+		\centering
+		\includegraphics[width=1.1\linewidth]{../script_results/bloc_actif_max.jpg}
+		\caption{Distance max à intensité max}
+	\end{minipage}
+	\hfill%
+	\begin{minipage}[c]{.46\linewidth}
+		\centering
+		\includegraphics[width=1.1\linewidth]{../script_results/bloc_actif_min.jpg}
+		\caption{Distance max à intensité min}
+	\end{minipage}
+\end{figure}
+\\
+Les robots devant êtres vraiment trop collés au bloc pour recevoir le signal en intensité minimale, nous utiliserons dans toutes les expériences l'intensité maximale du bloc actif.
 \subsection{Arène}
 Les algorithmes ont été testé sur un essaim de 70 robots, fournit par le laboratoire de rechercher ISIR. L'arène utilisé pour l'étude des algorithme faisait 1x2 mètres.\\
 PHOTO ARENE
@@ -120,11 +204,79 @@ Il est composé de 3 comportements basique : L'éloignement (\textit{repel}), le
 \end{tikzpicture}
 \caption{Couverture}
 \end{figure}
-
+\newpage
 \subsection{Résultats}
+Deux positions de départ sont possible pour l'essaim de Kilobot pour le problème de couverture. Nous pouvons partir d'un essaim regroupé en un groupe compact ou d'un essaim éparpillé sur l'ensemble de l'environnement.
+Nous étudions ici la 
+\begin{figure}[h]
+	\begin{minipage}[c]{.46\linewidth}
+		\centering
+		\includegraphics[width=1.1\linewidth]{../script_results/start_groupe.png}
+		\caption{Commencement groupé}
+	\end{minipage}
+	\hfill%
+	\begin{minipage}[c]{.46\linewidth}
+		\centering
+		\includegraphics[width=1.1\linewidth]{../script_results/start_eparpille.png}
+		\caption{Commencement éparpillé}
+	\end{minipage}
+\end{figure}
+\subsubsection{Commencement groupé}
+Dans ce 
+Stats en du temps que met le coverage a se faire en fonction de la distance demandé?
+\subsubsection{Commencement éparpillé}
+\begin{figure}[h]
+	\begin{minipage}[c]{.46\linewidth}
+		\centering
+		\includegraphics[width=1.1\linewidth]{../script_results/Couverture_average_robot.png}
+		\caption{Nombre de cluster selon la distance}
+	\end{minipage}
+	\hfill%
+	\begin{minipage}[c]{.46\linewidth}
+		\centering
+		\includegraphics[width=1.1\linewidth]{../script_results/Couverture_taille_cluster.png}
+		\caption{Taille moyenne d'un cluster selon la distance}
+	\end{minipage}
+\end{figure}
+On remarque immédiatement que plus la distance entre deux robot est grande (elle ne dépasse jamais la distance maximale de communication), moins la couverture est efficace. On remarque que plus la distance demandé est grande, plus le nombre total de groupe est grand et plus leur taille est petite. En effet, le groupe de robot, cherchant à atteindre cette distance minimale, va se fractionner et de nombreux petits groupes se formeront. 
+
+\begin{figure}[h!]
+	\begin{minipage}[c]{.46\linewidth}
+		\centering
+	\includegraphics[width=1.1\linewidth]{../script_results/Couverture_loss_kilobot.png}
+	\end{minipage}
+	\begin{minipage}[c]{.46\linewidth}
+	On remarque aussi, que plus la distance est grande, plus le nombre de Kilobot \textit{perdus} est grand. On observe un grand grand changement entre une distance de 60 et de 65. Ce grand écart est aussi observable sur les graphiques précédents.
+	\end{minipage}
+\end{figure}
+\newpage
+\subsubsection{Comparaison}
+On remarque que le départ depuis un essaim groupé amène à une configuration des Kilobots plus connectés contenant moins de robots perdus qu'un départ éparpillé. Cependant, cette connexité se fait au détriment de la durée de convergence de l'algorithme, qui est plus rapide depuis un essaim éparpillé (l'aléatoire ayant déjà fait une partie du travail).
 \newpage
 \section{Agrégation}
 \subsection{Agrégation naïve}
+Le but de cet algorithme est de faire s'agréger les Kilobot vers un objet  pouvant représenter une source de nourriture par exemple. Cet objet sera représenté ici par le bloc actif. Le principal but de cet algorithme étant de former un groupe compact de Kilobot, autour du bloc actif.\\
+Dans cet algorithme, les robots ne communique que pour indiquer l'emplacement du bloc actif. Ils n'ont donc aucune autre information sur leur environnement. Cet algorithme est composé de 3 comportements : la recherche, l'approche et l'émission.\\
+\paragraph{Recherche} Le robot bouge aléatoirement dans son environnement afin de trouver une source d'émission. Ici, le Kilobot ne fait aucune hypothèse sur son environnement. Il n'émet rien et ne reçoit donc aucune information provenant des autres robots dans le même état que lui. Ce comportement cesse lorsqu'il reçoit un message, le prévenant de la présence du bloc actif ou d'un robot proche de ce bloc actif. Il passe alors en comportement d'approche.
+\paragraph{L'approche} Lors de cette phase, le robot va essayer de s'approcher du signal le plus proche. La méthode d'approche utilisé (qui est la même dans tous les algorithmes qui suivent) consiste à approcher en faisant des rotations. A la réception du message, le robot choisit aléatoirement une direction entre droite et gauche. A chaque nouveau message, si le Kilobot s'est rapproché de la source, il continue dans la même direction, sinon il prend la direction opposé.\\Il sort de ce comportement s'il perd le signal de la source (retourne à la recherche) ou s'il est assez proche de tous ses voisins émetteurs. Il passe alors dans l'état d'émission.
+\paragraph{Émission} Le robot se trouve à une distance inférieure ou égale à celle demandé par l'algorithme. Il se met donc à émettre a son tour afin de transmettre l'information aux robots qui lui sont proches.
+
+\begin{figure}[h!]
+	\centering
+	\begin{tikzpicture}[>=stealth',shorten >=1pt,auto,node distance=10cm]
+	\node[state] (W)      {$Emission$};
+	\node[state] (R) [right of=W]  {$Approche$};
+	\node[state] at ($(W)!0.5!(R)$) [below =4cm] (S)  {$Searching$};
+	
+	
+	\path[->]
+	(R) edge   [sloped]node {Bonne distance} (W)
+	(W) edge   [anchor=east]node {Plus de voisins} (S)
+	(R) edge   [bend left]node {Perte de signal} (S)
+	(S) edge   [sloped,pos=0.7]node {Signal detecte} (R);
+	\end{tikzpicture}
+	\caption{Agrégation Naïve}
+\end{figure}
 \subsection{Agrégation probabiliste}
 
 Cet algorithme découle de celui présenté par O.Soysal et E.Sahin. Il permet aux robots de s'agglomérer basé sur une probabilité calculé indépendamment par chaque robot.\\
@@ -157,7 +309,120 @@ Un Kilobot n'ayant pas de capteur de proximité, il lui est impossible de détec
 \end{figure}
 \newpage
 \section{mEDEA}
+Nous implémenton ici la version Vanilla-EE de l'algorithme mEDEA présenté par J.Montanier, S.Carrignon et N.Bredeche. Il permet à un essaim de robot de s'adapter à leur environnement en fonction des contraintes de celui ci.
 \subsection{Algorithme}
+
+\begin{figure}[h!]
+	\centering
+	\begin{lstlisting}
+		Initialisation aléatoire du génome;
+		while True do
+			for i=0 to lifetime do
+				if self.genome!=NULL then
+					move() //selon le genome
+					fitness=calculerFitness()
+					transmettre(génome,fitness) //aux voisins accessibles
+	
+				end if
+				genomeQueue=receptionGénome()//traitement des messages
+				if genomeQueue!=NULL then
+					genomeList.add(genomeQueue)
+				end if
+			end for
+			self.genome=NULL
+			if genomeList.size > 0 then
+				newGenome=select(genomeList) //selection selon meilleure fitness	
+				newGenome=mutation(newGenome) //proba de muter
+				self.genome=newGenome
+			end if
+			genomeList.empty()
+		end while
+	\end{lstlisting}
+	\caption{Vanilla-EE}
+\end{figure}
+Dans notre cas, l'algorithme est exécuté sur chaque robot et évalue le comportement du robot pendant ses déplacements. Un robot correspond donc aux paramètres du comportement courant.
+Un Kilobot ne dispose que de 3 capteurs d'entrée :
+\begin{itemize}
+	\item[$-$] La luminosité
+	\item [$-$]Les messages reçus
+	\item [$-$]La distance du message à l'envoyeur(calculé par le Kilobot)\\
+\end{itemize}
+
+Il nous a donc fallu créer des capteurs \textit{artificiels} via le transfert d'information entre les Kilobots par message. Notre génome est donc constitué des poids d'un perceptron sans couches cachées. Les entrées sont donc :
+\begin{itemize}
+	\item[$-$] Une entrée active en permanence comme neurone de biais
+	\item [$-$]La moyenne des distances à tous les voisins connus
+	\item [$-$]Le nombre de voisin actuel
+	\item [$-$]Une entrée binaire associé à la présence ou non du bloc actif\\
+\end{itemize}
+Il y a deux sorties, correspondantes aux gauche et droit de chaque Kilobot.
+Cela nous donne donc un génome de 8 gènes correspondant aux 8 paramètres du perceptron. Chaque paramètre peut prendre 3 valeurs : \{-1,0,1\}.
+\begin{figure}[h!]
+	\centering
+	\begin{tikzpicture}[>=stealth',shorten >=1pt,auto,node distance=10cm]
+	\node[state,fill=black] (B)      {\textcolor{white}{$Biais$}};
+	\node[state] (M) [below =1cm]  {$Moy$};
+	\node[state] (S)  [below =2.5cm]  {$Nb$};
+	\node[state] (A)  [below=4cm]{$Bloc$};
+	\node[state] (MG) [right = of M] {$m_g$};
+	\node[state] (MD) [right = of S] {$m_d$};
+	
+	
+	\path[->]
+	(B) edge (MG)
+	(M) edge  (MG)
+	(S) edge  (MG)
+	(A) edge  (MG)
+	
+	(B) edge  (MD)
+	(M) edge  (MD)
+	(S) edge (MD)
+	(A) edge (MD)
+	;
+	\end{tikzpicture}
+	\caption{Controlleur mEDEA}
+\end{figure}
+\newpage
+\paragraph{Fonction d'activation} Notre fonction d'activation permet d'obtenir une sortie dans l'intervalle de vitesse des moteurs :
+\begin{center}
+$A(x)=\frac{1}{1+e^-x}*(Max\_moteur-Min\_moteur)+Min\_moteur$
+\end{center}
+
+
+\paragraph{Fitness} 
+\begin{center}
+$F(x)=\sum_{i}  f(x) \qquad \forall{i} \in{0,1,...,evalTime} $
+
+\end{center}
+avec
+\begin{center}
+$f(x)=$
+$\begin{cases}
+	$1$ &\text{\textit{si Block actif detecte}}\\
+	$0$ &\text{\textit{sinon}}\\
+\end{cases}$
+\end{center}
+
+Notre fitness est ici calculé sur les 40 dernière demi-secondes. Elle est mise à jour à chaque envoie de message du Kilobot vers ses voisins.
+\paragraph{Mutation}  La probabilité de mutation est un facteur important de l'algorithme. Un probabilité trop grande peut mener à une population incapable de se stabiliser alors qu'un taux trop bas peut amener à une absence de génome intéressant.
+\begin{figure}[h!]
+	\centering
+	\begin{lstlisting}
+	if random() < P_mutation then
+		for (i=0;i<len(genome);i++) do
+			if random() < 1/len(genome) then
+				modif=randint(1,2)
+				genome[i]=(genome[i]+modif+1) mod 3 -1
+			end if
+		end for
+	end if
+	\end{lstlisting}
+	\caption{Mutation}
+\end{figure}
+\\ Après la décision d'une mutation sur le génome, nous avons décidé de mettre une probabilité fixe de $\frac{1}{nombre de gènes}$ par gène. Cela permettant d'avoir en moyenne un seul gène changé par mutation afin de ne pas avoir un génome changeant drastiquement d'une génération à une autre.
+
+
+
 \subsection{Résultats}
 \newpage
 \section{Conclusion}

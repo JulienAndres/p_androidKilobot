@@ -1,7 +1,7 @@
 #ifndef AGGREGATION__H
     #define AGGREGATION__H
 
-    #define MAXVOISIN 10
+    #define MAXVOISIN 20
 
     void setup(void);
     void emission(void);

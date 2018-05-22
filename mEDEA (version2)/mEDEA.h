@@ -17,6 +17,7 @@ int fitness();
 
 int16_t callback_obstacles(double x, double y, double *m1, double *m2);
 char *botinfo(void);
+json_t *json_state();
 
     typedef struct {
       uint8_t dist;

@@ -187,11 +187,11 @@ void sleeping(){
 uint8_t is_too_close(){
 	uint8_t stop = 0;
 	//printf("dist dans is_too_close %d\n", mydata->toAggregate.dist);
-	if(mydata->toAggregate.dist <= DIST_TO_AGGREGATE){
-
-		stop = 1;
-		return stop;
-	}
+	// if(mydata->toAggregate.dist <= DIST_TO_AGGREGATE){
+	//
+	// 	stop = 1;
+	// 	return stop;
+	// }
 	int i=0;
 	for (;i<mydata->nb_voisins;i++){
 		if (mydata->voisins_liste[i].dist <= DIST_TO_AGGREGATE){
