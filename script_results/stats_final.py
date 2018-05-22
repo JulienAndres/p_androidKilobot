@@ -95,51 +95,89 @@ plt.subplot(111)
 #plt.title("Couverture - Nb max/moy/min robot par cluster - distance demande")
 #plt.show()
 
-## Analyse de la proba cluster_proba en fonction de la taille du cluster demandé
-# avg_size
-ymoy = [24.75, 19.75, 18.25, 11]
-ymin = [17, 10, 10, 0]
-ymax = [35, 30, 27, 23]
-myticks = [5, 6, 7, 8]
-x = np.array([0, 1, 2, 3])
-plt.xticks(x, myticks)
+## COVERAGE 
+#groupe
+ymoy=[6.4,9.8,15.2,35,37.6]
+ymin=[5,7,10,15,22]
+ymax=[8,11,23,69,67]
+x=[70,65,60,55,50]
 plt.scatter(x, ymoy,marker='o')
 plt.scatter(x, ymin,marker='_')
 plt.scatter(x, ymax,marker='_')
-plt.ylabel("Taille du cluster")
-plt.xlabel("Taille \"big\" cluster")
-plt.title("Agrégation - Taille max/moy/min Cluster - Taille \"big\" cluster")
+plt.ylabel("taille moyenne cluster")
+plt.title("Couverture - taille max/moy/min cluster - distance demande")
 plt.show()
 
-# nb_clusters
-ymoy = [1, 1, 1, 0.68]
-ymin = [1, 1, 1, 0]
-ymax = [1, 1, 1, 1]
-myticks = [5, 6, 7, 8]
-x = np.array([0, 1, 2, 3])
-plt.xticks(x, myticks)
-plt.scatter(x, ymoy,marker='o')
-plt.scatter(x, ymin,marker='_')
-plt.scatter(x, ymax,marker='_')
-plt.ylabel("Nombre de clusters")
-plt.xlabel("Taille \"big\" cluster")
-plt.title("Agrégation - Nombre max/moy/min de clusters - Taille \"big\" cluster")
-plt.show()
 
-# loss
-ymoy = [45.25, 50.25, 51.75, 59]
-ymin = [35, 40, 43, 47]
-ymax = [53, 60, 60, 70]
-myticks = [5, 6, 7, 8]
-x = np.array([0, 1, 2, 3])
-plt.xticks(x, myticks)
+
+ymoy=[8.4,8.8,4.3,2.6,3.2]
+ymin=[1,1,1,1,1]
+ymax=[21,25,8,8,6]
+x=[70,65,60,55,50]
 plt.scatter(x, ymoy,marker='o')
 plt.scatter(x, ymin,marker='_')
 plt.scatter(x, ymax,marker='_')
 plt.ylabel("Nombre de Kilobot perdu")
-plt.xlabel("Taille \"big\" cluster")
-plt.title("Agrégation - loss max/moy/min Kilobots - Taille \"big\" cluster")
+plt.title("Couverture - loss max/moy/min Kilobot - distance demande")
 plt.show()
+
+ymoy=[9.6,6.2,4.8,2.4,2]
+ymin=[8,4,3,1,1]
+ymax=[11,8,7,4,3]
+x=[70,65,60,55,50]
+plt.scatter(x, ymoy,marker='o')
+plt.scatter(x, ymin,marker='_')
+plt.scatter(x, ymax,marker='_')
+plt.ylabel("Nombre de cluster")
+plt.title("Couverture - Nb max/moy/min Cluster - distance demande")
+plt.show()
+
+
+## Analyse de la proba cluster_proba en fonction de la taille du cluster demandé
+# avg_size
+#ymoy = [24.75, 19.75, 18.25, 11]
+#ymin = [17, 10, 10, 0]
+#ymax = [35, 30, 27, 23]
+#myticks = [5, 6, 7, 8]
+#x = np.array([0, 1, 2, 3])
+#plt.xticks(x, myticks)
+#plt.scatter(x, ymoy,marker='o')
+#plt.scatter(x, ymin,marker='_')
+#plt.scatter(x, ymax,marker='_')
+#plt.ylabel("Taille du cluster")
+#plt.xlabel("Taille \"big\" cluster")
+#plt.title("Agrégation - Taille max/moy/min Cluster - Taille \"big\" cluster")
+#plt.show()
+#
+## nb_clusters
+#ymoy = [1, 1, 1, 0.68]
+#ymin = [1, 1, 1, 0]
+#ymax = [1, 1, 1, 1]
+#myticks = [5, 6, 7, 8]
+#x = np.array([0, 1, 2, 3])
+#plt.xticks(x, myticks)
+#plt.scatter(x, ymoy,marker='o')
+#plt.scatter(x, ymin,marker='_')
+#plt.scatter(x, ymax,marker='_')
+#plt.ylabel("Nombre de clusters")
+#plt.xlabel("Taille \"big\" cluster")
+#plt.title("Agrégation - Nombre max/moy/min de clusters - Taille \"big\" cluster")
+#plt.show()
+#
+## loss
+#ymoy = [45.25, 50.25, 51.75, 59]
+#ymin = [35, 40, 43, 47]
+#ymax = [53, 60, 60, 70]
+#myticks = [5, 6, 7, 8]
+#x = np.array([0, 1, 2, 3])
+#plt.xticks(x, myticks)
+#plt.scatter(x, ymoy,marker='o')
+#plt.scatter(x, ymin,marker='_')
+#plt.scatter(x, ymax,marker='_')
+#plt.ylabel("Nombre de Kilobot perdu")
+#plt.xlabel("Taille \"big\" cluster")
+#plt.title("Agrégation - loss max/moy/min Kilobots - Taille \"big\" cluster")
+#plt.show()
 
 
 
