@@ -99,7 +99,7 @@
 }
 
 \bibliography{bib/kilobots} 
-\nocite{*} %% A CHANGER POUR LES CITATIONS : exemple Je cite \cite{nom_article}
+%%\nocite{*} %% A CHANGER POUR LES CITATIONS : exemple Je cite \cite{nom_article}
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
 
 
@@ -147,7 +147,7 @@ L'objectif de ces algorithmes est d'arriver, à partir d'un génome aléatoire d
 \newpage
 \section{Matériel utilisé}
 \subsection{Kilobot}
-Un Kilobot est un robot miniature, créé par l'université d'Harvard. Ces robots permettent l'étude de la robotique en essaim grâce à leur faible cout, permettant grand nombre d'individu.
+Un Kilobot \cite{rubenstein_kilobot:_2012} est un robot miniature, créé par l'université d'Harvard. Ces robots permettent l'étude de la robotique en essaim grâce à leur faible cout, permettant grand nombre d'individu.
 \paragraph{Communication}Les robots peuvent communiquer entre eux grâce à des messages qu'ils envoient à leurs voisins à une distance d'environ 7cm. L'intensité du signal permet à un Kilobot d'évaluer la distance à laquelle se trouve la source du message. Chaque robot possède aussi un capteur de luminosité.
 \paragraph{Mouvements}Chaque robot possède deux moteurs, placé de chaque coté de son corps. Ils permettent au robot d'avancer en faisant vibrer ses pattes. Les déplacement d'un Kilobot se font donc en modulant la vitesse de chacun de ses moteurs selon la direction voulu.\\
 \begin{figure}[h]
@@ -180,7 +180,7 @@ Les robots devant êtres vraiment trop collés au bloc pour recevoir le signal e
 Les algorithmes ont été testé sur un essaim de 70 robots, fournit par le laboratoire de rechercher ISIR. L'arène utilisé pour l'étude des algorithme faisait 1x2 mètres.\\
 PHOTO ARENE
 \subsection{Simulateur}
-Afin de faciliter le développement et l'étude des algorithmes, le simulateur Kilombo a été utilisé. Il inclut l'API kilolib et permet ainsi une compatibilité direct du code entre le simulateur et l'essaim de robots.
+Afin de faciliter le développement et l'étude des algorithmes, le simulateur Kilombo \cite{jansson_kilombo:_2015} a été utilisé. Il inclut l'API kilolib et permet ainsi une compatibilité direct du code entre le simulateur et l'essaim de robots.
 \begin{figure}[h]
 	\begin{center}
 		\centering
@@ -292,7 +292,7 @@ Dans cet algorithme, les robots ne communique que pour indiquer l'emplacement du
 \newpage
 \subsection{Agrégation probabiliste}
 
-Cet algorithme découle de celui présenté par O.Soysal et E.Sahin. Il permet aux robots de s'agglomérer basé sur une probabilité calculé indépendamment par chaque robot.\\
+Cet algorithme découle de celui présenté par O.Soysal et E.Sahin. \cite{soysal_probabilistic_2005} Il permet aux robots de s'agglomérer basé sur une probabilité calculé indépendamment par chaque robot.\\
 
 Il est composé de 4 comportement basiques : l'approche
 (\textit{approach}), l'attente
@@ -351,7 +351,7 @@ avec
 
 \newpage
 \section{mEDEA}
-Nous implémentons ici la version Vanilla-EE de l'algorithme mEDEA présenté par J.Montanier, S.Carrignon et N.Bredeche. Il permet à un essaim de robot de s'adapter à leur environnement en fonction des contraintes de celui ci.
+Nous implémentons ici la version Vanilla-EE de l'algorithme mEDEA présenté par J.Montanier, S.Carrignon et N.Bredeche.  \cite{schaefer_environment-driven_2010} Il permet à un essaim de robot de s'adapter à leur environnement en fonction des contraintes de celui ci.
 \subsection{Algorithme}
 
 \begin{figure}[h!]
