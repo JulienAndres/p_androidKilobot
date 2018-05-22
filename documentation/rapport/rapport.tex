@@ -15,11 +15,11 @@
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}
 \usepackage{wrapfig}
 
-<<<<<<< HEAD:rapport/rapport.tex
-=======
+
+
 %% Bibtex
 \usepackage[backend=bibtex,style=ieee]{biblatex}
->>>>>>> b9211099075d75c8faa606b358933de42d99f5b8:documentation/rapport/rapport.tex
+
 
 \usepackage{tikz} %Tikz !
 \usetikzlibrary{arrows,automata,calc}
@@ -164,13 +164,13 @@ Le bloc actif a été développé par l'ISIR dans le cadre de la recherche sur K
 \begin{figure}[h]
 	\begin{minipage}[c]{.46\linewidth}
 		\centering
-		\includegraphics[width=1.1\linewidth]{../script_results/bloc_actif_max.jpg}
+		\includegraphics[width=1.1\linewidth]{../../script_results/bloc_actif_max.jpg}
 		\caption{Distance max à intensité max}
 	\end{minipage}
 	\hfill%
 	\begin{minipage}[c]{.46\linewidth}
 		\centering
-		\includegraphics[width=1.1\linewidth]{../script_results/bloc_actif_min.jpg}
+		\includegraphics[width=1.1\linewidth]{../../script_results/bloc_actif_min.jpg}
 		\caption{Distance max à intensité min}
 	\end{minipage}
 \end{figure}
@@ -181,7 +181,13 @@ Les algorithmes ont été testé sur un essaim de 70 robots, fournit par le labo
 PHOTO ARENE
 \subsection{Simulateur}
 Afin de faciliter le développement et l'étude des algorithmes, le simulateur Kilombo a été utilisé. Il inclut l'API kilolib et permet ainsi une compatibilité direct du code entre le simulateur et l'essaim de robots.
-SCREENSHOT ?
+\begin{figure}[h]
+	\begin{center}
+		\centering
+		\includegraphics[width=0.8\linewidth]{../../script_results/gradient2-sim.png}
+		\caption{Modélisation  d'un gradient sur simulateur}
+	\end{center}
+\end{figure} \\
 \newpage
 \section{Couverture}
 \subsection{Algorithme}
@@ -217,13 +223,13 @@ Nous étudions ici la
 \begin{figure}[h]
 	\begin{minipage}[c]{.46\linewidth}
 		\centering
-		\includegraphics[width=1.1\linewidth]{../script_results/start_groupe.png}
+		\includegraphics[width=1.1\linewidth]{../../script_results/start_groupe.png}
 		\caption{Commencement groupé}
 	\end{minipage}
 	\hfill%
 	\begin{minipage}[c]{.46\linewidth}
 		\centering
-		\includegraphics[width=1.1\linewidth]{../script_results/start_eparpille.png}
+		\includegraphics[width=1.1\linewidth]{../../script_results/start_eparpille.png}
 		\caption{Commencement éparpillé}
 	\end{minipage}
 \end{figure}
@@ -234,13 +240,13 @@ Stats en du temps que met le coverage a se faire en fonction de la distance dema
 \begin{figure}[h]
 	\begin{minipage}[c]{.46\linewidth}
 		\centering
-		\includegraphics[width=1.1\linewidth]{../script_results/Couverture_average_robot.png}
+		\includegraphics[width=1.1\linewidth]{../../script_results/Couverture_average_robot.png}
 		\caption{Nombre de cluster selon la distance}
 	\end{minipage}
 	\hfill%
 	\begin{minipage}[c]{.46\linewidth}
 		\centering
-		\includegraphics[width=1.1\linewidth]{../script_results/Couverture_taille_cluster.png}
+		\includegraphics[width=1.1\linewidth]{../../script_results/Couverture_taille_cluster.png}
 		\caption{Taille moyenne d'un cluster selon la distance}
 	\end{minipage}
 \end{figure}
@@ -249,7 +255,7 @@ On remarque immédiatement que plus la distance entre deux robot est grande (ell
 \begin{figure}[h!]
 	\begin{minipage}[c]{.46\linewidth}
 		\centering
-	\includegraphics[width=1.1\linewidth]{../script_results/Couverture_loss_kilobot.png}
+	\includegraphics[width=1.1\linewidth]{../../script_results/Couverture_loss_kilobot.png}
 	\end{minipage}
 	\begin{minipage}[c]{.46\linewidth}
 	On remarque aussi, que plus la distance est grande, plus le nombre de Kilobot \textit{perdus} est grand. On observe un grand grand changement entre une distance de 60 et de 65. Ce grand écart est aussi observable sur les graphiques précédents.
