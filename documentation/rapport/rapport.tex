@@ -219,7 +219,7 @@ Il est composé de 3 comportements basique : L'éloignement (\textit{repel}), le
 \newpage
 \subsection{Résultats}
 Deux positions de départ sont possible pour l'essaim de Kilobot pour le problème de couverture. Nous pouvons partir d'un essaim regroupé en un groupe compact ou d'un essaim éparpillé sur l'ensemble de l'environnement.
-Nous étudions ici la 
+Nous étudions ici le comportement de l'essaim en fonction de la distance minimale demandé entre chaque robot.
 \begin{figure}[h]
 	\begin{minipage}[c]{.46\linewidth}
 		\centering
@@ -289,6 +289,7 @@ Dans cet algorithme, les robots ne communique que pour indiquer l'emplacement du
 	\end{tikzpicture}
 	\caption{Agrégation Naïve}
 \end{figure}
+\newpage
 \subsection{Agrégation probabiliste}
 
 Cet algorithme découle de celui présenté par O.Soysal et E.Sahin. Il permet aux robots de s'agglomérer basé sur une probabilité calculé indépendamment par chaque robot.\\
@@ -323,8 +324,34 @@ Un Kilobot n'ayant pas de capteur de proximité, il lui est impossible de détec
 	\caption{Agrégation probabiliste}
 \end{figure}
 \newpage
+\subsection{Résultats}
+\subsubsection{Agrégation naïve}
+\subsubsection{Agrégation probabiliste}
+Cet algorithme se base sur la probabilité d'un robot de quitter son groupe afin de trouver potentiellement un nouveau groupe composé de plus d'individus (et donc plus intéressant). Le paramètre important de cet algorithme est donc le calcul de cette probabilité. Nous avons ici testé trois manières différentes pour ce calcul.
+\paragraph{Probabilité constante} Nous utilisons ici la probabilité constante proposé par O.Soyal et E.Sahin comme étant celle pour laquelle ils ont obtenu les meilleurs résultats.
+\begin{center}
+	$P(x)=0.0001$
+\end{center}
+\paragraph{Probabilité suivant taille groupe} Afin de permettre aux gros agglomérats de robots de rester ensemble, nous avons défini une probabilité pour un Kilobot de quitter un groupe en fonction du nombre de voisins de celui ci par rapport à une constante définie comme la taille d'un groupe que nous considérons \textit{stable}. Or après expérimentation, nous avons remarqué qu'un robot arrivant au bord d'un agglomérat ne reste pas forcément car connecté que à quelques individus de ce groupe.\\Afin de traiter les deux cas d'appartenance à un groupe (au centre ou sur un bord), nous prenons donc le maximum entre le nombre de voisin du Kilobot et le nombre maximum de voisin du meilleur de ses voisins. Le meilleur de ses voisins étant défini comme le voisin ayant le plus de voisin.
+\begin{center}
+	$P(x)=\min(1,\frac{v(x)}{TAILLE\_GRAND\_GROUPE})$
+\end{center}
+avec
+\begin{center}
+	$v(x)=\max(nombre\_de\_voisin(x),nombre\_de\_voisin(meilleur\_voisin(x))$
+\end{center}
+\paragraph{Probabilité mixte} Cette probabilité a été trouvé après avoir vu les résultats expérimentaux des deux probabilité précédente. Elle a comme objectif de créer des agglomérats stables en ne permettant pas à un robot de partir s'il appartient à un suffisamment grand groupe, et utilisant la probabilité trouvé par  O.Soyal et E.Sahin. Elle est définie comme :
+\begin{center}
+	$P(x)=$
+	$\begin{cases}
+	$0$ &\text{\textit{si v(x) >= TAILLE\_GRAND\_GROUPE }}\\
+	$0.0001$ &\text{\textit{sinon}}\\
+	\end{cases}$
+\end{center}
+
+\newpage
 \section{mEDEA}
-Nous implémenton ici la version Vanilla-EE de l'algorithme mEDEA présenté par J.Montanier, S.Carrignon et N.Bredeche. Il permet à un essaim de robot de s'adapter à leur environnement en fonction des contraintes de celui ci.
+Nous implémentons ici la version Vanilla-EE de l'algorithme mEDEA présenté par J.Montanier, S.Carrignon et N.Bredeche. Il permet à un essaim de robot de s'adapter à leur environnement en fonction des contraintes de celui ci.
 \subsection{Algorithme}
 
 \begin{figure}[h!]
