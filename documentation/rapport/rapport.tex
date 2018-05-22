@@ -2,7 +2,7 @@
 
 %% Language and font encodings
 \usepackage[english]{babel}
-\usepackage[utf8x]{inputenc}
+\usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 
 %% Sets page size and margins
@@ -15,6 +15,11 @@
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}
 \usepackage{wrapfig}
 
+<<<<<<< HEAD:rapport/rapport.tex
+=======
+%% Bibtex
+\usepackage[backend=bibtex,style=ieee]{biblatex}
+>>>>>>> b9211099075d75c8faa606b358933de42d99f5b8:documentation/rapport/rapport.tex
 
 \usepackage{tikz} %Tikz !
 \usetikzlibrary{arrows,automata,calc}
@@ -93,7 +98,8 @@
 	linkcolor= black, %couleur des liens internes
 }
 
-
+\bibliography{bib/kilobots} 
+\nocite{*} %% A CHANGER POUR LES CITATIONS : exemple Je cite \cite{nom_article}
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
 
 
@@ -105,7 +111,7 @@
 
 \begin{titlepage}
 \center
-\includegraphics{/home/julien/Images/LOGO_SCIENCES_SU_med.jpg}\\[1cm] 
+\includegraphics{incl/logo_sorbonne}\\[1cm] 
 
 \HRule \\[0.4cm]
 { \huge \bfseries Robotique en essaim}\\[0.4cm] % Title of your document
@@ -118,7 +124,7 @@ Thomas \textsc{Taylor}\\[3cm]
 Nicolas \textsc{Bredeche}\\[3cm]
 
 
-\includegraphics[width=4cm]{/home/julien/Images/Kilobots.png}
+\includegraphics[width=4cm]{incl/Kilobots.png}
 
 
 
@@ -147,7 +153,7 @@ Un Kilobot est un robot miniature, créé par l'université d'Harvard. Ces robot
 \begin{figure}[h]
 	\begin{center}
 		\centering
-		\includegraphics[width=0.8\linewidth]{kilobot-closeup-overview.jpg}
+		\includegraphics[width=0.8\linewidth]{incl/kilobot-closeup-overview.jpg}
 		\caption{Kilobot}
 	\end{center}
 \end{figure} \\
@@ -281,11 +287,14 @@ Dans cet algorithme, les robots ne communique que pour indiquer l'emplacement du
 
 Cet algorithme découle de celui présenté par O.Soysal et E.Sahin. Il permet aux robots de s'agglomérer basé sur une probabilité calculé indépendamment par chaque robot.\\
 
-Il est composé de 4 comportement basiques : l'approche(\textit{approach}), l'attente(\textit{wait}), l'éloignement (\textit{repel}) et un évitement d'obstacle.
+Il est composé de 4 comportement basiques : l'approche
+(\textit{approach}), l'attente
+(\textit{wait}), l'éloignement 
+(\textit{repel}) et un évitement d'obstacle.
 Un Kilobot n'ayant pas de capteur de proximité, il lui est impossible de détecter un obstacle tel qu'un mur. L'évitement d'obstacle a donc été remplacé par un déplacement aléatoire dans l'environnement (\textit{searching}).
-\paragraph{Le déplacement aléatoire} Quand le robot est seul dans l'environnement (aucun voisins), il bouge de façon aléatoire. Toute les secondes, il choisi une direction parmi les 3 disponibles (gauche, droite,tout droit) et la garde jusqu'à la prochaine actualisation. Dés qu'il détecte un voisin, il passe en comportement d'approche
-\paragraph{L'approche}Dans ce comportement, le robot décide de s'approcher du voisin le plus intéressant. Le voisin le plus intéressant est défini comme le celui ayant le plus de voisins à coté de lui. Si le Kilobot arrive à rejoindre le groupe, ce qui n'est pas obligatoire, à cause de l'absence de capteurs de proximités, il s'arrête et passe dans l'état d'attente.
-\paragraph{L'attente} Quand le robot est dans cet état, il fait partit d'un groupe composé d'au moins 2 individus. Il a cependant une probabilité de quitter ce groupe et d'entrer dans l'état d'éloignement à chaque seconde.
+\paragraph{Le déplacement aléatoire} Quand le robot est seul dans l'environnement (aucun voisins), il bouge de façon aléatoire. Toutes les secondes, il choisi une direction parmi les 3 disponibles (gauche, droite, tout droit) et la garde jusqu'à la prochaine actualisation. Dès qu'il détecte un voisin, il passe en comportement d'approche.
+\paragraph{L'approche}Dans ce comportement, le robot décide de s'approcher du voisin le plus intéressant. Le voisin le plus intéressant est défini comme le celui ayant le plus de voisins à coté de lui. Si le Kilobot arrive à rejoindre le groupe, ce qui n'est pas obligatoire, à cause de l'absence de capteurs de proximité, il s'arrête et passe dans l'état d'attente.
+\paragraph{L'attente} Quand le robot est dans cet état, il fait parti d'un groupe composé d'au moins 2 individus. Il a cependant une probabilité de quitter ce groupe et d'entrer dans l'état d'éloignement à chaque seconde.
 \paragraph{L'éloignement}Ce comportement fait s'éloigner le robot du groupe auquel il était agrégé précédemment. Pendant toute la durée de cet éloignement, à chaque seconde, le Kilobot à une probabilité de revenir en mode d'approche et de rejoindre le groupe qu'il vient de quitter. Ce comportement s'arrête quand le robot est seul ou que 10 secondes se sont écoulées. Il revient en déplacement aléatoire.\\
 \begin{figure}[h!]
 	\centering
@@ -427,4 +436,7 @@ Notre fitness est ici calculé sur les 40 dernière demi-secondes. Elle est mise
 \newpage
 \section{Conclusion}
 \section{Bibliographie}
+
+\printbibliography
+
 \end{document}
