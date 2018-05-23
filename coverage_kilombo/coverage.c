@@ -1,10 +1,12 @@
 #include <kilombo.h>
+#define DEBUG
+#include <debug.h>
 #include "coverage.h"
 
 
 REGISTER_USERDATA(USERDATA)
 
- 
+
 
 void update_from_message(){
   /*
@@ -120,7 +122,7 @@ Traitement des messages
 décide des comportements en fontion du nombre de voisin ou de tooClose()
 */
 
-
+  uint8_t nb ==1;
   //si un message est arrivé,le traiter
   if (mydata->new_message == 1)
   {
@@ -131,13 +133,18 @@ décide des comportements en fontion du nombre de voisin ou de tooClose()
   update_voisins(); //met a jour la liste de ses voisins
 
   //possible changement de direction toute les secondes
-    if (kilo_ticks > mydata->last_update+SECONDE) {
+    if (kilo_ticks > mydata->last_update+nb*SECONDE) {
+      nb=1;
       mydata->last_update=kilo_ticks;
       set_color(RGB(1,0,0));
     //printf("----------------------------------");
     //printf("loop\n");
-    //printf("    mydata->nb_voisins%d\n",mydata->nb_voisins );
-
+    printf("    mydata->nb_voisins%d\n",mydata->nb_voisins );
+    int k=0;
+    for(k=0;k<mydata->nb_voisins;k++){
+      printf("%d ",mydata->voisins_liste[k].dist );
+    }
+    printf("-------\n");
     if (tooClose() || mydata->nb_voisins==0){
       //printf("    tooclose or new voisins\n");
       if (mydata->nb_voisins==0){
@@ -149,6 +156,7 @@ décide des comportements en fontion du nombre de voisin ou de tooClose()
     //  update_motors(mydata->next_direction);//randomdirection
       set_color(RGB(1,0,0));
     }else{
+      nb=2;
       mydata->state=SLEEPING;
       //printf("    perfect mydata->distance\n");
       update_motors(STOP);
@@ -206,7 +214,7 @@ Initialise callback et lance la main loop
     kilo_message_tx=message_tx;
     //start loop
     SET_CALLBACK(json_state, json_state);
-
+    debug_init();
     kilo_start(setup, loop);
 
     return 0;

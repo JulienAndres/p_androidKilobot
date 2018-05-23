@@ -109,7 +109,6 @@ void update_from_message(){
 /*update du génome de ce voisin
 */
 	if (ID==IDFOOD) return;
-	if (mydata->message.data[8]==255) return; //255 correspond à un kilobot dead (voir fonction fitness dans mEDEA.c)
 	found_id=0;
 	i=0;
 		while (i< mydata->nb_genome && !found_id ){

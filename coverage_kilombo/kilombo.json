@@ -1,7 +1,7 @@
 {
 	"distributePercent" : 0.4,
     "nBots" : 70,
-		"simulationTime" : 3600,
+		"simulationTime" : 1000,
 		"stepsPerFrame" : 10,
     "formation":"random",
     "commsRadius" : 100,
