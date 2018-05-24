@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.5.13)  24 MAY 2018 23:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.5.13)  24 MAY 2018 23:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1811,23 +1811,33 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 [17 <../../script_results/mEDEA_1_with_0.png> <../../script_results/parent_orig
 ine_medea_full.png> <../../script_results/parent_origine_medea_zoom.png>]
 [18 <../../script_results/nombre_genome_different.png> <../../script_results/no
-mbre_genome_different_zoom.png>] [19]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 623.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 623.
+mbre_genome_different_zoom.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 619--624
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 619--624
+
+ []
+
+[19] [20]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 629.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 629.
  (./rapport.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 623.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 623.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 629.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 629.
 Package rerunfilecheck Info: File `rapport.out' has not changed.
 (rerunfilecheck)             Checksum: 5D77038F73801834337D5A1BC5709D0F;2173.
 Package logreq Info: Writing requests to 'rapport.run.xml'.
 \openout1 = `rapport.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 623.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 629.
  )
 (\end occurred when \iftrue on line 110 was incomplete) 
 Here is how much of TeX's memory you used:
- 25773 strings out of 493029
- 476436 string characters out of 6136234
+ 25774 strings out of 493029
+ 476443 string characters out of 6136234
  844902 words of memory out of 5000000
  28715 multiletter control sequences out of 15000+600000
  17570 words of font info for 39 fonts, out of 8000000 for 9000
@@ -1850,10 +1860,10 @@ super/sfrm0500.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0700.pfb><
 /usr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf/fon
 ts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-s
 uper/sfti1000.pfb>
-Output written on rapport.pdf (20 pages, 10621843 bytes).
+Output written on rapport.pdf (21 pages, 10623688 bytes).
 PDF statistics:
- 509 PDF objects out of 1000 (max. 8388607)
- 416 compressed objects within 5 object streams
- 145 named destinations out of 1000 (max. 500000)
+ 513 PDF objects out of 1000 (max. 8388607)
+ 419 compressed objects within 5 object streams
+ 146 named destinations out of 1000 (max. 500000)
  414 words of extra memory for PDF output out of 10000 (max. 10000000)
 

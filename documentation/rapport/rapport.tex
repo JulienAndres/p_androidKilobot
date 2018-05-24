@@ -612,9 +612,15 @@ Notre fitness est ici calculé sur les 40 dernière demi-secondes. Elle est mise
 		\caption{Nombre de génomes différents par génération(Zoom)}
 	\end{minipage}
 \end{figure}
+\newpage
 \subsubsection{Comparaison avec expérience témoin}
 \newpage
 \section{Conclusion}
+L’agrégation et la couverture sont des comportements fondamentaux de la robotique en essaim. Les Kilobots offrent un moyen robuste d’étude de ces comportements par leur simplicité et accessibilité, ils permettent une implémentation rapide d’un algorithme distribué tel que mEDEA. Deux types d’agrégation, une couverture ainsi qu’un algorithme d’embodied evolution ont été étudiés.
+\\ \\
+L’analyse de ces comportements sur robots réels illustre l’avantage d’un simulateur. En effet, le calcul de la distance d’un message reçu peut être défaillant (en raison d’obstructions, de la qualité de la surface utilisée ou d’un défaut matériel) et entraîner une perturbation quant aux résultats obtenus. D’autres facteurs sont à prendre en compte lors de la comparaison de résultats obtenus sur simulateur et en réalité : le bloc actif n’est pas modélisable dans le simulateur et a été remplacé par un Kilobot immobile émettant le signal, il est donc susceptible d’être heurté et déplacé, ce qui n’est pas possible sur le vrai modèle.
+\\ \\
+Les Kilobots ne possédant pas de capteur de proximité, l’évitement d’obstacle est impossible : les robots viennent à se bloquer entre eux ou contre les murs. Des bandes de LEDs (toujours en phase production à l’ISIR) permettraient aux Kilobots de recevoir des messages des obstacles et ainsi avoir une meilleure perception de l’environnement. Dans le cas de mEDEA, elles apporteraient une entrée supplémentaire au perceptron (et par la même, une solution au manque de capteurs constaté sur les Kilobots). Grâce à ce dispositif, l’étude des algorithmes déployés sera plus précise, ceux-ci contenant majoritairement une marche aléatoire destinée à l’exploration.
 \newpage
 \section{Bibliographie}
 

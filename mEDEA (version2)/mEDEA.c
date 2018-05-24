@@ -180,18 +180,18 @@ void loop() {
 		}else{
 			fprintf(mydata->fichier, "%d%d%d%d%d%d%d%d\n",mydata->genome[0],mydata->genome[1],mydata->genome[2],mydata->genome[3],mydata->genome[4],mydata->genome[5],mydata->genome[6],mydata->genome[7] );
 		}
-     
+
 		mydata->ecrire=0;
 	}
 if (kilo_ticks%SECONDE==1){
 	mydata->ecrire=1;
 }
 
-	if (kilo_uid==IDFOOD){
-	set_color(RGB(1,0,0));
-	 	emission();
-		return;
-	}
+	// if (kilo_uid==IDFOOD){
+	// set_color(RGB(1,0,0));
+	//  	emission();
+	// 	return;
+	// }
 	if(kilo_ticks>mydata->time_update_fitness+SECONDE/4){
 		update_fitness();
 		mydata->time_update_fitness=kilo_ticks;
