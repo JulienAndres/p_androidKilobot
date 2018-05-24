@@ -94,7 +94,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {5.2.1}Nombre de morts}{17}{subsubsection.5.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.2.2}Survivabilit\IeC {\'e} d'un g\IeC {\'e}nome.}{17}{subsubsection.5.2.2}
+\contentsline {subsubsection}{\numberline {5.2.2}Survivabilit\IeC {\'e} d'un g\IeC {\'e}nome}{17}{subsubsection.5.2.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {5.2.3}Comparaison avec exp\IeC {\'e}rience t\IeC {\'e}moin}{17}{subsubsection.5.2.3}
 \defcounter {refsection}{0}\relax 

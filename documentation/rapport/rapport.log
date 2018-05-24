@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.5.13)  24 MAY 2018 20:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.5.13)  24 MAY 2018 22:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1745,25 +1745,55 @@ Overfull \hbox (19.63388pt too wide) in paragraph at lines 583--584
  [][] 
  []
 
-[17 <../../script_results/mEDEA_1_with_0.png>] [18] [19]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 596.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 596.
+
+<../../script_results/parent_origine_medea_full.png, id=386, 387.4475pt x 281.0
+5pt>
+File: ../../script_results/parent_origine_medea_full.png Graphic file (type png
+)
+ <use ../../script_results/parent_origine_medea_full.png>
+Package pdftex.def Info: ../../script_results/parent_origine_medea_full.png use
+d on input line 591.
+(pdftex.def)             Requested size: 215.96075pt x 156.65787pt.
+
+Overfull \hbox (19.63388pt too wide) in paragraph at lines 591--592
+ [][] 
+ []
+
+
+<../../script_results/parent_origine_medea_zoom.png, id=387, 387.4475pt x 281.0
+5pt>
+File: ../../script_results/parent_origine_medea_zoom.png Graphic file (type png
+)
+ <use ../../script_results/parent_origine_medea_zoom.png>
+Package pdftex.def Info: ../../script_results/parent_origine_medea_zoom.png use
+d on input line 597.
+(pdftex.def)             Requested size: 215.96075pt x 156.65787pt.
+
+Overfull \hbox (19.63388pt too wide) in paragraph at lines 597--598
+ [][] 
+ []
+
+[17 <../../script_results/mEDEA_1_with_0.png> <../../script_results/parent_orig
+ine_medea_full.png> <../../script_results/parent_origine_medea_zoom.png>]
+[18] [19]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 609.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 609.
  (./rapport.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 596.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 596.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 609.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 609.
 Package rerunfilecheck Info: File `rapport.out' has not changed.
-(rerunfilecheck)             Checksum: 681DE90317029BA3D6F0ECF8BD7E880A;2174.
+(rerunfilecheck)             Checksum: 5D77038F73801834337D5A1BC5709D0F;2173.
 Package logreq Info: Writing requests to 'rapport.run.xml'.
 \openout1 = `rapport.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 596.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 609.
  )
 (\end occurred when \iftrue on line 110 was incomplete) 
 Here is how much of TeX's memory you used:
- 25749 strings out of 493029
- 475403 string characters out of 6136234
+ 25761 strings out of 493029
+ 475917 string characters out of 6136234
  844902 words of memory out of 5000000
- 28699 multiletter control sequences out of 15000+600000
+ 28707 multiletter control sequences out of 15000+600000
  17570 words of font info for 39 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,11n,72p,913b,1521s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1784,10 +1814,10 @@ super/sfrm0500.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0700.pfb><
 /usr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf/fon
 ts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-s
 uper/sfti1000.pfb>
-Output written on rapport.pdf (20 pages, 10526128 bytes).
+Output written on rapport.pdf (20 pages, 10561150 bytes).
 PDF statistics:
- 495 PDF objects out of 1000 (max. 8388607)
- 410 compressed objects within 5 object streams
- 141 named destinations out of 1000 (max. 500000)
- 394 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 501 PDF objects out of 1000 (max. 8388607)
+ 412 compressed objects within 5 object streams
+ 143 named destinations out of 1000 (max. 500000)
+ 404 words of extra memory for PDF output out of 10000 (max. 10000000)
 
