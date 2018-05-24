@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.5.13)  24 MAY 2018 18:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.5.13)  24 MAY 2018 20:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1326,14 +1326,14 @@ Package biblatex Info: ... file 'rapport.bbl' found.
 Package biblatex Info: Reference section=0 on input line 110.
 Package biblatex Info: Reference segment=0 on input line 110.
 \c@lstlisting=\count339
- <incl/logo_sorbonne.jpg, id=123, 212.4738pt x 85.2786pt>
+ <incl/logo_sorbonne.jpg, id=135, 212.4738pt x 85.2786pt>
 File: incl/logo_sorbonne.jpg Graphic file (type jpg)
 
 <use incl/logo_sorbonne.jpg>
 Package pdftex.def Info: incl/logo_sorbonne.jpg used on input line 114.
 (pdftex.def)             Requested size: 212.47327pt x 85.27837pt.
 
-<incl/Kilobots.png, id=124, 218.8175pt x 365.365pt>
+<incl/Kilobots.png, id=136, 218.8175pt x 365.365pt>
 File: incl/Kilobots.png Graphic file (type png)
  <use incl/Kilobots.png>
 Package pdftex.def Info: incl/Kilobots.png used on input line 127.
@@ -1357,7 +1357,7 @@ Overfull \hbox (1.47058pt too wide) in paragraph at lines 147--148
 /cmr/m/it/10 embodied evo-lu-tion\T1/cmr/m/n/10 , ce type d'algorithme
  []
 
-[2] <incl/kilobot-closeup-overview.jpg, id=178, 642.4pt x 246.9225pt>
+[2] <incl/kilobot-closeup-overview.jpg, id=193, 642.4pt x 246.9225pt>
 File: incl/kilobot-closeup-overview.jpg Graphic file (type jpg)
 
 <use incl/kilobot-closeup-overview.jpg>
@@ -1365,7 +1365,7 @@ Package pdftex.def Info: incl/kilobot-closeup-overview.jpg used on input line 1
 57.
 (pdftex.def)             Requested size: 341.43437pt x 131.24129pt.
 
-<../../script_results/bloc_actif_max.jpg, id=179, 4652.38126pt x 2619.7875pt>
+<../../script_results/bloc_actif_max.jpg, id=194, 4652.38126pt x 2619.7875pt>
 File: ../../script_results/bloc_actif_max.jpg Graphic file (type jpg)
 
 <use ../../script_results/bloc_actif_max.jpg>
@@ -1377,7 +1377,7 @@ Overfull \hbox (19.63388pt too wide) in paragraph at lines 168--169
  [][] 
  []
 
-<../../script_results/bloc_actif_min.jpg, id=180, 4657.4pt x 2619.7875pt>
+<../../script_results/bloc_actif_min.jpg, id=195, 4657.4pt x 2619.7875pt>
 File: ../../script_results/bloc_actif_min.jpg Graphic file (type jpg)
 
 <use ../../script_results/bloc_actif_min.jpg>
@@ -1389,7 +1389,7 @@ Overfull \hbox (19.63388pt too wide) in paragraph at lines 174--175
  [][] 
  []
 
-<../../script_results/arene.png, id=181, 685.56125pt x 916.42375pt>
+<../../script_results/arene.png, id=196, 685.56125pt x 916.42375pt>
 File: ../../script_results/arene.png Graphic file (type png)
 
 <use ../../script_results/arene.png>
@@ -1403,7 +1403,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 181--189
 
 [3 <./incl/kilobot-closeup-overview.jpg> <../../script_results/bloc_actif_max.j
 pg> <../../script_results/bloc_actif_min.jpg>]
-<../../script_results/gradient2-sim.png, id=193, 995.72pt x 441.65pt>
+<../../script_results/gradient2-sim.png, id=208, 995.72pt x 441.65pt>
 File: ../../script_results/gradient2-sim.png Graphic file (type png)
 
 <use ../../script_results/gradient2-sim.png>
@@ -1416,7 +1416,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 206--207
  []
 
 [5]
-<../../script_results/start_groupe_real.png, id=210, 999.735pt x 678.535pt>
+<../../script_results/start_groupe_real.png, id=225, 999.735pt x 678.535pt>
 File: ../../script_results/start_groupe_real.png Graphic file (type png)
 
 <use ../../script_results/start_groupe_real.png>
@@ -1429,7 +1429,7 @@ Overfull \hbox (19.63388pt too wide) in paragraph at lines 236--237
  []
 
 
-<../../script_results/start_eparpille_real.png, id=211, 1453.43pt x 903.375pt>
+<../../script_results/start_eparpille_real.png, id=226, 1453.43pt x 903.375pt>
 File: ../../script_results/start_eparpille_real.png Graphic file (type png)
 
 <use ../../script_results/start_eparpille_real.png>
@@ -1442,7 +1442,7 @@ Overfull \hbox (19.63388pt too wide) in paragraph at lines 242--243
  []
 
 
-<../../script_results/Couverture_taille_cluster_groupe.png, id=212, 393.47pt x 
+<../../script_results/Couverture_taille_cluster_groupe.png, id=227, 393.47pt x 
 264.99pt>
 File: ../../script_results/Couverture_taille_cluster_groupe.png Graphic file (t
 ype png)
@@ -1456,7 +1456,7 @@ Overfull \hbox (19.63388pt too wide) in paragraph at lines 254--255
  []
 
 
-<../../script_results/Couverture_average_robot_groupe.png, id=213, 399.4925pt x
+<../../script_results/Couverture_average_robot_groupe.png, id=228, 399.4925pt x
  264.99pt>
 File: ../../script_results/Couverture_average_robot_groupe.png Graphic file (ty
 pe png)
@@ -1470,7 +1470,7 @@ Overfull \hbox (19.63388pt too wide) in paragraph at lines 260--261
  []
 
 
-<../../script_results/Couverture_loss_kilobot_groupe.png, id=214, 396.48125pt x
+<../../script_results/Couverture_loss_kilobot_groupe.png, id=229, 396.48125pt x
  264.99pt>
 File: ../../script_results/Couverture_loss_kilobot_groupe.png Graphic file (typ
 e png)
@@ -1487,7 +1487,7 @@ Overfull \hbox (19.63388pt too wide) in paragraph at lines 268--269
 rpille_real.png> <../../script_results/Couverture_taille_cluster_groupe.png> <.
 ./../script_results/Couverture_average_robot_groupe.png> <../../script_results/
 Couverture_loss_kilobot_groupe.png>]
-<../../script_results/Couverture_average_robot.png, id=228, 462.528pt x 346.896
+<../../script_results/Couverture_average_robot.png, id=243, 462.528pt x 346.896
 pt>
 File: ../../script_results/Couverture_average_robot.png Graphic file (type png)
 
@@ -1501,7 +1501,7 @@ Overfull \hbox (19.63388pt too wide) in paragraph at lines 277--278
  []
 
 
-<../../script_results/Couverture_taille_cluster.png, id=229, 462.528pt x 346.89
+<../../script_results/Couverture_taille_cluster.png, id=244, 462.528pt x 346.89
 6pt>
 File: ../../script_results/Couverture_taille_cluster.png Graphic file (type png
 )
@@ -1515,7 +1515,7 @@ Overfull \hbox (19.63388pt too wide) in paragraph at lines 283--284
  []
 
 
-<../../script_results/Couverture_loss_kilobot.png, id=230, 462.528pt x 346.896p
+<../../script_results/Couverture_loss_kilobot.png, id=245, 462.528pt x 346.896p
 t>
 File: ../../script_results/Couverture_loss_kilobot.png Graphic file (type png)
  <use ../../script_results/Couverture_loss_kilobot.png>
@@ -1558,7 +1558,7 @@ gner le robot du groupe auquel il était agrégé précédem-
  []
 
 [10]
-<../../script_results/Agregation_naive_loss.png, id=264, 462.528pt x 346.896pt>
+<../../script_results/Agregation_naive_loss.png, id=279, 462.528pt x 346.896pt>
 File: ../../script_results/Agregation_naive_loss.png Graphic file (type png)
 <use ../../script_results/Agregation_naive_loss.png>
 Package pdftex.def Info: ../../script_results/Agregation_naive_loss.png used on
@@ -1570,7 +1570,7 @@ Overfull \hbox (19.63388pt too wide) in paragraph at lines 367--368
  []
 
 
-<../../script_results/Resultats_aggreg_naive.jpg, id=265, 4175.6pt x 3131.7pt>
+<../../script_results/Resultats_aggreg_naive.jpg, id=280, 4175.6pt x 3131.7pt>
 File: ../../script_results/Resultats_aggreg_naive.jpg Graphic file (type jpg)
 
 <use ../../script_results/Resultats_aggreg_naive.jpg>
@@ -1595,7 +1595,7 @@ la prob-a-bil-ité con-stante pro-posé par O.Soyal et E.Sahin
  []
 
 
-<../../script_results/Agregation_nombre_clusters.png, id=273, 440.64626pt x 265
+<../../script_results/Agregation_nombre_clusters.png, id=288, 440.64626pt x 265
 .99374pt>
 File: ../../script_results/Agregation_nombre_clusters.png Graphic file (type pn
 g)
@@ -1609,7 +1609,7 @@ Overfull \hbox (19.63388pt too wide) in paragraph at lines 405--406
  []
 
 
-<../../script_results/Agregation_taille_cluster.png, id=274, 411.5375pt x 265.9
+<../../script_results/Agregation_taille_cluster.png, id=289, 411.5375pt x 265.9
 9374pt>
 File: ../../script_results/Agregation_taille_cluster.png Graphic file (type png
 )
@@ -1623,7 +1623,7 @@ Overfull \hbox (19.63388pt too wide) in paragraph at lines 411--412
  []
 
 
-<../../script_results/Agregation_nombre_lost.png, id=275, 462.528pt x 346.896pt
+<../../script_results/Agregation_nombre_lost.png, id=290, 462.528pt x 346.896pt
 >
 File: ../../script_results/Agregation_nombre_lost.png Graphic file (type png)
  <use ../../script_results/Agregation_nombre_lost.png>
@@ -1636,7 +1636,7 @@ Overfull \hbox (19.63388pt too wide) in paragraph at lines 420--421
  []
 
 
-<../../script_results/Resultats_aggregation_proba.jpg, id=276, 4172.58875pt x 2
+<../../script_results/Resultats_aggregation_proba.jpg, id=291, 4172.58875pt x 2
 575.6225pt>
 File: ../../script_results/Resultats_aggregation_proba.jpg Graphic file (type j
 pg)
@@ -1660,7 +1660,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 433--435
 
 [13 <../../script_results/Agregation_nombre_lost.png> <../../script_results/Res
 ultats_aggregation_proba.jpg>]
-<../../script_results/Agregation_nombre_clusters_big_cluster.png, id=301, 422.5
+<../../script_results/Agregation_nombre_clusters_big_cluster.png, id=317, 422.5
 7875pt x 279.0425pt>
 File: ../../script_results/Agregation_nombre_clusters_big_cluster.png Graphic f
 ile (type png)
@@ -1680,7 +1680,7 @@ Underfull \hbox (badness 7631) in paragraph at lines 442--442
  []
 
 
-<../../script_results/Agregation_taille_big_cluster.png, id=302, 400.49625pt x 
+<../../script_results/Agregation_taille_big_cluster.png, id=318, 400.49625pt x 
 279.0425pt>
 File: ../../script_results/Agregation_taille_big_cluster.png Graphic file (type
  png)
@@ -1694,7 +1694,7 @@ Overfull \hbox (19.63388pt too wide) in paragraph at lines 447--448
  []
 
 
-<../../script_results/Agregation_loss_kilobot_big_cluster.png, id=303, 398.4887
+<../../script_results/Agregation_loss_kilobot_big_cluster.png, id=319, 398.4887
 5pt x 279.0425pt>
 File: ../../script_results/Agregation_loss_kilobot_big_cluster.png Graphic file
  (type png)
@@ -1733,25 +1733,37 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 LaTeX Warning: Command \` invalid in math mode on input line 573.
 
 Missing character: There is no è in font cmr7!
-[16] [17]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 584.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 584.
+[16] <../../script_results/mEDEA_1_with_0.png, id=385, 393.47pt x 266.9975pt>
+File: ../../script_results/mEDEA_1_with_0.png Graphic file (type png)
+
+<use ../../script_results/mEDEA_1_with_0.png>
+Package pdftex.def Info: ../../script_results/mEDEA_1_with_0.png used on input 
+line 583.
+(pdftex.def)             Requested size: 215.96075pt x 146.5435pt.
+
+Overfull \hbox (19.63388pt too wide) in paragraph at lines 583--584
+ [][] 
+ []
+
+[17 <../../script_results/mEDEA_1_with_0.png>] [18] [19]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 596.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 596.
  (./rapport.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 584.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 584.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 596.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 596.
 Package rerunfilecheck Info: File `rapport.out' has not changed.
-(rerunfilecheck)             Checksum: 07CB19BA31BFAA3D8EBF6B42C110F95E;1906.
+(rerunfilecheck)             Checksum: 681DE90317029BA3D6F0ECF8BD7E880A;2174.
 Package logreq Info: Writing requests to 'rapport.run.xml'.
 \openout1 = `rapport.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 584.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 596.
  )
 (\end occurred when \iftrue on line 110 was incomplete) 
 Here is how much of TeX's memory you used:
- 25735 strings out of 493029
- 475067 string characters out of 6136234
+ 25749 strings out of 493029
+ 475403 string characters out of 6136234
  844902 words of memory out of 5000000
- 28692 multiletter control sequences out of 15000+600000
+ 28699 multiletter control sequences out of 15000+600000
  17570 words of font info for 39 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,11n,72p,913b,1521s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1772,10 +1784,10 @@ super/sfrm0500.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0700.pfb><
 /usr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf/fon
 ts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-s
 uper/sfti1000.pfb>
-Output written on rapport.pdf (18 pages, 10508672 bytes).
+Output written on rapport.pdf (20 pages, 10526128 bytes).
 PDF statistics:
- 466 PDF objects out of 1000 (max. 8388607)
- 386 compressed objects within 4 object streams
- 135 named destinations out of 1000 (max. 500000)
- 365 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 495 PDF objects out of 1000 (max. 8388607)
+ 410 compressed objects within 5 object streams
+ 141 named destinations out of 1000 (max. 500000)
+ 394 words of extra memory for PDF output out of 10000 (max. 10000000)
 

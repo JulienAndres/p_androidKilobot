@@ -163,7 +163,7 @@ void update_from_message(){
 			mydata->genome_list[i].fitness=mydata->message.data[8];
 			// printf("fitness recu : %d\n",mydata->genome_list[i].fitness );
 
-
+			mydata->genome_list[i].parent=mydata->message.data[7]; //parent du génome actuel
 			// for(j=0;j<GENOMEPARAM;j++){
 			// 	printf("%d ",mydata->genome_list[i].genome[j]);
 			// }
@@ -217,10 +217,11 @@ void setup_message(){
 	int tmp1=100*(mydata->genome[0])+10*(mydata->genome[1])+mydata->genome[2];
 	int tmp2=100*(mydata->genome[3])+10*(mydata->genome[4])+mydata->genome[5];
 	int tmp3=100*(mydata->genome[6])+10*(mydata->genome[7]);
-	mydata->msg_transmis.data[1]=tmp1;
-	mydata->msg_transmis.data[2]=tmp2;
-	mydata->msg_transmis.data[3]=tmp3;
-	mydata->msg_transmis.data[8]=fitness();
+	mydata->msg_transmis.data[1]=tmp1;//transmition genome
+	mydata->msg_transmis.data[2]=tmp2;//transmition genome
+	mydata->msg_transmis.data[3]=tmp3;//transmition genome
+	mydata->msg_transmis.data[7]=mydata->parent;//transmition parent
+	mydata->msg_transmis.data[8]=fitness();//transmition fitness
 
 	i=0;
 	for(i=0;i<9;i++){

@@ -7,13 +7,15 @@
     #define MAXROBOT 100
     #define TIMEUPDATE 40
     #define IDFOOD 0
-    #define PROBA_MUTATION 0.67
+    #define PROBA_MUTATION 0
 
 void setup();
 void genome_alea();
 void loop();
 int main();
 int fitness();
+
+void do_stats();
 
 int16_t callback_obstacles(double x, double y, double *m1, double *m2);
 char *botinfo(void);
@@ -31,10 +33,12 @@ typedef struct{
   uint8_t genome[GENOMEPARAM];
   uint8_t id;
   uint8_t fitness;
+  uint32_t parent;//départ du genome
 }Genome_t;
 
     typedef struct
     {
+
       uint8_t state;
       uint32_t nb_voisins;
       Neighbor_t voisins_liste[MAXVOISIN];
@@ -58,6 +62,7 @@ typedef struct{
       uint8_t broadcast;
       uint8_t message_sent;
       int genome[GENOMEPARAM];
+      uint32_t parent;
       uint16_t nb_genome;
       Genome_t genome_list[MAXROBOT];
       uint32_t last_genome_update;
@@ -65,6 +70,8 @@ typedef struct{
       uint8_t dead;
       uint32_t last_allowed;
 
+      FILE* fichier;
+      uint8_t ecrire;
 
     } USERDATA;
 

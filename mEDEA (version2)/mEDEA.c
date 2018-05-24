@@ -5,6 +5,8 @@
 #include "communication.h"
 #include "movement.h"
 
+#include "stdlib.h"
+#include <string.h>
 /*
 TODO :
 Rajouter un timer en mode repelling ? (genre 10s pour eveiter de faire n imp)
@@ -55,12 +57,22 @@ i=0;
 for(i=1;i<9;i++){
 	mydata->msg_transmis.data[i]=0;
 }
+mydata->parent=kilo_uid;
 
 genome_alea();
 	set_motion(STRAIGHT);
 
 
 	mydata->time_update_fitness=0;
+	char nu[3];
+	snprintf(nu,3,"%d",kilo_uid);
+	// itoa(kilo_uid,nu,10);
+	char name[20]="stats_robot/";
+	strcat(name,nu);
+	// printf("%s\n",name );
+	// name=""
+	 mydata->fichier=fopen(name,"w");
+	 mydata->ecrire=1;
 }
 
 void genome_alea(){
@@ -99,6 +111,7 @@ void genome_alea(){
 			mydata->genome[i]=mydata->genome_list[best_indice].genome[i];
 			// printf("%d ",mydata->genome[i] );
 		}
+		mydata->parent=mydata->genome_list[best_indice].parent;
 		// printf("apres mutation\n" );
 
 		//mutation
@@ -127,6 +140,7 @@ void genome_alea(){
 }
 
 int fitness(){
+
 	int i;
 	int fit=0;
 	for (i=0;i<TIMEUPDATE;i++){
@@ -142,6 +156,8 @@ int fitness(){
 
 
 
+
+
 void loop() {
 	//52 loop par secondes sur simulateur
 //TEST
@@ -153,8 +169,15 @@ void loop() {
 // }else{
 // 	mydata->test2++;
 // }
+	if (kilo_ticks%(60*SECONDE)==0 && mydata->ecrire==1){
+		// fprintf(mydata->fichier, "%d\n",mydata->dead );
+		fprintf(mydata->fichier, "%d\n",mydata->parent );
 
-
+		mydata->ecrire=0;
+	}
+if (kilo_ticks%SECONDE==1){
+	mydata->ecrire=1;
+}
 
 	if (kilo_uid==IDFOOD){
 	set_color(RGB(1,0,0));
@@ -164,7 +187,7 @@ void loop() {
 	if(kilo_ticks>mydata->time_update_fitness+SECONDE/4){
 		update_fitness();
 		mydata->time_update_fitness=kilo_ticks;
-		printf("%d \n",mydata->last_update_fitness );
+		// printf("%d \n",mydata->last_update_fitness );
 	}
 
 	update_voisins();
@@ -213,6 +236,13 @@ Initialise callback et lance la main loop
     return 0;
 }
 #ifdef SIMULATOR
+
+
+void do_stats(char * path){
+
+}
+
+
 static char botinfo_buffer[10000000];
 // provide a text string for the status bar, about this bot
 char *botinfo(void)
@@ -222,8 +252,8 @@ char *botinfo(void)
   p+= sprintf (p, "ID: %d \n", kilo_uid);
 
   // p+= sprintf (p, "move: %d wait:%d turn:%d\n", mydata->move, mydata->wait, mydata->turn);
-  p+= sprintf (p, "genome: [%d,%d,%d,%d,%d,%d,%d,%d]  fitness: %d ",
-	       mydata->genome[0],mydata->genome[1],mydata->genome[2],mydata->genome[3],mydata->genome[4],mydata->genome[5],mydata->genome[6],mydata->genome[7],fitness() );
+  p+= sprintf (p, "genome: [%d,%d,%d,%d,%d,%d,%d,%d]  fitness: %d parent:%d ",
+	       mydata->genome[0],mydata->genome[1],mydata->genome[2],mydata->genome[3],mydata->genome[4],mydata->genome[5],mydata->genome[6],mydata->genome[7],fitness(),mydata->parent );
 
   p += sprintf (p, "%d neighbors: \n", mydata->nb_voisins);
 	p+= sprintf(p,"%d genomes : ",mydata->nb_genome);
@@ -235,7 +265,7 @@ char *botinfo(void)
   return botinfo_buffer;
 }
 
-#define MUR 750
+#define MUR 500
 
 int16_t callback_obstacles(double x, double y, double *m1, double *m2){
     if (x > MUR || x< -MUR || y>MUR|| y<-MUR){
@@ -253,6 +283,7 @@ int16_t callback_obstacles(double x, double y, double *m1, double *m2){
 }
 
 json_t *json_state(){
+	fclose(mydata->fichier);
     //create the state object we return
     json_t* state = json_object();
 //stats genome
@@ -284,6 +315,6 @@ json_t *json_state(){
     json_object_set (state, "states", g);
 
     return state;
-}
+}}
 
 #endif

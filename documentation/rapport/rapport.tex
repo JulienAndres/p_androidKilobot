@@ -377,7 +377,7 @@ Un Kilobot n'ayant pas de capteur de proximité, il lui est impossible de détec
 On remarque ici que plus la distance maximale d'agrégation est grande, mois il y a de robots perdu. En effet, ces derniers ayant une distance plus grande pour entrer en attente, ils ont moins de temps d'approche, et donc moins de chance de se perdre lors de cette approche.\\
 Lors des expériences, on remarque que les Kilobots se regroupent en chaines et non en agglomérat. De plus, on remarque que les robots perdus sur les cotés de l'arène ont peut de chance de se sortir de cette bordure. En effet, les robots adjacent les pousse et les empêche de se libérer.
 \newpage
-\subsubsection{Agrégation probabiliste - Analyse Probabilité}
+\subsubsection{Agrégation probabiliste - Analyse Probabilités}
 Cet algorithme se base sur la probabilité d'un robot de quitter son groupe afin de trouver potentiellement un nouveau groupe composé de plus d'individus (et donc plus intéressant). Le paramètre important de cet algorithme est donc le calcul de cette probabilité. Nous avons ici testé trois différentes façon de calculer cette probabilité.
 \paragraph{Probabilité constante} Nous utilisons ici la probabilité constante proposé par O.Soyal et E.Sahin comme étant celle pour laquelle ils ont obtenu les meilleurs résultats.
 \begin{center}
@@ -571,12 +571,24 @@ Notre fitness est ici calculé sur les 40 dernière demi-secondes. Elle est mise
 	\caption{Mutation}
 \end{figure}
 \\ Après la décision d'une mutation sur le génome, nous avons décidé de mettre une probabilité fixe de $\frac{1}{nombre de gènes}$ par gène. Cela permettant d'avoir en moyenne un seul gène changé par mutation afin de ne pas avoir un génome changeant drastiquement d'une génération à une autre.
-
+\newpage
 
 
 \subsection{Résultats}
+\subsubsection{Nombre de morts}
+\begin{figure}[h]
+	\centering
+	\begin{minipage}[c]{.46\linewidth}
+		\centering
+		\includegraphics[width=1.1\linewidth]{../../script_results/mEDEA_1_with_0.png}
+		\caption{Nombre de robots mort en fonction du temps}
+	\end{minipage}
+\end{figure}
+\subsubsection{Survivabilité d'un génome.}
+\subsubsection{Comparaison avec expérience témoin}
 \newpage
 \section{Conclusion}
+\newpage
 \section{Bibliographie}
 
 \printbibliography
