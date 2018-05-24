@@ -2,14 +2,14 @@
   "bot_states": [
     {
       "ID": 0,
-      "direction": 0.94483076755964479,
+      "direction": 5.9929689502519903,
       "state": {
         "states": "SLEEPING"
       },
-      "x_position": -429.37378023098796,
-      "y_position": -94.838625345816467
+      "x_position": -366.80259746141877,
+      "y_position": -160.74921761568254
     },
     {
       "ID": 1,
-      "direction": -19.829937193744112,
+      "direction": -30.624751858605435,
       "state": 

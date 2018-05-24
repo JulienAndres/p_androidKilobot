@@ -178,9 +178,9 @@ void loop() {
 		if(mydata->dead){
 			fprintf(mydata->fichier, "%d\n",-1 );
 		}else{
-			fprintf(mydata->fichier, "%s\n",mydata->genome );
+			fprintf(mydata->fichier, "%d%d%d%d%d%d%d%d\n",mydata->genome[0],mydata->genome[1],mydata->genome[2],mydata->genome[3],mydata->genome[4],mydata->genome[5],mydata->genome[6],mydata->genome[7] );
 		}
-
+     
 		mydata->ecrire=0;
 	}
 if (kilo_ticks%SECONDE==1){
