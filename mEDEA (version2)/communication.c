@@ -161,7 +161,7 @@ void update_from_message(){
 			mydata->genome_list[i].genome[7]=mydata->message.data[3]/10;
 
 			mydata->genome_list[i].fitness=mydata->message.data[8];
-			printf("fitness recu : %d\n",mydata->genome_list[i].fitness );
+			// printf("fitness recu : %d\n",mydata->genome_list[i].fitness );
 
 
 			// for(j=0;j<GENOMEPARAM;j++){
@@ -238,7 +238,7 @@ void setup_message_fitness(){
 	mydata->broadcast=0;//ne pas transmettre quand on change le message
 
 	mydata->msg_transmis.data[8]=fitness();
-	if(kilo_uid!=IDFOOD) printf("fit setup message %d\n",mydata->msg_transmis.data[8] );
+	// if(kilo_uid!=IDFOOD) printf("fit setup message %d\n",mydata->msg_transmis.data[8] );
 	mydata->msg_transmis.crc = message_crc(&mydata->msg_transmis);
 
 	mydata->broadcast=1;

@@ -144,6 +144,7 @@ L'agrégation est un comportement de base des essaims. Il permet aux organismes 
 \subsection{Algorithmes génétiques en ligne}
 L'objectif de ces algorithmes est d'arriver, à partir d'un génome aléatoire définissant un comportement d'un robot, à un comportement permettant au robot de survivre dans son environnement. L'aspect \textit{en-ligne} de l'algorithme représente la distribution du code sur l'ensemble des robots. ??? ajouter apprentissage ensemble ??
 \subsection{Problématique}
+L'objectif de ce projet est de tester le dispositif expérimental en implémentant des comportements simples d'agrégation et de couverture ainsi qu'un comportement plus évolué d'agrégation. \\Dans un second temps, nous étudierons un algorithme dit d'\textit{embodied evolution}, ce type d'algorithme distribué est plus léger et permet de converger vers des comportements opérant un compromis entre survie (proximité d'un point de recharge) et diffusion du jeu de paramètres (permettant à l'essaim une plus grande chance de survie collective)
 \newpage
 \section{Matériel utilisé}
 \subsection{Kilobot}
@@ -177,17 +178,24 @@ Le bloc actif a été développé par l'ISIR dans le cadre de la recherche sur K
 \\
 Les robots devant êtres vraiment trop collés au bloc pour recevoir le signal en intensité minimale, nous utiliserons dans toutes les expériences l'intensité maximale du bloc actif.
 \subsection{Arène}
-Les algorithmes ont été testé sur un essaim de 70 robots, fournit par le laboratoire de rechercher ISIR. L'arène utilisé pour l'étude des algorithme faisait 1x2 mètres.\\
-PHOTO ARENE
+Les algorithmes ont été testé sur un essaim de 70 robots, fournit par le laboratoire de rechercher ISIR. L'arène utilisé pour l'étude des algorithme faisait 1x1.5 mètres.\\
+\begin{figure}[h]
+	\begin{center}
+		\centering
+		\includegraphics[scale=0.4,angle=-90]{../../script_results/arene.png}
+		\caption{Modélisation  d'un gradient sur simulateur}
+	\end{center}
+\end{figure} \\
+
 \subsection{Simulateur}
 Afin de faciliter le développement et l'étude des algorithmes, le simulateur Kilombo \cite{jansson_kilombo:_2015} a été utilisé. Il inclut l'API kilolib et permet ainsi une compatibilité direct du code entre le simulateur et l'essaim de robots.
-\begin{figure}[h]
+\begin{figure}[h!]
 	\begin{center}
 		\centering
 		\includegraphics[width=0.8\linewidth]{../../script_results/gradient2-sim.png}
 		\caption{Modélisation  d'un gradient sur simulateur}
 	\end{center}
-\end{figure} \\
+\end{figure} 
 \newpage
 \section{Couverture}
 \subsection{Algorithme}
@@ -220,16 +228,18 @@ Il est composé de 3 comportements basique : L'éloignement (\textit{repel}), le
 \subsection{Résultats}
 Deux positions de départ sont possible pour l'essaim de Kilobot pour le problème de couverture. Nous pouvons partir d'un essaim regroupé en un groupe compact ou d'un essaim éparpillé sur l'ensemble de l'environnement.
 Nous étudions ici le comportement de l'essaim en fonction de la distance minimale demandé entre chaque robot.
+
+
 \begin{figure}[h]
 	\begin{minipage}[c]{.46\linewidth}
 		\centering
-		\includegraphics[width=1.1\linewidth]{../../script_results/start_groupe.png}
+		\includegraphics[width=1.1\linewidth]{../../script_results/start_groupe_real.png}
 		\caption{Commencement groupé}
 	\end{minipage}
 	\hfill%
 	\begin{minipage}[c]{.46\linewidth}
 		\centering
-		\includegraphics[width=1.1\linewidth]{../../script_results/start_eparpille.png}
+		\includegraphics[width=1.1\linewidth]{../../script_results/start_eparpille_real.png}
 		\caption{Commencement éparpillé}
 	\end{minipage}
 \end{figure}
@@ -351,6 +361,22 @@ Un Kilobot n'ayant pas de capteur de proximité, il lui est impossible de détec
 \newpage
 \subsection{Résultats}
 \subsubsection{Agrégation naïve}
+\begin{figure}[h]
+	\begin{minipage}[c]{.46\linewidth}
+		\centering
+		\includegraphics[width=1.1\linewidth]{../../script_results/Agregation_naive_loss}
+		\caption{Nombre de robots perdu selon la distance maximum d'agrégation}
+	\end{minipage}
+	\hfill%
+	\begin{minipage}[c]{.46\linewidth}
+		\centering
+		\includegraphics[width=1.1\linewidth]{../../script_results/Resultats_aggreg_naive.jpg}
+		\caption{Photo fin d'expérience d'agrégation naïve}
+	\end{minipage}
+\end{figure}
+On remarque ici que plus la distance maximale d'agrégation est grande, mois il y a de robots perdu. En effet, ces derniers ayant une distance plus grande pour entrer en attente, ils ont moins de temps d'approche, et donc moins de chance de se perdre lors de cette approche.\\
+Lors des expériences, on remarque que les Kilobots se regroupent en chaines et non en agglomérat. De plus, on remarque que les robots perdus sur les cotés de l'arène ont peut de chance de se sortir de cette bordure. En effet, les robots adjacent les pousse et les empêche de se libérer.
+\newpage
 \subsubsection{Agrégation probabiliste - Analyse Probabilité}
 Cet algorithme se base sur la probabilité d'un robot de quitter son groupe afin de trouver potentiellement un nouveau groupe composé de plus d'individus (et donc plus intéressant). Le paramètre important de cet algorithme est donc le calcul de cette probabilité. Nous avons ici testé trois différentes façon de calculer cette probabilité.
 \paragraph{Probabilité constante} Nous utilisons ici la probabilité constante proposé par O.Soyal et E.Sahin comme étant celle pour laquelle ils ont obtenu les meilleurs résultats.
@@ -394,6 +420,12 @@ avec
 		\includegraphics[width=1.1\linewidth]{../../script_results/Agregation_nombre_lost.png}
 		\caption{Nombre de robots perdu selon probabilité}
 	\end{minipage}
+\hfill
+	\begin{minipage}[c]{.45\linewidth}
+	\centering
+	\includegraphics[width=1.1\linewidth]{../../script_results/Resultats_aggregation_proba.jpg}
+	\caption{Photo fin expérience agrégation linéaire}
+\end{minipage}
 \end{figure}
 \newpage
 %

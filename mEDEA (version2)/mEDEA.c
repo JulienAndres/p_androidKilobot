@@ -255,28 +255,31 @@ int16_t callback_obstacles(double x, double y, double *m1, double *m2){
 json_t *json_state(){
     //create the state object we return
     json_t* state = json_object();
+//stats genome
+    // char content[13];
+		// int i=0;
+		// for(i=0;i<8;i++){
+		// 	switch(mydata->genome[i]){
+		// 		case 0:
+		// 		content[i]='-1';
+		// 		break;
+		// 		case 1:
+		// 		content[i]='0';
+		// 		break;
+		// 		case 2:
+		// 		content[i]='1';
+		// 		break;
+		// 	}
+		// }
+		//  content[8]='_';
 
-    // store the gradient value
-    char content[13];
-		// sprintf(content,"%d,%d,%d,%d,%d,%d,%d,%d, %d",mydata->genome[0],mydata->genome[1],mydata->genome[2],mydata->genome[3],mydata->genome[4],mydata->genome[5],mydata->genome[6],mydata->genome[7],fitness());
-		int i=0;
-		for(i=0;i<8;i++){
-			switch(mydata->genome[i]){
-				case 0:
-				content[i]='-1';
-				break;
-				case 1:
-				content[i]='0';
-				break;
-				case 2:
-				content[i]='1';
-				break;
-			}
-		}
-		 content[8]='_';
-		// content[9]=fitness();
+		//stats loss
+		char *content;
+  	if (mydata->dead==1){
+			content="SEARCHING";
+		}else{
+			content="SLEEPING";
 
-		printf("%d\n",content[5] );
     json_t* g = json_string(content);
     json_object_set (state, "states", g);
 

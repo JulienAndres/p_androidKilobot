@@ -41,6 +41,31 @@ plt.subplot(111)
 #plt.title("Couverture - Nb max/moy/min Cluster - distance demande")
 #plt.show()
 
+## AGREGATION NAIVE
+ymoy=[52,48.25,46.75,45.5,32.5]
+ymin=[38,35,33,35,26]
+ymax=[64,65,51,56,40]
+x=[70,65,60,55,50]
+plt.scatter(x, ymoy,marker='o')
+plt.scatter(x, ymin,marker='_')
+plt.scatter(x, ymax,marker='_')
+plt.ylabel("taille moyenne cluster")
+plt.title("Couverture - taille max/moy/min cluster - distance minimale d'agregation")
+plt.show()
+
+
+
+ymoy=[18,20.75,21.5,24.5,34.6]
+ymin=[6,5,19,14,23]
+ymax=[29,35,35,47,44]
+x=[70,65,60,55,50]
+plt.scatter(x, ymoy,marker='o')
+plt.scatter(x, ymin,marker='_')
+plt.scatter(x, ymax,marker='_')
+plt.ylabel("Nombre de Kilobot perdu")
+plt.title("Couverture - loss max/moy/min Kilobot - distance minimale d'agregation")
+plt.show()
+
 ### AGREGATION
 ##avg_size
 #ymoy = [5.5, 21, 7.25] 
