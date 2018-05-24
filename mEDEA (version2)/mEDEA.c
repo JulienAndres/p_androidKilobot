@@ -93,7 +93,7 @@ void genome_alea(){
 
 			}
 		}
-		printf("%d best fit %d\n",kilo_uid,bestfit );
+		// printf("%d best fit %d\n",kilo_uid,bestfit );
 		i=0;
 		for (i=0;i<GENOMEPARAM; i++){
 			mydata->genome[i]=mydata->genome_list[best_indice].genome[i];
@@ -156,15 +156,15 @@ void loop() {
 
 
 
-	if (kilo_uid==IDFOOD){
-	set_color(RGB(1,0,0));
-	 	emission();
-		return;
-	}
+	// if (kilo_uid==IDFOOD){
+	// set_color(RGB(1,0,0));
+	//  	emission();
+	// 	return;
+	// }
 	if(kilo_ticks>mydata->time_update_fitness+SECONDE/4){
 		update_fitness();
 		mydata->time_update_fitness=kilo_ticks;
-		printf("%d \n",mydata->last_update_fitness );
+		// printf("%d \n",mydata->last_update_fitness );
 	}
 
 	update_voisins();
@@ -256,27 +256,35 @@ json_t *json_state(){
     //create the state object we return
     json_t* state = json_object();
 
-    // store the gradient value
-    char content[13];
-		// sprintf(content,"%d,%d,%d,%d,%d,%d,%d,%d, %d",mydata->genome[0],mydata->genome[1],mydata->genome[2],mydata->genome[3],mydata->genome[4],mydata->genome[5],mydata->genome[6],mydata->genome[7],fitness());
-		int i=0;
-		for(i=0;i<8;i++){
-			switch(mydata->genome[i]){
-				case 0:
-				content[i]='-1';
-				break;
-				case 1:
-				content[i]='0';
-				break;
-				case 2:
-				content[i]='1';
-				break;
-			}
-		}
-		 content[8]='_';
-		// content[9]=fitness();
 
-		printf("%d\n",content[5] );
+//stats genome
+    // char content[13];
+		// int i=0;
+		// for(i=0;i<8;i++){
+		// 	switch(mydata->genome[i]){
+		// 		case 0:
+		// 		content[i]='-1';
+		// 		break;
+		// 		case 1:
+		// 		content[i]='0';
+		// 		break;
+		// 		case 2:
+		// 		content[i]='1';
+		// 		break;
+		// 	}
+		// }
+		//  content[8]='_';
+		//
+
+//stats loss
+		char *content;
+  	if (mydata->dead==1){
+			content="SEARCHING";
+		}else{
+			content="SLEEPING";
+		}
+
+
     json_t* g = json_string(content);
     json_object_set (state, "states", g);
 
