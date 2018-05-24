@@ -160,26 +160,18 @@ int fitness(){
 void loop() {
 	//52 loop par secondes sur simulateur
 //TEST
-// if (kilo_ticks>mydata->test+SECONDE){
-// 	printf("1 SECONDE\n" );
-// 	printf("%d \n",mydata->test2 );
-// 	mydata->test2=0;
-// 	mydata->test=kilo_ticks;
-// }else{
-// 	mydata->test2++;
-// }
 	if (kilo_ticks%(60*SECONDE)==0 && mydata->ecrire==1){
-		// fprintf(mydata->fichier, "%d\n",mydata->dead );
+		fprintf(mydata->fichier, "%d\n",mydata->dead );
 		// if(mydata->dead){
 		// 	fprintf(mydata->fichier, "%d\n",-1 );
 		// }else{
 		// 	fprintf(mydata->fichier, "%d\n",mydata->parent );
 		// }
-		if(mydata->dead){
-			fprintf(mydata->fichier, "%d\n",-1 );
-		}else{
-			fprintf(mydata->fichier, "%d%d%d%d%d%d%d%d\n",mydata->genome[0],mydata->genome[1],mydata->genome[2],mydata->genome[3],mydata->genome[4],mydata->genome[5],mydata->genome[6],mydata->genome[7] );
-		}
+		// if(mydata->dead){
+		// 	fprintf(mydata->fichier, "%d\n",-1 );
+		// }else{
+		// 	fprintf(mydata->fichier, "%d%d%d%d%d%d%d%d\n",mydata->genome[0],mydata->genome[1],mydata->genome[2],mydata->genome[3],mydata->genome[4],mydata->genome[5],mydata->genome[6],mydata->genome[7] );
+		// }
 
 		mydata->ecrire=0;
 	}

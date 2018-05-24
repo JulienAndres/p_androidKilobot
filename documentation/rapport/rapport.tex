@@ -106,7 +106,7 @@
 
 \title{Robotique en essaim}
 \author{Andres Julien, Taylor Thomas}
-\date{}
+
 \begin{document}
 
 \begin{titlepage}
@@ -121,12 +121,14 @@
 
 Julien \textsc{Andres}\\ % Your name
 Thomas \textsc{Taylor}\\[3cm]
-Nicolas \textsc{Bredeche}\\[3cm]
+Nicolas \textsc{Bredeche}\\[2cm]
 
 
-\includegraphics[width=4cm]{incl/Kilobots.png}
+\includegraphics[width=4cm]{incl/Kilobots.png}\\[2cm]
 
 
+25 mai 2018\\
+Projet ANDROIDE
 
 \end{titlepage}
 
@@ -141,8 +143,8 @@ La robotique en essaim s'inspire d'observations d'insectes et d'animaux sociaux 
 La couverture est un problème fondamental dans la robotique en essaim. En effet, elle permet aux robots de se déployer dans un environnement inconnu ou dynamiques, tout en maintenant un contact entre eux. Ce problème se retrouve dans beaucoup de domaine, comme le sauvetage de personnes en milieu hostile ou inconnu.
 \subsection{Agrégation}
 L'agrégation est un comportement de base des essaims. Il permet aux organismes de faire face ensemble à un problème. Dans le domaine de la robotique en essaim, ce comportement permet a des robots dispersés dans un environnement de se regrouper en un ou plusieurs groupes.
-\subsection{Algorithmes génétiques en ligne}
-L'objectif de ces algorithmes est d'arriver, à partir d'un génome aléatoire définissant un comportement d'un robot, à un comportement permettant au robot de survivre dans son environnement. L'aspect \textit{en-ligne} de l'algorithme représente la distribution du code sur l'ensemble des robots. ??? ajouter apprentissage ensemble ??
+\subsection{Algorithmes d'embodied evolution}
+L'objectif de ces algorithmes est d'arriver, à partir d'un génome aléatoire définissant un comportement d'un robot, à un comportement permettant au robot de survivre dans son environnement. Chaque Kilobot communique son génome à ses voisins et adopte un des génomes qu'il a récupéré. Sur le long terme, cette sélection permet aux robots de s'adapter à leur environnement.
 \subsection{Problématique}
 L'objectif de ce projet est de tester le dispositif expérimental en implémentant des comportements simples d'agrégation et de couverture ainsi qu'un comportement plus évolué d'agrégation. \\Dans un second temps, nous étudierons un algorithme dit d'\textit{embodied evolution}, ce type d'algorithme distribué est plus léger et permet de converger vers des comportements opérant un compromis entre survie (proximité d'un point de recharge) et diffusion du jeu de paramètres (permettant à l'essaim une plus grande chance de survie collective)
 \newpage
@@ -584,6 +586,9 @@ Notre fitness est ici calculé sur les 40 dernière demi-secondes. Elle est mise
 		\caption{Nombre de robots mort par génération}
 	\end{minipage}
 \end{figure}
+Ces expériences ont été faites en environnement fini, avec une durée d'une heure. On remarque la grande différence entre le nombre de morts avec une probabilité de mutation de 0\% et une probabilité non nulle.\\
+En effet, les génomes ne mutant pas, une fois une configuration stable trouvé, les robots vont y rester. On observe en effet pendant l'expérience des agglomérats de robots, se transférant le même génome. Ce comportement est impossible dans le cas d'une possibilité de mutation. Un robot ayant une chance non nulle de partir de cette configuration.
+
 \subsubsection{Survivabilité d'un génome}
 \begin{figure}[h]
 	\begin{minipage}[c]{.46\linewidth}
@@ -613,7 +618,26 @@ Notre fitness est ici calculé sur les 40 dernière demi-secondes. Elle est mise
 	\end{minipage}
 \end{figure}
 \newpage
+
+Le nombre de génome différent par population dans le cas d'une probabilité de mutation nulle baisse de façon très rapide. C'est à partir de la $20^{eme}$ génération que le nombre de génome reste stable. Couplé avec le graphique sur le nombre de robot mort, on en déduit une stabilisation rapide de la population. Ce qui se traduit visuellement par des agglomérats de robots, tournant sur eux même et ayant tous le même génome.\\
+Dans le cas d'une probabilité non nulle de mutation, on remarque que les probabilités de 0.4 et 0.6\% donnent les mêmes résultats : une population se diversifiant au cours des générations, mais qui ne parvient pas à rester stable. On peut cependant remarquer qu'à partir de la $20^{eme}$ génération, les 40 génomes différents de la population sont issus d'uniquement 5 à 6 parents différents. Cette diversité se faisant donc principalement grâce aux mutations.
+\newpage
 \subsubsection{Comparaison avec expérience témoin}
+\begin{figure}[h]
+	\begin{minipage}[c]{.46\linewidth}
+		\centering
+		\includegraphics[scale=0.29]{../../script_results/expe_temoin.png}
+		\caption{Résultat d'expérience mEDEA avec bloc actif }
+	\end{minipage}
+	\hfill%
+	\begin{minipage}[c]{.46\linewidth}
+		\centering
+		\includegraphics[width=1.1\linewidth]{../../script_results/expe_normale.png}
+		\caption{Résultat d'expérience mEDEA témoin sans bloc actif }
+	\end{minipage}
+\end{figure}
+Grâces aux exécutions répétées de mEDEA, on a pu observer un comportement récurent des Kilobots près du bloc actif : en cas groupe de robot non présent près du bloc actif dés le commencement de l'expérience, il est très peu probable de voir un agglomérat de Kilobots se former proche de ce bloc. Cependant, si un Kilobot génère un bon génome lui permettant de rester près de ce bloc, alors la dispersion de ce dernier dans la population permettra de voir rapidement se former un groupe près du bloc.\\
+On observe lors des expériences sans bloc actif (ici représenté par un Kilobot rouge qui ne fait qu'émettre), les murs "remplace" ce bloc actif et permettent une agglomération efficace des robots.
 \newpage
 \section{Conclusion}
 L’agrégation et la couverture sont des comportements fondamentaux de la robotique en essaim. Les Kilobots offrent un moyen robuste d’étude de ces comportements par leur simplicité et accessibilité, ils permettent une implémentation rapide d’un algorithme distribué tel que mEDEA. Deux types d’agrégation, une couverture ainsi qu’un algorithme d’embodied evolution ont été étudiés.

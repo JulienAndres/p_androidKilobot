@@ -7,7 +7,7 @@
     #define MAXROBOT 100
     #define TIMEUPDATE 40
     #define IDFOOD 0
-    #define PROBA_MUTATION 0.6
+    #define PROBA_MUTATION 0.05
 
 void setup();
 void genome_alea();

@@ -2,14 +2,50 @@
   "bot_states": [
     {
       "ID": 0,
-      "direction": 5.9929689502519903,
+      "direction": 11.341058562077365,
       "state": {
         "states": "SLEEPING"
       },
-      "x_position": -366.80259746141877,
-      "y_position": -160.74921761568254
+      "x_position": -498.9872544203418,
+      "y_position": 430.34264074219914
     },
     {
       "ID": 1,
-      "direction": -30.624751858605435,
+      "direction": 1.7864826445647892,
+      "state": {
+        "states": "SLEEPING"
+      },
+      "x_position": 138.23102920740175,
+      "y_position": -210.54226906978596
+    },
+    {
+      "ID": 2,
+      "direction": -54.420105206712087,
+      "state": {
+        "states": "SLEEPING"
+      },
+      "x_position": 392.79554731386787,
+      "y_position": -253.58146837522384
+    },
+    {
+      "ID": 3,
+      "direction": -73.047275008439968,
+      "state": {
+        "states": "SLEEPING"
+      },
+      "x_position": 414.22351368770404,
+      "y_position": 370.72807034867094
+    },
+    {
+      "ID": 4,
+      "direction": 26.435324979070156,
+      "state": {
+        "states": "SLEEPING"
+      },
+      "x_position": -412.49028088400075,
+      "y_position": -499.66377398419945
+    },
+    {
+      "ID": 5,
+      "direction": 6.1728779785068459,
       "state": 
