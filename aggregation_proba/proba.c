@@ -19,8 +19,8 @@ void makeJoinDecision(){
 void makeLeaveDecision(){
     // uint32_t p=clusters_proba2();
     // uint32_t p=clusters_proba();
-    // uint32_t p=uniform_proba();
-    uint32_t p=clusters_proba3(nbvoisin_bestvoisin());
+    uint32_t p=uniform_proba();
+    //uint32_t p=clusters_proba3(nbvoisin_bestvoisin());
 
     if (rand() > p){
       // printf("makeLeaveDecision %d\n" ,kilo_uid);

@@ -147,7 +147,7 @@ L'objectif de ces algorithmes est d'arriver, à partir d'un génome aléatoire d
 \newpage
 \section{Matériel utilisé}
 \subsection{Kilobot}
-Un Kilobot \cite{rubenstein_kilobot:_2012} est un robot miniature, créé par l'université d'Harvard. Ces robots permettent l'étude de la robotique en essaim, leur faible cout étant un avantage pour la manipulation d'un grand nombre d'individus.
+Un Kilobot \cite{rubenstein_kilobot:_2012} est un robot miniature, créé par l'université d'Harvard. Ces robots permettent l'étude de la robotique en essaim grâce à leur faible cout, permettant grand nombre d'individu.
 \paragraph{Communication}Les robots peuvent communiquer entre eux grâce à des messages qu'ils envoient à leurs voisins à une distance d'environ 7cm. L'intensité du signal permet à un Kilobot d'évaluer la distance à laquelle se trouve la source du message. Chaque robot possède aussi un capteur de luminosité.
 \paragraph{Mouvements}Chaque robot possède deux moteurs, placé de chaque coté de son corps. Ils permettent au robot d'avancer en faisant vibrer ses pattes. Les déplacement d'un Kilobot se font donc en modulant la vitesse de chacun de ses moteurs selon la direction voulu.\\
 \begin{figure}[h]
@@ -233,33 +233,9 @@ Nous étudions ici le comportement de l'essaim en fonction de la distance minima
 		\caption{Commencement éparpillé}
 	\end{minipage}
 \end{figure}
-
-
-
 \subsubsection{Commencement groupé}
-
-\begin{figure}[h]
-	\begin{minipage}[c]{.46\linewidth}
-		\centering
-		\includegraphics[width=1.1\linewidth]{../../script_results/Couverture_taille_cluster_groupe.png}
-		\caption{Nombre de cluster selon la distance}
-	\end{minipage}
-	\hfill%
-	\begin{minipage}[c]{.46\linewidth}
-		\centering
-		\includegraphics[width=1.1\linewidth]{../../script_results/Couverture_average_robot_groupe.png}
-		\caption{Taille moyenne d'un cluster selon la distance}
-	\end{minipage}
-\end{figure}
-\begin{figure}[h!]
-	\centering
-	\begin{minipage}[c]{.46\linewidth}
-		\centering
-		\includegraphics[width=1.1\linewidth]{../../script_results/Couverture_loss_kilobot_groupe.png}
-		\caption{Nombre de Kilobot perdu selon la distance}
-	\end{minipage}
-\end{figure}
-On remarque ici un nombre très bas de robot \textit{perdus} (c'est a dire qui n'appartiennent à aucun groupe). \\Le nombre de robots dans un agrégat (c'est à dire un groupe de Kilobot en attente, communiquant tous ensemble) est assez grand pour des valeurs inférieures à 55mm, ce qui s'explique par la proximité des robots dés le départ. Les robots étant proches, il est normal qu'ils soient bien connectés entre eux.
+Dans ce 
+Stats en du temps que met le coverage a se faire en fonction de la distance demandé?
 \subsubsection{Commencement éparpillé}
 \begin{figure}[h]
 	\begin{minipage}[c]{.46\linewidth}
@@ -280,7 +256,6 @@ On remarque immédiatement que plus la distance entre deux robot est grande (ell
 	\begin{minipage}[c]{.46\linewidth}
 		\centering
 	\includegraphics[width=1.1\linewidth]{../../script_results/Couverture_loss_kilobot.png}
-	\caption{Nombre de Kilobot perdu selon la distance}
 	\end{minipage}
 	\begin{minipage}[c]{.46\linewidth}
 	On remarque aussi, que plus la distance est grande, plus le nombre de Kilobot \textit{perdus} est grand. On observe un grand grand changement entre une distance de 60 et de 65. Ce grand écart est aussi observable sur les graphiques précédents.
@@ -288,7 +263,7 @@ On remarque immédiatement que plus la distance entre deux robot est grande (ell
 \end{figure}
 \newpage
 \subsubsection{Comparaison}
-On remarque que le départ depuis un essaim groupé amène à une configuration des Kilobots plus connectés contenant moins de robots perdus qu'un départ éparpillé.En effet, la proximité des Kilobots dés le début de l'expérience les empêche de rester seul.\\ Cependant, cette connexité se fait au détriment de la durée de convergence de l'algorithme, qui est plus rapide depuis un essaim éparpillé (l'aléatoire ayant déjà fait une partie du travail).
+On remarque que le départ depuis un essaim groupé amène à une configuration des Kilobots plus connectés contenant moins de robots perdus qu'un départ éparpillé. Cependant, cette connexité se fait au détriment de la durée de convergence de l'algorithme, qui est plus rapide depuis un essaim éparpillé (l'aléatoire ayant déjà fait une partie du travail).
 \newpage
 \section{Agrégation}
 \subsection{Agrégation naïve}
@@ -351,8 +326,8 @@ Un Kilobot n'ayant pas de capteur de proximité, il lui est impossible de détec
 \newpage
 \subsection{Résultats}
 \subsubsection{Agrégation naïve}
-\subsubsection{Agrégation probabiliste - Analyse Probabilité}
-Cet algorithme se base sur la probabilité d'un robot de quitter son groupe afin de trouver potentiellement un nouveau groupe composé de plus d'individus (et donc plus intéressant). Le paramètre important de cet algorithme est donc le calcul de cette probabilité. Nous avons ici testé trois différentes façon de calculer cette probabilité.
+\subsubsection{Agrégation probabiliste}
+Cet algorithme se base sur la probabilité d'un robot de quitter son groupe afin de trouver potentiellement un nouveau groupe composé de plus d'individus (et donc plus intéressant). Le paramètre important de cet algorithme est donc le calcul de cette probabilité. Nous avons ici testé trois manières différentes pour ce calcul.
 \paragraph{Probabilité constante} Nous utilisons ici la probabilité constante proposé par O.Soyal et E.Sahin comme étant celle pour laquelle ils ont obtenu les meilleurs résultats.
 \begin{center}
 	$P(x)=0.0001$
@@ -373,62 +348,10 @@ avec
 	$0.0001$ &\text{\textit{sinon}}\\
 	\end{cases}$
 \end{center}
-\begin{figure}[h]
-	\begin{minipage}[c]{.46\linewidth}
-		\centering
-		\includegraphics[width=1.1\linewidth]{../../script_results/Agregation_nombre_clusters.png}
-		\caption{Nombre de cluster selon probabilité}
-	\end{minipage}
-	\hfill%
-	\begin{minipage}[c]{.46\linewidth}
-		\centering
-		\includegraphics[width=1.1\linewidth]{../../script_results/Agregation_taille_cluster.png}
-		\caption{Taille moyenne d'un cluster selon la probabilité}
-	\end{minipage}
-\end{figure}
 
-\begin{figure}[h]
-	\centering
-	\begin{minipage}[c]{.46\linewidth}
-		\centering
-		\includegraphics[width=1.1\linewidth]{../../script_results/Agregation_nombre_lost.png}
-		\caption{Nombre de robots perdu selon probabilité}
-	\end{minipage}
-\end{figure}
-\newpage
-%
-%On remarque que la probabilité constante et la probabilité mixte, contrairement à ce que l on attendait, donnent les mêmes résultats.
-On observe que la probabilité constante, proposée par O.Soysal et E.Sahin, donne un grand nombre de petits groupes. En effet, les agrégats sont formés rapidement et la faible probabilité de partir ne permet pas de la mise en place d'un grand groupe.\\
-En revanche, la probabilité suivant la taille du groupe permet de remédier à ce problème. On observe en effet un petit nombre de groupe composée d'un grand nombre d'individu. Un individu dans un petit groupe ayant en effet une forte probabilité d'en sortir. Cependant, cette mesure de probabilité ne domine pas la première, le nombre de robot perdu étant largement supérieur à celle ci.\\
-\newpage
-\subsubsection{Agrégation probabiliste - Analyse Paramètres}
-Afin de remédier aux défauts de la probabilité linéaire suivant la taille d'un grand agrégat, nous avons essayé d'étudier les effets de cette taille TAILLE\_GRAND\_GROUPE, afin de faciliter la création d'un groupe robuste et de minimiser le nombre de robots perdus.\\ \\
-\begin{figure}[h]
-	\begin{minipage}[c]{.46\linewidth}
-		\centering
-		\includegraphics[width=1.1\linewidth]{../../script_results/Agregation_nombre_clusters_big_cluster.png}
-		\caption{Nombre de cluster selon TAILLE\_GRAND\_GROUPE}
-	\end{minipage}
-	\hfill%
-	\begin{minipage}[c]{.46\linewidth}
-		\centering
-		\includegraphics[width=1.1\linewidth]{../../script_results/Agregation_taille_big_cluster.png}
-		\caption{Taille moyenne d'un cluster selon TAILLE\_GRAND\_GROUPE}
-	\end{minipage}
-\end{figure}
-\begin{figure}[h]
-	\centering
-	\begin{minipage}[c]{.46\linewidth}
-		\centering
-		\includegraphics[width=1.1\linewidth]{../../script_results/Agregation_loss_kilobot_big_cluster.png}
-		\caption{Nombre de robots perdu selon TAILLE\_GRAND\_GROUPE}
-	\end{minipage}
-\end{figure}
-\\On remarque ici que plus la valeur de TAILLE\_GRAND\_GROUPE est faible, moins les robots se perdent. Cependant, une petite valeur ne donne pas forcement plus de groupes.\\
-Une valeur trop haute, en revanche, induit un grand nombre de Kilobot perdu et une taille de groupe plus petite. En effet, un Kilobot a rarement plus de 6~7 voisins autour de lui. La probabilité ne permet donc pas la création d'agrégats stables.
 \newpage
 \section{mEDEA}
-Nous implémentons ici la version Vanilla-EE de l'algorithme mEDEA présenté par J.Montanier, S.Carrignon et N.Bredeche.  \cite{montanier_behavioral_2016} Il permet à un essaim de robot de s'adapter à leur environnement en fonction des contraintes de celui ci.
+Nous implémentons ici la version Vanilla-EE de l'algorithme mEDEA présenté par J.Montanier, S.Carrignon et N.Bredeche.  \cite{schaefer_environment-driven_2010} Il permet à un essaim de robot de s'adapter à leur environnement en fonction des contraintes de celui ci.
 \subsection{Algorithme}
 
 \begin{figure}[h!]

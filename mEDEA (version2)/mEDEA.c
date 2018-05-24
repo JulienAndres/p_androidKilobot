@@ -132,9 +132,6 @@ int fitness(){
 	for (i=0;i<TIMEUPDATE;i++){
 		fit+=mydata->last_fitness[i];
 	}
-	if (mydata->dead==1){
-		return 255;
-	}
 	// toRet/=TIMEUPDATE;
 	// pri++){ntf("uid %d fit %d\n",kilo_uid,fit );
 	return fit;

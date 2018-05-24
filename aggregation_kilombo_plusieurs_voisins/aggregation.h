@@ -18,6 +18,8 @@
     uint8_t is_too_close(void);
     void set_random_turning_direction(void);
     int lost_aggregate(void);
+    json_t *json_state();
+
 
     typedef struct {
       uint8_t dist;
