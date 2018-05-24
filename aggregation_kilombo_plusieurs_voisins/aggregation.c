@@ -3,7 +3,7 @@
 #include "aggregation.h"
 
 #define SECONDE 32
-#define DIST_TO_AGGREGATE 70
+#define DIST_TO_AGGREGATE 50
 
 
 REGISTER_USERDATA(USERDATA)
@@ -299,32 +299,8 @@ Initialise callback et lance la main loop
     kilo_message_rx = message_rx;
     kilo_message_tx = message_tx;
 		kilo_message_tx_success = message_tx_success;
-	SET_CALLBACK(json_state, json_state);
+
 		kilo_start(setup, aggregation);
 
     return 0;
 }
-
-#ifdef SIMULATOR
-
-json_t *json_state(){
-    //create the state object we return
-    json_t* state = json_object();
-
-    // store the gradient value
-    char *content;
-    switch(mydata->state){
-        case SEARCHING:
-            content = "SEARCHING";
-            break;
-        case SLEEPING:
-            content = "SLEEPING";
-            break;
-
-    }
-    json_t* g = json_string(content);
-    json_object_set (state, "states", g);
-
-    return state;
-}
-#endif

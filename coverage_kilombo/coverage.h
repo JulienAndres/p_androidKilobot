@@ -1,7 +1,7 @@
 
-#define MAXVOISIN 10 //nombre de voisins dans la liste
+#define MAXVOISIN 5 //nombre de voisins dans la liste
 #define SECONDE 32 //nombre de tick en 1 seconde
-#define ASK 65 //mydata->distance minimale entre 2 kilobots
+#define ASK 55  //mydata->distance minimale entre 2 kilobots
 
 #define STOP 0
 #define STRAIGHT 1
@@ -17,7 +17,7 @@ void message_rx(message_t *message, distance_measurement_t *d);
 message_t *message_tx();
 void update_voisins();
 void update_from_message();
-//json_t *json_state();
+json_t *json_state();
 
 // declare variables
 
