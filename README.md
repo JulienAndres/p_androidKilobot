@@ -4,18 +4,22 @@
 
 Ce repository est à monter dans le docker **Kilodocker** disponible à l'adresse https://hub.docker.com/r/juandres/kilodocker/ .
 Utiliser le script fourni pour run le docker et autoriser les affichages graphiques.
-Toutes les librairies pour la compilation du code source est compris dans le docker.
+Toutes les librairies pour la compilation du code source sont comprises dans le docker.
 
-# Comment compiler
+# Comment compiler pour robots réel
 
-Pour compiler un fichier .c, lancer le script compileCode.sh avec le nom du fichier sans son extension
-Exemple:
+Compiler un fichier .c en .hex (pour robot réel) :
 ```bash
-./compileCode.sh test
+make hex
 ```
-Les fichier .hex issus de la compilation seront placé dans un dossier build.
+le fichier .hex sera placé dans le dossier courant.
 
-# Lancer Kilogui
+# Lancer Kilogui 
 
 Pour envoyer les .hex aux kilobots, il faut utiliser l'interface graphique Kilogui : `kilogui`
 (pas de message d'erreur si le docker a été lancé avec le script fourni)
+
+# Compiler pour simulateur
+
+Utiliser le Makefile `make mEDEA` puis `./mEDEA`.
+Le simulateur se lancera automatiquement.
