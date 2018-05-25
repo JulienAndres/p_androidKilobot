@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.5.13)  25 MAY 2018 01:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.5.13)  25 MAY 2018 15:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1389,13 +1389,13 @@ Overfull \hbox (19.63388pt too wide) in paragraph at lines 176--177
  [][] 
  []
 
-<../../script_results/arene.png, id=196, 685.56125pt x 916.42375pt>
+<../../script_results/arene.png, id=196, 685.56125pt x 816.04875pt>
 File: ../../script_results/arene.png Graphic file (type png)
 
 <use ../../script_results/arene.png>
 Package pdftex.def Info: ../../script_results/arene.png used on input line 187.
 
-(pdftex.def)             Requested size: 274.21964pt x 366.563pt.
+(pdftex.def)             Requested size: 274.21964pt x 326.41371pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 183--191
 
@@ -1858,10 +1858,10 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 653.
  )
 (\end occurred when \iftrue on line 110 was incomplete) 
 Here is how much of TeX's memory you used:
- 25787 strings out of 493029
- 476829 string characters out of 6136234
- 844902 words of memory out of 5000000
- 28723 multiletter control sequences out of 15000+600000
+ 25782 strings out of 493029
+ 476672 string characters out of 6136234
+ 844903 words of memory out of 5000000
+ 28720 multiletter control sequences out of 15000+600000
  17570 words of font info for 39 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,11n,72p,913b,1521s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1882,10 +1882,10 @@ super/sfrm0500.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0700.pfb><
 /usr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf/fon
 ts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-s
 uper/sfti1000.pfb>
-Output written on rapport.pdf (22 pages, 10656247 bytes).
+Output written on rapport.pdf (22 pages, 10530979 bytes).
 PDF statistics:
- 521 PDF objects out of 1000 (max. 8388607)
- 424 compressed objects within 5 object streams
- 149 named destinations out of 1000 (max. 500000)
+ 519 PDF objects out of 1000 (max. 8388607)
+ 422 compressed objects within 5 object streams
+ 147 named destinations out of 1000 (max. 500000)
  424 words of extra memory for PDF output out of 10000 (max. 10000000)
 

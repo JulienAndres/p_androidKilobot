@@ -215,52 +215,6 @@
   \endverb
 \endentry
 
-\entry{asama_mobile_2002}{incollection}{}
-  \name{author}{3}{}{%
-    {{}%
-     {Howard}{H.}%
-     {Andrew}{A.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Matarić}{M.}%
-     {Maja~J.}{M.~J.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Sukhatme}{S.}%
-     {Gaurav~S.}{G.~S.}%
-     {}{}%
-     {}{}}%
-  }
-  \strng{namehash}{HAMMJSGS1}
-  \strng{fullhash}{HAMMJSGS1}
-  \field{abstract}{%
-  This paper considers the problem of deploying a mobile sensor network in an
-  unknown environment. A mobile sensor network is composed of a distributed
-  collection of nodes, each of which has sensing, computation, communication
-  and locomotion capabilities. Such networks are capable of self-deployment;
-  i.e., starting from some compact initial conﬁguration, the nodes in the
-  network can spread out such that the area ‘covered’ by the network is
-  maximized. In this paper, we present a potential-ﬁeld-based approach to
-  deployment. The ﬁelds are constructed such that each node is repelled by
-  both obstacles and by other nodes, thereby forcing the network to spread
-  itself throughout the environment. The approach is both distributed and
-  scalable.%
-  }
-  \field{booktitle}{Distributed {Autonomous} {Robotic} {Systems} 5}
-  \field{pages}{299\bibrangedash 308}
-  \field{title}{Mobile {Sensor} {Network} {Deployment} using {Potential}
-  {Fields}: {A} {Distributed}, {Scalable} {Solution} to the {Area} {Coverage}
-  {Problem}}
-  \verb{file}
-  \verb Howard et al. - 2002 - Mobile Sensor Network Deployment using Potential
-  \verb  F.pdf:/home/thomas/Zotero/storage/YL9GQN7C/Howard et al. - 2002 - Mobi
-  \verb le Sensor Network Deployment using Potential F.pdf:application/pdf
-  \endverb
-  \field{year}{2002}
-\endentry
-
 \entry{montanier_behavioral_2016}{article}{}
   \name{author}{3}{}{%
     {{}%
@@ -314,43 +268,6 @@
   \endverb
   \field{journaltitle}{Frontiers in Robotics and AI}
   \field{year}{2016}
-\endentry
-
-\entry{schaefer_environment-driven_2010}{incollection}{}
-  \name{author}{2}{}{%
-    {{}%
-     {Bredeche}{B.}%
-     {Nicolas}{N.}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {Montanier}{M.}%
-     {Jean-Marc}{J.-M.}%
-     {}{}%
-     {}{}}%
-  }
-  \strng{namehash}{BNMJM1}
-  \strng{fullhash}{BNMJM1}
-  \field{abstract}{%
-  This paper is concerned with a ﬁxed-size population of autonomous agents
-  facing unknown, possibly changing, environments. The motivation is to design
-  an embodied evolutionary algorithm that can cope with the implicit ﬁtness
-  function hidden in the environment so as to provide adaptation in the long
-  run at the level of the population. The proposed algorithm, termed mEDEA, is
-  shown to be both efﬁcient in unknown environment and robust with regards to
-  abrupt, unpredicted, and possibly lethal changes in the environment.%
-  }
-  \field{booktitle}{Parallel {Problem} {Solving} from {Nature}, {PPSN} {XI}}
-  \field{pages}{290\bibrangedash 299}
-  \field{title}{Environment-{Driven} {Embodied} {Evolution} in a {Population}
-  of {Autonomous} {Agents}}
-  \verb{file}
-  \verb Bredeche et Montanier - 2010 - Environment-Driven Embodied Evolution in
-  \verb  a Populat.pdf:/home/thomas/Zotero/storage/8HK7BC6B/Bredeche et Montani
-  \verb er - 2010 - Environment-Driven Embodied Evolution in a Populat.pdf:appl
-  \verb ictation/pdf
-  \endverb
-  \field{year}{2010}
 \endentry
 
 \lossort
