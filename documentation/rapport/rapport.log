@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.5.13)  26 MAY 2018 18:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.5.13)  26 MAY 2018 21:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1351,13 +1351,8 @@ been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.139 \newpage
-               [1]
-Overfull \hbox (1.47058pt too wide) in paragraph at lines 151--152
-\T1/cmr/m/n/10 Dans un sec-ond temps, nous étudierons un al-go-rithme dit d'\T1
-/cmr/m/it/10 embodied evo-lu-tion\T1/cmr/m/n/10 , ce type d'algorithme
- []
-
-[2] <incl/kilobot-closeup-overview.jpg, id=193, 642.4pt x 246.9225pt>
+               [1] [2]
+<incl/kilobot-closeup-overview.jpg, id=193, 642.4pt x 246.9225pt>
 File: incl/kilobot-closeup-overview.jpg Graphic file (type jpg)
 
 <use incl/kilobot-closeup-overview.jpg>
@@ -1891,7 +1886,7 @@ super/sfrm0500.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0700.pfb><
 /usr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf/fon
 ts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-s
 uper/sfti1000.pfb>
-Output written on rapport.pdf (22 pages, 10531698 bytes).
+Output written on rapport.pdf (22 pages, 10531752 bytes).
 PDF statistics:
  519 PDF objects out of 1000 (max. 8388607)
  422 compressed objects within 5 object streams
