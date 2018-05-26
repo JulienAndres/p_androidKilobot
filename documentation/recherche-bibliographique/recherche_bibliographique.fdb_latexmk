@@ -1,13 +1,14 @@
 # Fdb version 3
-["bibtex main"] 1527361203 "main.aux" "main.bbl" "main" 1527361205
+["bibtex recherche_bibliographique"] 1527361293 "recherche_bibliographique.aux" "recherche_bibliographique.bbl" "recherche_bibliographique" 1527361295
   "/usr/share/texlive/texmf-dist/bibtex/bst/biblatex/biblatex.bst" 1463430410 63005 2d5c74caa08218e0f9e8bc5ec9474f08 ""
-  "bib/kilobots.bib" 1527361198 9980 70cb3178bf7a2f8d5eb5dea9c924b7df ""
-  "main-blx.bib" 1527361204 307 a9aeb11a32be8a2308bdf0bb92dcd377 ""
-  "main.aux" 1527361204 3296 4de5db99127afc65d4d237fa910faeba ""
-  "main.bcf" 0 -1 0 ""
+  "bib/kilobots.bib" 1527361239 7957 1164b11fd78632a8b704f8cb8324d04c ""
+  "recherche_bibliographique-blx.bib" 1527361294 307 a9aeb11a32be8a2308bdf0bb92dcd377 ""
+  "recherche_bibliographique.aux" 1527361294 3250 051928bd43241e6beeffeba00993181f ""
+  "recherche_bibliographique.bcf" 0 -1 0 ""
   (generated)
-  "main.bbl"
-["pdflatex"] 1527361204 "main.tex" "main.pdf" "main" 1527361205
+  "recherche_bibliographique.bbl"
+  "recherche_bibliographique.blg"
+["pdflatex"] 1527361294 "recherche_bibliographique.tex" "recherche_bibliographique.pdf" "recherche_bibliographique" 1527361295
   "/etc/texmf/web2c/texmf.cnf" 1515831263 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbx1200.tfm" 1136768653 3584 402da0b29eafbad07963b1224b222f18 ""
@@ -172,15 +173,15 @@
   "incl/Kilobots.png" 1527361199 338504 ebcc28d47d563b5efc5538790442079f ""
   "incl/carte_heuristique.jpg" 1527361199 92933 e2936b1b01930f8e3f5c39084b01f03a ""
   "incl/logo_sorbonne.jpg" 1527361199 41390 6da0813a1c8114badd4e3d7a5fc6a365 ""
-  "main.aux" 1527361204 3296 4de5db99127afc65d4d237fa910faeba ""
-  "main.bbl" 1527361204 16246 34316a766b56a4394e9ba74ec9a16849 "bibtex main"
-  "main.out" 1527361204 635 5591b2db02a5a1c12563eef1d0acef26 ""
-  "main.run.xml" 1527361204 2621 2bb9369c2fb0d45a12586d4d1ef54925 ""
-  "main.tex" 1527361198 5393 0c48be2df0d2f7f02cc5dd8f8799809b ""
+  "recherche_bibliographique.aux" 1527361294 3250 051928bd43241e6beeffeba00993181f ""
+  "recherche_bibliographique.bbl" 1527361294 11938 4c2edb3806f26655c1e38db639dc7474 "bibtex recherche_bibliographique"
+  "recherche_bibliographique.out" 1527361294 635 5591b2db02a5a1c12563eef1d0acef26 ""
+  "recherche_bibliographique.run.xml" 1527361294 2810 103ef7e5933f9554732696e683a85884 ""
+  "recherche_bibliographique.tex" 1527361222 5393 0c48be2df0d2f7f02cc5dd8f8799809b ""
   (generated)
-  "main.pdf"
-  "main.log"
-  "main-blx.bib"
-  "main.aux"
-  "main.run.xml"
-  "main.out"
+  "recherche_bibliographique.pdf"
+  "recherche_bibliographique-blx.bib"
+  "recherche_bibliographique.out"
+  "recherche_bibliographique.run.xml"
+  "recherche_bibliographique.log"
+  "recherche_bibliographique.aux"

@@ -1,0 +1,285 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.7 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\sortlist[entry]{none/global/}
+  \entry{rubenstein_kilobot:_2012}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=RM}{%
+         family={Rubenstein},
+         family_i={R\bibinitperiod},
+         given={M.},
+         given_i={M\bibinitperiod},
+      }}%
+      {{hash=AC}{%
+         family={Ahler},
+         family_i={A\bibinitperiod},
+         given={C.},
+         given_i={C\bibinitperiod},
+      }}%
+      {{hash=NR}{%
+         family={Nagpal},
+         family_i={N\bibinitperiod},
+         given={R.},
+         given_i={R\bibinitperiod},
+      }}%
+    }
+    \keyw{multi-robot systems, Robot sensing systems, Batteries, collective
+  behaviors, Collision avoidance, decentralised control, decentralized
+  cooperating robots, Kilobot collective, low cost scalable robot system,
+  research and development, robot design, Robot kinematics, robotics research,
+  Switches, testing collective algorithms}
+    \strng{namehash}{RMACNR1}
+    \strng{fullhash}{RMACNR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{shorttitle}
+    \field{abstract}{%
+    In current robotics research there is a vast body of work on algorithms and
+  control methods for groups of decentralized cooperating robots, called a
+  swarm or collective. These algorithms are generally meant to control
+  collectives of hundreds or even thousands of robots; however, for reasons of
+  cost, time, or complexity, they are generally validated in simulation only,
+  or on a group of a few tens of robots. To address this issue, this paper
+  presents Kilobot, a low-cost robot designed to make testing collective
+  algorithms on hundreds or thousands of robots accessible to robotics
+  researchers. To enable the possibility of large Kilobot collectives where the
+  number of robots is an order of magnitude larger than the largest that exist
+  today, each robot is made with only \$14 worth of parts and takes 5 minutes
+  to assemble. Furthermore, the robot design allows a single user to easily
+  operate a large Kilobot collective, such as programming, powering on, and
+  charging all robots, which would be difficult or impossible to do with many
+  existing robotic systems.%
+    }
+    \field{booktitle}{2012 {IEEE} {International} {Conference} on {Robotics}
+  and {Automation}}
+    \field{pages}{3293\bibrangedash 3298}
+    \field{shorttitle}{Kilobot}
+    \field{title}{Kilobot: {A} low cost scalable robot system for collective
+  behaviors}
+    \verb{file}
+    \verb IEEE Xplore Abstract Record:/home/thomas/Zotero/storage/G9IJNSZH/6224
+    \verb 638.html:text/html;IEEE Xplore Full Text PDF:/home/thomas/Zotero/stor
+    \verb age/BT5L8ZTN/Rubenstein et al. - 2012 - Kilobot A low cost scalable r
+    \verb obot system for coll.pdf:application/pdf
+    \endverb
+    \field{month}{05}
+    \field{year}{2012}
+  \endentry
+
+  \entry{soysal_probabilistic_2005}{inproceedings}{}
+    \name{author}{2}{}{%
+      {{hash=SO}{%
+         family={Soysal},
+         family_i={S\bibinitperiod},
+         given={O.},
+         given_i={O\bibinitperiod},
+      }}%
+      {{hash=SE}{%
+         family={Sahin},
+         family_i={S\bibinitperiod},
+         given={E.},
+         given_i={E\bibinitperiod},
+      }}%
+    }
+    \keyw{Automata, collision avoidance, Computer bugs, Educational
+  institutions, finite state machine, finite state machines, Humidity, Insects,
+  Marine animals, multi-robot systems, obstacle avoidance, Organisms,
+  probabilistic aggregation strategy, Robot sensing systems, Size measurement,
+  swarm robotic systems, Temperature}
+    \strng{namehash}{SOSE1}
+    \strng{fullhash}{SOSE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    In this study, a systematic analysis of probabilistic aggregation
+  strategies in swarm robotic systems is presented. A generic aggregation
+  behavior is proposed as a combination of four basic behaviors: obstacle
+  avoidance, approach, repel, and wait. The latter three basic behaviors are
+  combined using a three-state finite state machine with two probabilistic
+  transitions among them. Two different metrics were used to compare
+  performance of strategies. Through systematic experiments, how the
+  aggregation performance, as measured by these two metrics, change 1) with
+  transition probabilities, 2) with number of simulation steps, and 3) with
+  arena size, is studied.%
+    }
+    \field{booktitle}{Proceedings 2005 {IEEE} {Swarm} {Intelligence}
+  {Symposium}, 2005. {SIS} 2005.}
+    \field{pages}{325\bibrangedash 332}
+    \field{title}{Probabilistic aggregation strategies in swarm robotic
+  systems}
+    \verb{file}
+    \verb IEEE Xplore Abstract Record:/home/thomas/Zotero/storage/2DGCYEWT/1501
+    \verb 639.html:text/html;IEEE Xplore Full Text PDF:/home/thomas/Zotero/stor
+    \verb age/3VWKCHEH/Soysal et Sahin - 2005 - Probabilistic aggregation strat
+    \verb egies in swarm robo.pdf:application/pdf
+    \endverb
+  \endentry
+
+  \entry{asama_mobile_2002}{incollection}{}
+    \name{author}{3}{}{%
+      {{hash=HA}{%
+         family={Howard},
+         family_i={H\bibinitperiod},
+         given={Andrew},
+         given_i={A\bibinitperiod},
+      }}%
+      {{hash=MMJ}{%
+         family={Matarić},
+         family_i={M\bibinitperiod},
+         given={Maja\bibnamedelima J.},
+         given_i={M\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=SGS}{%
+         family={Sukhatme},
+         family_i={S\bibinitperiod},
+         given={Gaurav\bibnamedelima S.},
+         given_i={G\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{HAMMJSGS1}
+    \strng{fullhash}{HAMMJSGS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    This paper considers the problem of deploying a mobile sensor network in an
+  unknown environment. A mobile sensor network is composed of a distributed
+  collection of nodes, each of which has sensing, computation, communication
+  and locomotion capabilities. Such networks are capable of self-deployment;
+  i.e., starting from some compact initial conﬁguration, the nodes in the
+  network can spread out such that the area ‘covered’ by the network is
+  maximized. In this paper, we present a potential-ﬁeld-based approach to
+  deployment. The ﬁelds are constructed such that each node is repelled by
+  both obstacles and by other nodes, thereby forcing the network to spread
+  itself throughout the environment. The approach is both distributed and
+  scalable.%
+    }
+    \field{booktitle}{Distributed {Autonomous} {Robotic} {Systems} 5}
+    \field{pages}{299\bibrangedash 308}
+    \field{title}{Mobile {Sensor} {Network} {Deployment} using {Potential}
+  {Fields}: {A} {Distributed}, {Scalable} {Solution} to the {Area} {Coverage}
+  {Problem}}
+    \verb{file}
+    \verb Howard et al. - 2002 - Mobile Sensor Network Deployment using Potenti
+    \verb al F.pdf:/home/thomas/Zotero/storage/YL9GQN7C/Howard et al. - 2002 -
+    \verb Mobile Sensor Network Deployment using Potential F.pdf:application/pd
+    \verb f
+    \endverb
+    \field{year}{2002}
+  \endentry
+
+  \entry{montanier_behavioral_2016}{article}{}
+    \name{author}{3}{}{%
+      {{hash=MJM}{%
+         family={Montanier},
+         family_i={M\bibinitperiod},
+         given={Jean-Marc},
+         given_i={J\bibinitperiod-M\bibinitperiod},
+      }}%
+      {{hash=CS}{%
+         family={Carrignon},
+         family_i={C\bibinitperiod},
+         given={Simon},
+         given_i={S\bibinitperiod},
+      }}%
+      {{hash=BN}{%
+         family={Bredeche},
+         family_i={B\bibinitperiod},
+         given={Nicolas},
+         given_i={N\bibinitperiod},
+      }}%
+    }
+    \keyw{behavioural specialization, Collective behaviour, distributed online
+  learning, Division of labour, embodied evolution, Evolutionary Robotics}
+    \strng{namehash}{MJMCSBN1}
+    \strng{fullhash}{MJMCSBN1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{shorttitle}
+    \field{abstract}{%
+    Embodied evolutionary robotics is an on-line distributed learning method
+  used in collective robotics where robots are facing open environments. This
+  paper focuses on learning behavioural specialization, as defined by robots
+  being able to demonstrate different kind of behaviours at the same time (e.g.
+  division of labour). Using a foraging task with two resources available in
+  limited quantities, we show that behavioural specialization is unlikely to
+  evolve in the general case, unless very specific conditions are met regarding
+  interactions between robots (a very sparse communication network is required)
+  and the expected outcome of specialization (specialization into groups of
+  similar sizes is easier to achieve). We also show that the population size
+  (the larger the better) as well as the selection scheme used (favoring
+  exploration over exploitation) both play important -- though not always
+  mandatory -- roles. This research sheds light on why existing embodied
+  evolution algorithms are limited with respect to learning efficient division
+  of labour in the general case, ie. where it is not possible to guess before
+  deployment if behavioural specialization is required or not, and gives
+  directions to overcome current limitations.%
+    }
+    \field{shorttitle}{Behavioral {Specialization} in {Embodied} {Evolutionary}
+  {Robotics}}
+    \field{title}{Behavioral {Specialization} in {Embodied} {Evolutionary}
+  {Robotics}: {Why} {So} {Difficult}?}
+    \field{volume}{3}
+    \verb{file}
+    \verb Full Text PDF:/home/thomas/Zotero/storage/ZGXNQPS9/Montanier et al. -
+    \verb  2016 - Behavioral Specialization in Embodied Evolutionary.pdf:applic
+    \verb ation/pdf
+    \endverb
+    \field{journaltitle}{Frontiers in Robotics and AI}
+    \field{year}{2016}
+  \endentry
+
+  \entry{schaefer_environment-driven_2010}{incollection}{}
+    \name{author}{2}{}{%
+      {{hash=BN}{%
+         family={Bredeche},
+         family_i={B\bibinitperiod},
+         given={Nicolas},
+         given_i={N\bibinitperiod},
+      }}%
+      {{hash=MJM}{%
+         family={Montanier},
+         family_i={M\bibinitperiod},
+         given={Jean-Marc},
+         given_i={J\bibinitperiod-M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BNMJM1}
+    \strng{fullhash}{BNMJM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    This paper is concerned with a ﬁxed-size population of autonomous agents
+  facing unknown, possibly changing, environments. The motivation is to design
+  an embodied evolutionary algorithm that can cope with the implicit ﬁtness
+  function hidden in the environment so as to provide adaptation in the long
+  run at the level of the population. The proposed algorithm, termed mEDEA, is
+  shown to be both efﬁcient in unknown environment and robust with regards to
+  abrupt, unpredicted, and possibly lethal changes in the environment.%
+    }
+    \field{booktitle}{Parallel {Problem} {Solving} from {Nature}, {PPSN} {XI}}
+    \field{pages}{290\bibrangedash 299}
+    \field{title}{Environment-{Driven} {Embodied} {Evolution} in a {Population}
+  of {Autonomous} {Agents}}
+    \verb{file}
+    \verb Bredeche et Montanier - 2010 - Environment-Driven Embodied Evolution
+    \verb in a Populat.pdf:/home/thomas/Zotero/storage/8HK7BC6B/Bredeche et Mon
+    \verb tanier - 2010 - Environment-Driven Embodied Evolution in a Populat.pd
+    \verb f:applictation/pdf
+    \endverb
+    \field{year}{2010}
+  \endentry
+\endsortlist
+\endinput
