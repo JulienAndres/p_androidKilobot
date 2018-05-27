@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.5.13)  26 MAY 2018 21:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.5.13)  27 MAY 2018 16:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1357,7 +1357,7 @@ File: incl/kilobot-closeup-overview.jpg Graphic file (type jpg)
 
 <use incl/kilobot-closeup-overview.jpg>
 Package pdftex.def Info: incl/kilobot-closeup-overview.jpg used on input line 1
-61.
+62.
 (pdftex.def)             Requested size: 341.43437pt x 131.24129pt.
 
 <../../script_results/bloc_actif_max.jpg, id=194, 4652.38126pt x 2619.7875pt>
@@ -1365,10 +1365,10 @@ File: ../../script_results/bloc_actif_max.jpg Graphic file (type jpg)
 
 <use ../../script_results/bloc_actif_max.jpg>
 Package pdftex.def Info: ../../script_results/bloc_actif_max.jpg used on input 
-line 172.
+line 173.
 (pdftex.def)             Requested size: 215.96075pt x 121.603pt.
 
-Overfull \hbox (19.63388pt too wide) in paragraph at lines 172--173
+Overfull \hbox (19.63388pt too wide) in paragraph at lines 173--174
  [][] 
  []
 
@@ -1377,10 +1377,10 @@ File: ../../script_results/bloc_actif_min.jpg Graphic file (type jpg)
 
 <use ../../script_results/bloc_actif_min.jpg>
 Package pdftex.def Info: ../../script_results/bloc_actif_min.jpg used on input 
-line 178.
+line 179.
 (pdftex.def)             Requested size: 215.96075pt x 121.4431pt.
 
-Overfull \hbox (19.63388pt too wide) in paragraph at lines 178--179
+Overfull \hbox (19.63388pt too wide) in paragraph at lines 179--180
  [][] 
  []
 
@@ -1388,11 +1388,11 @@ Overfull \hbox (19.63388pt too wide) in paragraph at lines 178--179
 File: ../../script_results/arene.png Graphic file (type png)
 
 <use ../../script_results/arene.png>
-Package pdftex.def Info: ../../script_results/arene.png used on input line 189.
+Package pdftex.def Info: ../../script_results/arene.png used on input line 190.
 
 (pdftex.def)             Requested size: 274.21964pt x 326.41371pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 185--193
+Underfull \hbox (badness 10000) in paragraph at lines 186--194
 
  []
 
@@ -1403,10 +1403,10 @@ File: ../../script_results/gradient2-sim.png Graphic file (type png)
 
 <use ../../script_results/gradient2-sim.png>
 Package pdftex.def Info: ../../script_results/gradient2-sim.png used on input l
-ine 199.
+ine 200.
 (pdftex.def)             Requested size: 341.43437pt x 151.44615pt.
  [4 <../../script_results/arene.png> <../../script_results/gradient2-sim.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 210--211
+Underfull \hbox (badness 10000) in paragraph at lines 211--212
 
  []
 
@@ -1416,10 +1416,10 @@ File: ../../script_results/start_groupe_real.png Graphic file (type png)
 
 <use ../../script_results/start_groupe_real.png>
 Package pdftex.def Info: ../../script_results/start_groupe_real.png used on inp
-ut line 240.
+ut line 241.
 (pdftex.def)             Requested size: 215.96075pt x 146.57587pt.
 
-Overfull \hbox (19.63388pt too wide) in paragraph at lines 240--241
+Overfull \hbox (19.63388pt too wide) in paragraph at lines 241--242
  [][] 
  []
 
@@ -1429,10 +1429,10 @@ File: ../../script_results/start_eparpille_real.png Graphic file (type png)
 
 <use ../../script_results/start_eparpille_real.png>
 Package pdftex.def Info: ../../script_results/start_eparpille_real.png used on 
-input line 246.
+input line 247.
 (pdftex.def)             Requested size: 215.96075pt x 134.21844pt.
 
-Overfull \hbox (19.63388pt too wide) in paragraph at lines 246--247
+Overfull \hbox (19.63388pt too wide) in paragraph at lines 247--248
  [][] 
  []
 
@@ -1443,10 +1443,10 @@ File: ../../script_results/Couverture_taille_cluster_groupe.png Graphic file (t
 ype png)
  <use ../../script_results/Couverture_taille_cluster_groupe.png>
 Package pdftex.def Info: ../../script_results/Couverture_taille_cluster_groupe.
-png used on input line 258.
+png used on input line 259.
 (pdftex.def)             Requested size: 215.96075pt x 145.44168pt.
 
-Overfull \hbox (19.63388pt too wide) in paragraph at lines 258--259
+Overfull \hbox (19.63388pt too wide) in paragraph at lines 259--260
  [][] 
  []
 
@@ -1457,10 +1457,10 @@ File: ../../script_results/Couverture_average_robot_groupe.png Graphic file (ty
 pe png)
  <use ../../script_results/Couverture_average_robot_groupe.png>
 Package pdftex.def Info: ../../script_results/Couverture_average_robot_groupe.p
-ng used on input line 264.
+ng used on input line 265.
 (pdftex.def)             Requested size: 215.96075pt x 143.25015pt.
 
-Overfull \hbox (19.63388pt too wide) in paragraph at lines 264--265
+Overfull \hbox (19.63388pt too wide) in paragraph at lines 265--266
  [][] 
  []
 
@@ -1471,10 +1471,10 @@ File: ../../script_results/Couverture_loss_kilobot_groupe.png Graphic file (typ
 e png)
  <use ../../script_results/Couverture_loss_kilobot_groupe.png>
 Package pdftex.def Info: ../../script_results/Couverture_loss_kilobot_groupe.pn
-g used on input line 272.
+g used on input line 273.
 (pdftex.def)             Requested size: 215.96075pt x 144.34187pt.
 
-Overfull \hbox (19.63388pt too wide) in paragraph at lines 272--273
+Overfull \hbox (19.63388pt too wide) in paragraph at lines 273--274
  [][] 
  []
 
@@ -1488,10 +1488,10 @@ File: ../../script_results/Couverture_average_robot.png Graphic file (type png)
 
  <use ../../script_results/Couverture_average_robot.png>
 Package pdftex.def Info: ../../script_results/Couverture_average_robot.png used
- on input line 281.
+ on input line 282.
 (pdftex.def)             Requested size: 215.96075pt x 161.97191pt.
 
-Overfull \hbox (19.63388pt too wide) in paragraph at lines 281--282
+Overfull \hbox (19.63388pt too wide) in paragraph at lines 282--283
  [][] 
  []
 
@@ -1502,10 +1502,10 @@ File: ../../script_results/Couverture_taille_cluster.png Graphic file (type png
 )
  <use ../../script_results/Couverture_taille_cluster.png>
 Package pdftex.def Info: ../../script_results/Couverture_taille_cluster.png use
-d on input line 287.
+d on input line 288.
 (pdftex.def)             Requested size: 215.96075pt x 161.97191pt.
 
-Overfull \hbox (19.63388pt too wide) in paragraph at lines 287--288
+Overfull \hbox (19.63388pt too wide) in paragraph at lines 288--289
  [][] 
  []
 
@@ -1515,39 +1515,39 @@ t>
 File: ../../script_results/Couverture_loss_kilobot.png Graphic file (type png)
  <use ../../script_results/Couverture_loss_kilobot.png>
 Package pdftex.def Info: ../../script_results/Couverture_loss_kilobot.png used 
-on input line 296.
+on input line 297.
 (pdftex.def)             Requested size: 215.96075pt x 161.97191pt.
 
-Overfull \hbox (19.63388pt too wide) in paragraph at lines 296--297
+Overfull \hbox (19.63388pt too wide) in paragraph at lines 297--298
  [][] 
  []
 
 [7 <../../script_results/Couverture_average_robot.png> <../../script_results/Co
 uverture_taille_cluster.png> <../../script_results/Couverture_loss_kilobot.png>
 ] [8]
-Underfull \hbox (badness 10000) in paragraph at lines 309--311
+Underfull \hbox (badness 10000) in paragraph at lines 310--312
 
  []
 
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 334--335
+Underfull \hbox (badness 10000) in paragraph at lines 335--336
 
  []
 
 
-Overfull \hbox (11.92638pt too wide) in paragraph at lines 336--341
+Overfull \hbox (11.92638pt too wide) in paragraph at lines 337--342
 []\T1/cmr/m/n/10 Il est com-posé de 4 com-porte-ments basiques : l'approche (\T
 1/cmr/m/it/10 ap-proach\T1/cmr/m/n/10 ), l'attente (\T1/cmr/m/it/10 wait\T1/cmr
 /m/n/10 ), l'éloignement
  []
 
 
-Overfull \hbox (61.52951pt too wide) in paragraph at lines 362--363
+Overfull \hbox (61.52951pt too wide) in paragraph at lines 363--364
  [][] 
  []
 
 
-Overfull \hbox (8.0955pt too wide) in paragraph at lines 344--365
+Overfull \hbox (8.0955pt too wide) in paragraph at lines 345--366
  []\T1/cmr/bx/n/10 L'éloignement[] \T1/cmr/m/n/10 Ce com-porte-ment fait s'éloi
 gner le robot du groupe auquel il était agrégé précédem-
  []
@@ -1557,10 +1557,10 @@ gner le robot du groupe auquel il était agrégé précédem-
 File: ../../script_results/Agregation_naive_loss.png Graphic file (type png)
 <use ../../script_results/Agregation_naive_loss.png>
 Package pdftex.def Info: ../../script_results/Agregation_naive_loss.png used on
- input line 371.
+ input line 372.
 (pdftex.def)             Requested size: 215.96075pt x 161.97191pt.
 
-Overfull \hbox (19.63388pt too wide) in paragraph at lines 371--372
+Overfull \hbox (19.63388pt too wide) in paragraph at lines 372--373
  [][] 
  []
 
@@ -1570,36 +1570,30 @@ File: ../../script_results/Resultats_aggreg_naive.jpg Graphic file (type jpg)
 
 <use ../../script_results/Resultats_aggreg_naive.jpg>
 Package pdftex.def Info: ../../script_results/Resultats_aggreg_naive.jpg used o
-n input line 377.
+n input line 378.
 (pdftex.def)             Requested size: 215.96075pt x 161.94618pt.
 
-Overfull \hbox (19.63388pt too wide) in paragraph at lines 377--378
+Overfull \hbox (19.63388pt too wide) in paragraph at lines 378--379
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 378--378
+Underfull \hbox (badness 10000) in paragraph at lines 379--379
 []\T1/cmr/m/n/10 Figure 18: []Photo fin d'expérience
  []
 
 [11 <../../script_results/Agregation_naive_loss.png> <../../script_results/Resu
 ltats_aggreg_naive.jpg>]
-Overfull \hbox (0.41821pt too wide) in paragraph at lines 386--387
- []\T1/cmr/bx/n/10 Probabilité con-stante[] \T1/cmr/m/n/10 Nous util-isons ici 
-la prob-a-bil-ité con-stante pro-posé par O.Soyal et E.Sahin
- []
-
-
 <../../script_results/Agregation_nombre_clusters.png, id=288, 440.64626pt x 265
 .99374pt>
 File: ../../script_results/Agregation_nombre_clusters.png Graphic file (type pn
 g)
  <use ../../script_results/Agregation_nombre_clusters.png>
 Package pdftex.def Info: ../../script_results/Agregation_nombre_clusters.png us
-ed on input line 409.
+ed on input line 410.
 (pdftex.def)             Requested size: 215.96075pt x 130.36241pt.
 
-Overfull \hbox (19.63388pt too wide) in paragraph at lines 409--410
+Overfull \hbox (19.63388pt too wide) in paragraph at lines 410--411
  [][] 
  []
 
@@ -1610,10 +1604,10 @@ File: ../../script_results/Agregation_taille_cluster.png Graphic file (type png
 )
  <use ../../script_results/Agregation_taille_cluster.png>
 Package pdftex.def Info: ../../script_results/Agregation_taille_cluster.png use
-d on input line 415.
+d on input line 416.
 (pdftex.def)             Requested size: 215.96075pt x 139.58386pt.
 
-Overfull \hbox (19.63388pt too wide) in paragraph at lines 415--416
+Overfull \hbox (19.63388pt too wide) in paragraph at lines 416--417
  [][] 
  []
 
@@ -1623,10 +1617,10 @@ Overfull \hbox (19.63388pt too wide) in paragraph at lines 415--416
 File: ../../script_results/Agregation_nombre_lost.png Graphic file (type png)
  <use ../../script_results/Agregation_nombre_lost.png>
 Package pdftex.def Info: ../../script_results/Agregation_nombre_lost.png used o
-n input line 424.
+n input line 425.
 (pdftex.def)             Requested size: 215.96075pt x 161.97191pt.
 
-Overfull \hbox (19.63388pt too wide) in paragraph at lines 424--425
+Overfull \hbox (19.63388pt too wide) in paragraph at lines 425--426
  [][] 
  []
 
@@ -1637,15 +1631,15 @@ File: ../../script_results/Resultats_aggregation_proba.jpg Graphic file (type j
 pg)
  <use ../../script_results/Resultats_aggregation_proba.jpg>
 Package pdftex.def Info: ../../script_results/Resultats_aggregation_proba.jpg u
-sed on input line 430.
+sed on input line 431.
 (pdftex.def)             Requested size: 211.26144pt x 130.4pt.
 
-Overfull \hbox (19.20665pt too wide) in paragraph at lines 430--431
+Overfull \hbox (19.20665pt too wide) in paragraph at lines 431--432
  [][] 
  []
 
 
-Underfull \hbox (badness 6575) in paragraph at lines 431--431
+Underfull \hbox (badness 6575) in paragraph at lines 432--432
 []\T1/cmr/m/n/10 Figure 22: []Photo de fin ex-péri-ence
  []
 
@@ -1654,7 +1648,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 [12 <../../script_results/Agregation_nombre_clusters.png> <../../script_results
 /Agregation_taille_cluster.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 437--439
+Underfull \hbox (badness 10000) in paragraph at lines 438--440
 
  []
 
@@ -1667,16 +1661,16 @@ ile (type png)
 
 <use ../../script_results/Agregation_nombre_clusters_big_cluster.png>
 Package pdftex.def Info: ../../script_results/Agregation_nombre_clusters_big_cl
-uster.png used on input line 445.
+uster.png used on input line 446.
 (pdftex.def)             Requested size: 215.96075pt x 142.60783pt.
 
-Overfull \hbox (19.63388pt too wide) in paragraph at lines 445--446
+Overfull \hbox (19.63388pt too wide) in paragraph at lines 446--447
  [][] 
  []
 
 
-Underfull \hbox (badness 7631) in paragraph at lines 446--446
-[]\T1/cmr/m/n/10 Figure 23: []Nombre de clus-ter selon
+Underfull \hbox (badness 5696) in paragraph at lines 447--447
+[]\T1/cmr/m/n/10 Figure 23: []Nombre de clus-ters selon
  []
 
 
@@ -1686,10 +1680,10 @@ File: ../../script_results/Agregation_taille_big_cluster.png Graphic file (type
  png)
  <use ../../script_results/Agregation_taille_big_cluster.png>
 Package pdftex.def Info: ../../script_results/Agregation_taille_big_cluster.png
- used on input line 451.
+ used on input line 452.
 (pdftex.def)             Requested size: 215.96075pt x 150.47206pt.
 
-Overfull \hbox (19.63388pt too wide) in paragraph at lines 451--452
+Overfull \hbox (19.63388pt too wide) in paragraph at lines 452--453
  [][] 
  []
 
@@ -1701,27 +1695,27 @@ File: ../../script_results/Agregation_loss_kilobot_big_cluster.png Graphic file
 
 <use ../../script_results/Agregation_loss_kilobot_big_cluster.png>
 Package pdftex.def Info: ../../script_results/Agregation_loss_kilobot_big_clust
-er.png used on input line 459.
+er.png used on input line 460.
 (pdftex.def)             Requested size: 215.96075pt x 151.2257pt.
 
-Overfull \hbox (19.63388pt too wide) in paragraph at lines 459--460
+Overfull \hbox (19.63388pt too wide) in paragraph at lines 460--461
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 441--465
+Underfull \hbox (badness 10000) in paragraph at lines 442--466
 
  []
 
 [14 <../../script_results/Agregation_nombre_clusters_big_cluster.png> <../../sc
 ript_results/Agregation_taille_big_cluster.png> <../../script_results/Agregatio
 n_loss_kilobot_big_cluster.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 503--504
+Underfull \hbox (badness 10000) in paragraph at lines 504--505
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 511--512
+Underfull \hbox (badness 10000) in paragraph at lines 512--513
 
  []
 
@@ -1730,7 +1724,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [15]
 
-LaTeX Warning: Command \` invalid in math mode on input line 577.
+LaTeX Warning: Command \` invalid in math mode on input line 578.
 
 Missing character: There is no è in font cmr7!
 [16] <../../script_results/mEDEA_1_with_0.png, id=385, 462.528pt x 346.896pt>
@@ -1738,16 +1732,11 @@ File: ../../script_results/mEDEA_1_with_0.png Graphic file (type png)
 
 <use ../../script_results/mEDEA_1_with_0.png>
 Package pdftex.def Info: ../../script_results/mEDEA_1_with_0.png used on input 
-line 587.
+line 588.
 (pdftex.def)             Requested size: 215.96075pt x 161.97191pt.
 
-Overfull \hbox (19.63388pt too wide) in paragraph at lines 587--588
+Overfull \hbox (19.63388pt too wide) in paragraph at lines 588--589
  [][] 
- []
-
-
-Underfull \hbox (badness 1184) in paragraph at lines 588--588
-[]\T1/cmr/m/n/10 Figure 29: []Nombre de robots mort par
  []
 
 
@@ -1757,10 +1746,10 @@ File: ../../script_results/parent_origine_medea_full.png Graphic file (type png
 )
  <use ../../script_results/parent_origine_medea_full.png>
 Package pdftex.def Info: ../../script_results/parent_origine_medea_full.png use
-d on input line 598.
+d on input line 599.
 (pdftex.def)             Requested size: 215.96075pt x 156.65787pt.
 
-Overfull \hbox (19.63388pt too wide) in paragraph at lines 598--599
+Overfull \hbox (19.63388pt too wide) in paragraph at lines 599--600
  [][] 
  []
 
@@ -1771,10 +1760,10 @@ File: ../../script_results/parent_origine_medea_zoom.png Graphic file (type png
 )
  <use ../../script_results/parent_origine_medea_zoom.png>
 Package pdftex.def Info: ../../script_results/parent_origine_medea_zoom.png use
-d on input line 604.
+d on input line 605.
 (pdftex.def)             Requested size: 215.96075pt x 156.65787pt.
 
-Overfull \hbox (19.63388pt too wide) in paragraph at lines 604--605
+Overfull \hbox (19.63388pt too wide) in paragraph at lines 605--606
  [][] 
  []
 
@@ -1784,10 +1773,10 @@ t>
 File: ../../script_results/nombre_genome_different.png Graphic file (type png)
  <use ../../script_results/nombre_genome_different.png>
 Package pdftex.def Info: ../../script_results/nombre_genome_different.png used 
-on input line 612.
+on input line 613.
 (pdftex.def)             Requested size: 215.96075pt x 156.65787pt.
 
-Overfull \hbox (19.63388pt too wide) in paragraph at lines 612--613
+Overfull \hbox (19.63388pt too wide) in paragraph at lines 613--614
  [][] 
  []
 
@@ -1798,10 +1787,10 @@ File: ../../script_results/nombre_genome_different_zoom.png Graphic file (type
 png)
  <use ../../script_results/nombre_genome_different_zoom.png>
 Package pdftex.def Info: ../../script_results/nombre_genome_different_zoom.png 
-used on input line 618.
+used on input line 619.
 (pdftex.def)             Requested size: 215.96075pt x 156.65787pt.
 
-Overfull \hbox (19.63388pt too wide) in paragraph at lines 618--619
+Overfull \hbox (19.63388pt too wide) in paragraph at lines 619--620
  [][] 
  []
 
@@ -1817,10 +1806,10 @@ File: ../../script_results/expe_normale.png Graphic file (type png)
 
 <use ../../script_results/expe_normale.png>
 Package pdftex.def Info: ../../script_results/expe_normale.png used on input li
-ne 631.
+ne 632.
 (pdftex.def)             Requested size: 215.96075pt x 154.54724pt.
 
-Overfull \hbox (19.63388pt too wide) in paragraph at lines 631--632
+Overfull \hbox (19.63388pt too wide) in paragraph at lines 632--633
  [][] 
  []
 
@@ -1829,36 +1818,36 @@ File: ../../script_results/expe_temoin.png Graphic file (type png)
 
 <use ../../script_results/expe_temoin.png>
 Package pdftex.def Info: ../../script_results/expe_temoin.png used on input lin
-e 637.
+e 638.
 (pdftex.def)             Requested size: 167.6621pt x 145.8311pt.
  [19 <../../script_results/expe_normale.png> <../../script_results/expe_temoin.
 png>]
-Underfull \hbox (badness 10000) in paragraph at lines 645--652
+Underfull \hbox (badness 10000) in paragraph at lines 646--653
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 645--652
+Underfull \hbox (badness 10000) in paragraph at lines 646--653
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 645--652
+Underfull \hbox (badness 10000) in paragraph at lines 646--653
 
  []
 
 [20] [21]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 657.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 657.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 658.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 658.
  (./rapport.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 657.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 657.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 658.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 658.
 Package rerunfilecheck Info: File `rapport.out' has not changed.
 (rerunfilecheck)             Checksum: 4208C9E36BCCDA9F23F95AD5C976E038;2158.
 Package logreq Info: Writing requests to 'rapport.run.xml'.
 \openout1 = `rapport.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 657.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 658.
  )
 (\end occurred when \iftrue on line 110 was incomplete) 
 Here is how much of TeX's memory you used:
@@ -1886,7 +1875,7 @@ super/sfrm0500.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0700.pfb><
 /usr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf/fon
 ts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-s
 uper/sfti1000.pfb>
-Output written on rapport.pdf (22 pages, 10531752 bytes).
+Output written on rapport.pdf (22 pages, 10531750 bytes).
 PDF statistics:
  519 PDF objects out of 1000 (max. 8388607)
  422 compressed objects within 5 object streams

@@ -142,19 +142,20 @@ Projet ANDROIDE
 La robotique en essaim s'inspire d'observations d'insectes et d'animaux sociaux pour l'étude de comportements collectifs issus de simples tâches individuelles. Les principales propriétés de ce domaine sont la robustesse, grâce à un code décentralisé, et l'échelle proposée, le code pouvant être déployé sur différentes tailles d'essaim.
 %les pricipazles propriété de ce domaine sont la robustesse et l ehcelle proposé. La robustesse peut etre obtenu 
 \subsection{Couverture}
-La couverture est un problème fondamental dans la robotique en essaim. En effet, un algorithme de couverture permet aux robots de se déployer dans un environnement inconnu ou dynamique, tout en maintenant un contact entre eux. Ce problème se retrouve dans beaucoup de domaine, comme le sauvetage de personnes en milieu hostile ou inconnu.
+La couverture est un problème fondamental dans la robotique en essaim. En effet, un algorithme de couverture permet aux robots de se déployer dans un environnement inconnu ou dynamique, tout en maintenant un contact entre eux. Ce problème se retrouve dans beaucoup de domaines, comme le sauvetage de personnes en milieu hostile ou inconnu.
 \subsection{Agrégation}
-L'agrégation est un comportement de base des essaims. Il permet aux organismes de faire face ensemble à un problème. Dans le domaine de la robotique en essaim, ce comportement permet a des robots dispersés dans un environnement de se regrouper en un ou plusieurs groupes.
+L'agrégation est un comportement de base des essaims. Il permet aux organismes de faire face ensemble à un problème. Dans le domaine de la robotique en essaim, ce comportement permet à des robots dispersés dans un environnement de se regrouper en un ou plusieurs groupes.
 \subsection{Algorithmes d'embodied evolution}
-L'objectif de ces algorithmes est d'arriver, à partir d'un génome aléatoire définissant le comportement d'un robot, à un comportement permettant à ce robot de survivre dans son environnement. Chaque Kilobot communique son génome à ses voisins et adopte un des génomes qu'il a récupéré. Sur le long terme, cette sélection permet aux robots de s'adapter à leur environnement.
+L'objectif de ces algorithmes est d'arriver, à partir d'un génome aléatoire définissant le comportement d'un robot, à un comportement permettant à ce robot de survivre dans son environnement. Chaque Kilobot communique son génome à ses voisins et adopte un des génomes qu'il a récupérés. Sur le long terme, cette sélection permet aux robots de s'adapter à leur environnement.
 \subsection{Problématique}
-L'objectif de ce projet est de tester le dispositif expérimental de  l'ISIR en implémentant sur des Kilobots des comportements simples d'agrégation et de couverture ainsi qu'un comportement plus évolué d'agrégation. \\Dans un second temps, nous étudierons un algorithme dit d'\textit{embodied evolution} dirigé par la pression environnemental. Ce type d'algorithme distribué est plus léger et permet de converger vers des comportements opérant un compromis entre survie (proximité d'un point de recharge) et diffusion du jeu de paramètres (permettant à l'essaim une plus grande chance de survie collective).
+L'objectif de ce projet est de tester le dispositif expérimental de  l'ISIR en implémentant sur des Kilobots des comportements simples d'agrégation et de couverture ainsi qu'un comportement plus évolué d'agrégation. 
+\\Dans un second temps, nous étudierons un algorithme dit d'\textit{embodied evolution} dirigé par la pression environnemental. Ce type d'algorithme distribué est plus léger et permet de converger vers des comportements opérant un compromis entre survie (proximité d'un point de recharge) et diffusion du jeu de paramètres (permettant à l'essaim une plus grande chance de survie collective).
 \newpage
 \section{Matériel utilisé}
 \subsection{Kilobot}
-Un Kilobot \cite{rubenstein_kilobot:_2012} est un robot miniature, créé par l'université d'Harvard. Ces robots permettent l'étude de la robotique en essaim, leur faible cout étant un avantage pour la manipulation d'un grand nombre d'individus.
+Un Kilobot \cite{rubenstein_kilobot:_2012} est un robot miniature, créé par l'université d'Harvard. Ces robots permettent l'étude de la robotique en essaim, leur faible coût étant un avantage pour la manipulation d'un grand nombre d'individus.
 \paragraph{Communication}Les robots peuvent communiquer entre eux grâce à des messages qu'ils envoient à leurs voisins à une distance d'environ 7cm. L'intensité du signal permet à un Kilobot d'évaluer la distance à laquelle se trouve la source du message. Chaque robot possède aussi un capteur de luminosité.
-\paragraph{Mouvements}Chaque robot possède deux moteurs, placés de chaque coté de son corps. Ils permettent au robot d'avancer en faisant vibrer ses pattes. Les déplacement d'un Kilobot se font donc en modulant la vitesse de chacun de ses moteurs selon la direction voulu.\\
+\paragraph{Mouvements}Chaque robot possède deux moteurs, placés de chaque côté de son corps. Ils permettent au robot d'avancer en faisant vibrer ses pattes. Les déplacements d'un Kilobot se font donc en modulant la vitesse de chacun de ses moteurs selon la direction voulue.\\
 \begin{figure}[h]
 	\begin{center}
 		\centering
@@ -165,7 +166,7 @@ Un Kilobot \cite{rubenstein_kilobot:_2012} est un robot miniature, créé par l'
 Les comportements des robots sont écrits en C, en utilisant l'API kilolib et peuvent être transmis à l'ensemble des Kilobots  grâce à un contrôleur infrarouge.
 
 \subsection{Bloc Actif}
-Le bloc actif a été développé par l'ISIR dans le cadre de la recherche sur Kilobots. Il permet d'interagir avec les robots en émettant un signal infrarouge. Le numéro du message et l'intensité du signal peuvent être modulés grâce à des boutons sur le bloc actif. Il fera office d'obstacle et de point de ralliement pour certains de nos algorithmes.\\
+Le bloc actif a été développé par l'ISIR dans le cadre de la recherche sur Kilobots. Il permet d'interagir avec les robots en émettant un signal infrarouge. Le numéro du message et l'intensité du signal peuvent être modulés grâce à des boutons sur le bloc actif. Ce bloc actif fera office d'obstacle et de point de ralliement pour certains de nos algorithmes.\\
 \begin{figure}[h]
 	\begin{minipage}[c]{.46\linewidth}
 		\centering
@@ -182,7 +183,7 @@ Le bloc actif a été développé par l'ISIR dans le cadre de la recherche sur K
 \\
 Les robots devant être vraiment trop collés au bloc pour recevoir le signal en intensité minimale, nous utiliserons dans toutes les expériences l'intensité maximale du bloc actif.
 \subsection{Arène}
-Les algorithmes ont été testés sur un essaim de 70 robots, fourni par le laboratoire de recherche ISIR. L'arène utilisée pour l'étude des algorithmes faisait 1x1.5 mètres.\\
+Les algorithmes ont été testés sur un essaim de 70 robots, fournis par le laboratoire de recherche ISIR. L'arène utilisée pour l'étude des algorithmes faisait 1x1.5 mètres.\\
 \begin{figure}[h]
 	\begin{center}
 		\centering
@@ -207,7 +208,7 @@ Cet algorithme est utilisé afin de couvrir la plus grande surface possible, tou
 Il est composé de 3 comportements basiques : le déplacement aléatoire(\textit{searching}), l'éloignement (\textit{repel}),  et l'attente(\textit{wait})
 \paragraph{Le déplacement aléatoire} Ce comportement s'effectue lorsque le Kilobot ne détecte aucun voisin. Il bouge alors aléatoirement dans son environnement jusqu'à la détection d'un autre robot. Il passe alors en mode d'attente ou d'éloignement selon la distance à laquelle il est de ses voisins.
 \paragraph{L'éloignement} Si le Kilobot se trouve trop proche de ses voisins, il essayera de s'en éloigner. Soit en s'éloignant de son voisin le plus proche, soit en bougeant aléatoirement jusqu'à être à la distance désirée de tous ses voisins.
-\paragraph{L'attente} Le Kilobot entre en attente quand il se trouve à une distance de tous ses voisins supérieure ou égale à la distance demandée . Il sort de ce comportement s'il ne capte plus aucun voisin ou si un Kilobot arrive trop proche.\\
+\paragraph{L'attente} Le Kilobot entre en attente quand il se trouve à une distance de tous ses voisins supérieure ou égale à la distance demandée . Il sort de ce comportement s'il ne capte plus aucun voisin ou si un Kilobot se rapproche trop.\\
 
 
 \begin{figure}[h!]
@@ -230,9 +231,9 @@ Il est composé de 3 comportements basiques : le déplacement aléatoire(\textit
 \end{figure}
 \newpage
 \subsection{Résultats}
-Deux positions de départ sont possibles pour l'essaim de Kilobot. Nous pouvons partir d'un essaim regroupé en un groupe compact ou d'un essaim éparpillé sur l'ensemble de l'environnement.
+Deux positions de départ sont possibles pour l'essaim de Kilobots. Nous pouvons partir d'un essaim regroupé en un groupe compact ou d'un essaim éparpillé sur l'ensemble de l'environnement.
 Nous étudions ici le comportement de l'essaim en fonction de la distance minimale demandée entre chaque robot.
-
+%entre chaque
 
 \begin{figure}[h]
 	\begin{minipage}[c]{.46\linewidth}
@@ -256,7 +257,7 @@ Nous étudions ici le comportement de l'essaim en fonction de la distance minima
 	\begin{minipage}[c]{.46\linewidth}
 		\centering
 		\includegraphics[width=1.1\linewidth]{../../script_results/Couverture_taille_cluster_groupe.png}
-		\caption{Nombre de cluster selon la distance}
+		\caption{Nombre de clusters selon la distance}
 	\end{minipage}
 	\hfill%
 	\begin{minipage}[c]{.46\linewidth}
@@ -270,16 +271,16 @@ Nous étudions ici le comportement de l'essaim en fonction de la distance minima
 	\begin{minipage}[c]{.46\linewidth}
 		\centering
 		\includegraphics[width=1.1\linewidth]{../../script_results/Couverture_loss_kilobot_groupe.png}
-		\caption{Nombre de Kilobot perdu selon la distance}
+		\caption{Nombre de Kilobots perdus selon la distance}
 	\end{minipage}
 \end{figure}
-On remarque ici un nombre très bas de robots \textit{perdus} (c'est-à-dire qui n'appartiennent à aucun groupe). \\Le nombre de robots dans un agrégat (c'est à dire un groupe de Kilobot en attente, communiquant tous ensemble) est assez grand pour des valeurs inférieures à 55mm, ce qui s'explique par la proximité des robots dés le départ. Les Kilobots étant proches, il est normal qu'ils soient bien connectés entre eux.
+On remarque ici un nombre très bas de robots \textit{perdus} (c'est-à-dire qui n'appartiennent à aucun groupe). \\Le nombre de robots dans un agrégat (c'est à dire un groupe de Kilobots en attente, communiquant tous ensemble) est assez grand pour des valeurs inférieures à 55mm, ce qui s'explique par la proximité des robots dès le départ. Les Kilobots étant proches, il est normal qu'ils soient bien connectés entre eux.
 \subsubsection{Commencement éparpillé}
 \begin{figure}[h]
 	\begin{minipage}[c]{.46\linewidth}
 		\centering
 		\includegraphics[width=1.1\linewidth]{../../script_results/Couverture_average_robot.png}
-		\caption{Nombre de cluster selon la distance}
+		\caption{Nombre de clusters selon la distance}
 	\end{minipage}
 	\hfill%
 	\begin{minipage}[c]{.46\linewidth}
@@ -288,25 +289,25 @@ On remarque ici un nombre très bas de robots \textit{perdus} (c'est-à-dire qui
 		\caption{Taille moyenne d'un cluster selon la distance}
 	\end{minipage}
 \end{figure}
-On remarque immédiatement que plus la distance entre deux robot est grande (elle ne dépasse jamais la distance maximale de communication), moins la couverture est efficace. On remarque que plus la distance demandé est grande, plus le nombre total de groupe est grand et plus leur taille est petite. En effet, le groupe de robot, cherchant à atteindre cette distance minimale, va se fractionner et de nombreux petits groupes se formeront. 
+On remarque immédiatement que plus la distance entre deux robots est grande (elle ne dépasse jamais la distance maximale de communication), moins la couverture est efficace. On remarque que plus la distance demandée est grande, plus le nombre total de groupes est grand et plus leur taille est petite. En effet, le groupe de robots, cherchant à atteindre cette distance minimale, va se fractionner et de nombreux petits groupes se formeront. 
 
 \begin{figure}[h!]
 	\begin{minipage}[c]{.46\linewidth}
 		\centering
 	\includegraphics[width=1.1\linewidth]{../../script_results/Couverture_loss_kilobot.png}
-	\caption{Nombre de Kilobot perdu selon la distance}
+	\caption{Nombre de Kilobots perdu selon la distance}
 	\end{minipage}
 	\begin{minipage}[c]{.46\linewidth}
-	On remarque aussi, que plus la distance est grande, plus le nombre de Kilobot \textit{perdus} est grand. On observe un grand changement entre une distance de 60 et de 65mm. Ce grand écart est aussi observable sur les graphiques précédents.
+	On remarque aussi que plus la distance est grande, plus le nombre de Kilobots \textit{perdus} est grand. On observe un grand changement entre une distance de 60 et de 65mm. Ce grand écart est aussi observable sur les graphiques précédents.
 	\end{minipage}
 \end{figure}
 \newpage
 \subsubsection{Comparaison}
-On remarque que le départ depuis un essaim groupé amène à une configuration des Kilobots plus connectée contenant moins de robots perdus qu'avec un départ éparpillé. En effet, la proximité des Kilobots dés le début de l'expérience les empêche de rester seul.\\ Cependant, cette connexité se fait au détriment de la durée de convergence de l'algorithme, qui est plus rapide depuis un essaim éparpillé (l'aléatoire ayant déjà fait une partie du travail).
+On remarque que le départ depuis un essaim groupé amène à une configuration des Kilobots plus connectée contenant moins de robots perdus qu'avec un départ éparpillé. En effet, la proximité des Kilobots dès le début de l'expérience les empêches de rester seul.\\ Cependant, cette connexité se fait au détriment de la durée de convergence de l'algorithme, qui est plus rapide depuis un essaim éparpillé (l'aléatoire ayant déjà fait une partie du travail).
 \newpage
 \section{Agrégation}
 \subsection{Agrégation naïve}
-Le but de cet algorithme est de faire s'agréger les Kilobots vers un objet  pouvant représenter une source de nourriture par exemple. Cet objet sera représenté ici par le bloc actif. Le principal but de cet algorithme étant de former un groupe compact de Kilobots, autour du bloc actif.\\
+Le but de cet algorithme est de faire s'agréger les Kilobots vers un objet  pouvant représenter une source de nourriture par exemple. Cet objet sera représenté ici par le bloc actif. Le principal but de cet algorithme étant de former un groupe compact de Kilobots autour du bloc actif.\\
 Dans cet algorithme, les robots ne communiquent que pour indiquer l'emplacement du bloc actif. Ils n'ont donc aucune autre information sur leur environnement. Cet algorithme est composé de 3 comportements : la recherche, l'approche et l'émission.\\
 \paragraph{Recherche} Le robot bouge aléatoirement dans son environnement afin de trouver une source d'émission. Ici, le Kilobot ne fait aucune hypothèse sur son environnement. Il n'émet rien et ne reçoit donc aucune information provenant des autres robots dans le même état que lui. Ce comportement cesse lorsqu'il reçoit un message, le prévenant de la présence du bloc actif ou d'un robot proche de ce bloc actif. Il passe alors en comportement d'approche.
 \paragraph{L'approche} Lors de cette phase, le robot va essayer de s'approcher du signal le plus proche. La méthode d'approche utilisée (qui est la même dans tous les algorithmes qui suivent) consiste à approcher en faisant des rotations. A la réception du message, le robot choisit aléatoirement une direction entre droite et gauche. A chaque nouveau message, si le Kilobot s'est rapproché de la source, il continue dans la même direction, sinon il prend la direction opposée.\\Il sort de ce comportement s'il perd le signal de la source (retourne à la recherche) ou s'il est assez proche de tous ses voisins émetteurs. Il passe alors dans l'état d'émission.
@@ -324,24 +325,24 @@ Dans cet algorithme, les robots ne communiquent que pour indiquer l'emplacement 
 	(R) edge   [sloped]node {Bonne distance} (W)
 	(W) edge   [anchor=east]node {Plus de voisins} (S)
 	(R) edge   [bend left]node {Perte de signal} (S)
-	(S) edge   [sloped,pos=0.7]node {Signal detecte} (R);
+	(S) edge   [sloped,pos=0.7]node {Signal detecté} (R);
 	\end{tikzpicture}
-	\caption{Agrégation Naïve}
+	\caption{Agrégation naïve}
 \end{figure}
 \newpage
 \subsection{Agrégation probabiliste}
 
-Cet algorithme découle de celui présenté par O.Soysal et E.Sahin. \cite{soysal_probabilistic_2005} Il permet aux robots de s'agglomérer en se basant sur une probabilité calculée indépendamment par chaque Kilobots.\\
+Cet algorithme découle de celui présenté par O.Soysal et E.Sahin. \cite{soysal_probabilistic_2005} Il permet aux robots de s'agglomérer en se basant sur une probabilité calculée indépendamment par chaque Kilobot.\\
 
 Il est composé de 4 comportements basiques : l'approche
 (\textit{approach}), l'attente
 (\textit{wait}), l'éloignement 
 (\textit{repel}) et un évitement d'obstacle.
 Un Kilobot n'ayant pas de capteur de proximité, il lui est impossible de détecter un obstacle tel qu'un mur. L'évitement d'obstacle a donc été remplacé par un déplacement aléatoire dans l'environnement (\textit{searching}).
-\paragraph{Le déplacement aléatoire} Quand le robot est seul dans l'environnement (aucun voisin), il bouge de façon aléatoire. Toutes les secondes, il choisi une direction parmi les 3 disponibles (gauche, droite, tout droit) et la garde jusqu'à la l'actualisation suivante. Dès qu'il détecte un voisin, il passe en comportement d'approche.
-\paragraph{L'approche}Dans ce comportement, le robot décide de s'approcher du voisin le plus intéressant. Le voisin le plus intéressant est défini comme celui ayant le plus de voisins à coté de lui. Si le Kilobot arrive à rejoindre le groupe, ce qui n'est pas obligatoire, à cause de l'absence de capteurs de proximité, il s'arrête et passe dans l'état d'attente.
-\paragraph{L'attente} Quand le robot est dans cet état, il fait parti d'un groupe composé d'au moins 2 individus. Il a cependant une probabilité de quitter ce groupe et d'entrer dans l'état d'éloignement à chaque seconde.
-\paragraph{L'éloignement}Ce comportement fait s'éloigner le robot du groupe auquel il était agrégé précédemment. Pendant toute la durée de cet éloignement, à chaque seconde, le Kilobot à une probabilité de revenir en mode d'approche et de rejoindre le groupe qu'il vient de quitter. Ce comportement s'arrête quand le robot est seul ou que 10 secondes se sont écoulées. Il revient alors en déplacement aléatoire.\\
+\paragraph{Le déplacement aléatoire} Quand le robot est seul dans l'environnement (aucun voisin), il bouge de façon aléatoire. Toutes les secondes, il choisit une direction parmi les 3 disponibles (gauche, droite, tout droit) et la garde jusqu'à la l'actualisation suivante. Dès qu'il détecte un voisin, il passe en comportement d'approche.
+\paragraph{L'approche}Dans ce comportement, le robot décide de s'approcher du voisin le plus intéressant. Le voisin le plus intéressant est défini comme celui ayant le plus de voisins à côté de lui. Si le Kilobot arrive à rejoindre le groupe, ce qui n'est pas obligatoire, à cause de l'absence de capteurs de proximité, il s'arrête et passe dans l'état d'attente.
+\paragraph{L'attente} Quand le robot est dans cet état, il fait partie d'un groupe composé d'au moins 2 individus. Il a cependant une probabilité de quitter ce groupe et d'entrer dans l'état d'éloignement à chaque seconde.
+\paragraph{L'éloignement}Ce comportement fait s'éloigner le robot du groupe auquel il était agrégé précédemment. Pendant toute la durée de cet éloignement, à chaque seconde, le Kilobot a une probabilité de revenir en mode d'approche et de rejoindre le groupe qu'il vient de quitter. Ce comportement s'arrête quand le robot est seul ou que 10 secondes se sont écoulées. Il revient alors en déplacement aléatoire.\\
 \begin{figure}[h!]
 	\centering
 	\begin{tikzpicture}[>=stealth',shorten >=1pt,auto,node distance=10cm]
@@ -378,16 +379,16 @@ Un Kilobot n'ayant pas de capteur de proximité, il lui est impossible de détec
 		\caption{Photo fin d'expérience d'agrégation naïve}
 	\end{minipage}
 \end{figure}
-On remarque ici que plus la distance maximale d'agrégation est grande, mois il y a de Kilobots perdus. En effet, ces derniers ayant une distance plus grande pour entrer en attente, ils ont moins de temps d'approche, et donc moins de chance de se perdre lors de cette approche.\\
-Lors des expériences, on remarque que les Kilobots se regroupent en chaines et non en agglomérat. De plus, on remarque que les robots perdus sur les cotés de l'arène ont peu de chance de se sortir de cette bordure. En effet, les robots adjacents les poussent et les empêchent de se libérer.
+On remarque ici que plus la distance maximale d'agrégation est grande, mois il y a de Kilobots perdus. En effet, ces derniers ayant une distance plus grande pour entrer en attente, ils ont moins de temps d'approche, et donc risquent moins de se perdre lors de cette approche.\\
+Lors des expériences, on remarque que les Kilobots se regroupent en chaines et non en agglomérat. De plus, on remarque que les robots perdus sur les côtés de l'arène ont peu de chance de se sortir de cette bordure. En effet, les robots adjacents les poussent et les empêchent de se libérer.
 \newpage
 \subsubsection{Agrégation probabiliste - Analyse Probabilités}
 Cet algorithme se base sur la probabilité qu'a un robot de quitter son groupe afin de trouver potentiellement un nouveau groupe composé de plus d'individus (et donc plus intéressant). Le paramètre important de cet algorithme est donc le calcul de cette probabilité. Nous avons ici testé trois façons différentes de calculer cette probabilité.
-\paragraph{Probabilité constante} Nous utilisons ici la probabilité constante proposé par O.Soyal et E.Sahin comme étant celle pour laquelle ils ont obtenu les meilleurs résultats.
+\paragraph{Probabilité constante} Nous utilisons ici la probabilité constante proposée par O.Soyal et E.Sahin comme étant celle pour laquelle ils ont obtenu les meilleurs résultats.
 \begin{center}
 	$P(x)=0.0001$
 \end{center}
-\paragraph{Probabilité suivant taille groupe} Afin de permettre aux gros agglomérats de robots de rester ensemble, nous avons défini la probabilité pour un Kilobot quitte un groupe en fonction du nombre de voisins de celui ci et par rapport à une constante définie comme la taille d'un groupe que nous considérons \textit{stable}. Or après expérimentation, nous avons remarqué qu'un robot arrivant au bord d'un agglomérat n'y reste pas forcément car il n'est connecté qu'à quelques individus de ce groupe.\\Afin de traiter les deux cas d'appartenance à un groupe (au centre ou sur un bord), nous prenons donc le maximum entre le nombre de voisin du Kilobot et le nombre maximum de voisin du meilleur de ses voisins. Le meilleur de ses voisins étant défini comme le voisin ayant le plus de voisin.
+\paragraph{Probabilité suivant taille groupe} Afin de permettre aux gros agglomérats de robots de rester ensemble, nous avons défini la probabilité pour un Kilobot quitte un groupe en fonction du nombre de voisins de celui-ci et par rapport à une constante définie comme la taille d'un groupe que nous considérons \textit{stable}. Or après expérimentation, nous avons remarqué qu'un robot arrivant au bord d'un agglomérat n'y reste pas forcément car il n'est connecté qu'à quelques individus de ce groupe.\\Afin de traiter les deux cas d'appartenance à un groupe (au centre ou sur un bord), nous prenons donc le maximum entre le nombre de voisin du Kilobot et le nombre maximum de voisin du meilleur de ses voisins. Le meilleur de ses voisins étant défini comme le voisin ayant le plus de voisins.
 \begin{center}
 	$P(x)=\min(1,\frac{v(x)}{TAILLE\_GRAND\_GROUPE})$
 \end{center}
@@ -395,7 +396,7 @@ avec
 \begin{center}
 	$v(x)=\max(nombre\_de\_voisin(x),nombre\_de\_voisin(meilleur\_voisin(x))$
 \end{center}
-\paragraph{Probabilité mixte} Cette probabilité a été trouvé après avoir vu les résultats expérimentaux des deux probabilités précédentes. Elle a comme objectif de créer des agglomérats stables en ne permettant pas à un robot de partir s'il appartient à un suffisamment grand groupe, et en utilisant la probabilité trouvé par  O.Soyal et E.Sahin. Elle est définie comme :
+\paragraph{Probabilité mixte} Cette probabilité a été trouvée après avoir vu les résultats expérimentaux des deux probabilités précédentes. Elle a comme objectif de créer des agglomérats stables en ne permettant pas à un robot de partir s'il appartient à un suffisamment grand groupe, et en utilisant la probabilité trouvée par  O.Soyal et E.Sahin. Elle est définie comme :
 \begin{center}
 	$P(x)=$
 	$\begin{cases}
@@ -407,7 +408,7 @@ avec
 	\begin{minipage}[c]{.46\linewidth}
 		\centering
 		\includegraphics[width=1.1\linewidth]{../../script_results/Agregation_nombre_clusters.png}
-		\caption{Nombre de cluster selon la probabilité}
+		\caption{Nombre de clusters selon la probabilité}
 	\end{minipage}
 	\hfill%
 	\begin{minipage}[c]{.46\linewidth}
@@ -443,7 +444,7 @@ Afin de remédier aux défauts de la probabilité linéaire suivant la taille d'
 	\begin{minipage}[c]{.46\linewidth}
 		\centering
 		\includegraphics[width=1.1\linewidth]{../../script_results/Agregation_nombre_clusters_big_cluster.png}
-		\caption{Nombre de cluster selon TAILLE\_GRAND\_GROUPE}
+		\caption{Nombre de clusters selon TAILLE\_GRAND\_GROUPE}
 	\end{minipage}
 	\hfill%
 	\begin{minipage}[c]{.46\linewidth}
@@ -457,14 +458,14 @@ Afin de remédier aux défauts de la probabilité linéaire suivant la taille d'
 	\begin{minipage}[c]{.46\linewidth}
 		\centering
 		\includegraphics[width=1.1\linewidth]{../../script_results/Agregation_loss_kilobot_big_cluster.png}
-		\caption{Nombre de robots perdu selon TAILLE\_GRAND\_GROUPE}
+		\caption{Nombre de robots perdus selon TAILLE\_GRAND\_GROUPE}
 	\end{minipage}
 \end{figure}
 \\On remarque ici que plus la valeur de TAILLE\_GRAND\_GROUPE est faible, moins les robots se perdent. Cependant, une petite valeur ne donne pas forcement plus de groupes.\\
 Une valeur trop haute, en revanche, induit un grand nombre de Kilobots perdus et une taille de groupe plus petite. En effet, un Kilobot a rarement plus de 6 ou 7 voisins autour de lui. La probabilité ne permet donc pas la création d'agrégats stables.
 \newpage
 \section{mEDEA}
-Nous implémentons ici la version Vanilla-EE de l'algorithme mEDEA présenté par J.Montanier, S.Carrignon et N.Bredeche.  \cite{montanier_behavioral_2016} Il permet à un essaim de robots de s'adapter à leur environnement en fonction des contraintes de celui ci.
+Nous implémentons ici la version Vanilla-EE de l'algorithme mEDEA présenté par J.Montanier, S.Carrignon et N.Bredeche \cite{montanier_behavioral_2016}. Il permet à un essaim de robots de s'adapter à leur environnement en fonction des contraintes de celui-ci.
 \subsection{Algorithme}
 
 \begin{figure}[h!]
@@ -500,17 +501,17 @@ Un Kilobot ne dispose que de 3 capteurs d'entrée :
 \begin{itemize}
 	\item[$-$] La luminosité
 	\item [$-$]Les messages reçus
-	\item [$-$]La distance du message à l'envoyeur(calculé par le Kilobot)\\
+	\item [$-$]La distance du message à l'envoyeur(calculée par le Kilobot)\\
 \end{itemize}
 
 Il nous a donc fallu créer des capteurs \textit{artificiels} via le transfert d'information entre les Kilobots par message. Notre génome est donc constitué des poids d'un perceptron sans couches cachées. Les entrées sont donc :
 \begin{itemize}
 	\item[$-$] Une entrée active en permanence comme neurone de biais
 	\item [$-$]La moyenne des distances à tous les voisins connus
-	\item [$-$]Le nombre de voisin actuel
+	\item [$-$]Le nombre de voisins actuels
 	\item [$-$]Une entrée binaire associée à la présence ou non du bloc actif\\
 \end{itemize}
-Il y a deux sorties, correspondantes aux moteurs gauche et droit de chaque Kilobot.
+Il y a deux sorties, correspondants aux moteurs gauche et droit de chaque Kilobot.
 Cela nous donne donc un génome de 8 gènes correspondant aux 8 paramètres du perceptron. Chaque paramètre peut prendre 3 valeurs : \{-1,0,1\}.
 \begin{figure}[h!]
 	\centering
@@ -535,7 +536,7 @@ Cela nous donne donc un génome de 8 gènes correspondant aux 8 paramètres du p
 	(A) edge (MD)
 	;
 	\end{tikzpicture}
-	\caption{Controlleur mEDEA}
+	\caption{Contrôleur mEDEA}
 \end{figure}
 \newpage
 \paragraph{Fonction d'activation} Notre fonction d'activation permet d'obtenir une sortie dans l'intervalle de vitesse des moteurs :
@@ -585,7 +586,7 @@ Notre fitness est ici calculée sur les 40 dernières demi-secondes (fenêtre gl
 	\begin{minipage}[c]{.46\linewidth}
 		\centering
 		\includegraphics[width=1.1\linewidth]{../../script_results/mEDEA_1_with_0.png}
-		\caption{Nombre de robots mort par génération}
+		\caption{Nombre de robots morts par génération}
 	\end{minipage}
 \end{figure}
 Ces expériences ont été faites en environnement fini, avec sur une durée d'une heure. On remarque la grande différence entre le nombre de morts avec une probabilité de mutation nulle et non nulle.\\
@@ -596,13 +597,13 @@ En effet, comme les génomes mutent pas, une fois qu'une configuration stable a 
 	\begin{minipage}[c]{.46\linewidth}
 		\centering
 		\includegraphics[width=1.1\linewidth]{../../script_results/parent_origine_medea_full.png}
-		\caption{Nombre de parent à l'origine des génomes des robots vivant par génération}
+		\caption{Nombre de parents à l'origine des génomes des robots vivants par génération}
 	\end{minipage}
 	\hfill
 	\begin{minipage}[c]{.46\linewidth}
 		\centering
 		\includegraphics[width=1.1\linewidth]{../../script_results/parent_origine_medea_zoom.png}
-		\caption{Nombre de parent à l'origine des génomes des robots vivant par génération(Zoom)}
+		\caption{Nombre de parents à l'origine des génomes des robots vivants par génération (zoom)}
 	\end{minipage}
 \end{figure}
 
@@ -616,12 +617,12 @@ En effet, comme les génomes mutent pas, une fois qu'une configuration stable a 
 	\begin{minipage}[c]{.46\linewidth}
 		\centering
 		\includegraphics[width=1.1\linewidth]{../../script_results/nombre_genome_different_zoom.png}
-		\caption{Nombre de génomes différents par génération (Zoom)}
+		\caption{Nombre de génomes différents par génération (zoom)}
 	\end{minipage}
 \end{figure}
 \newpage
 
-Le nombre de génomes différents par population dans le cas d'une probabilité de mutation nulle baisse de façon très rapide. C'est à partir de la $20^{e}$ génération que le nombre de génome reste stable. Couplé avec le graphique sur le nombre de robots morts, on en déduit une stabilisation rapide de la population. Ce qui se traduit visuellement par des agglomérats de robots, tournant sur eux mêmes et ayant tous le même génome.\\
+Le nombre de génomes différents par population dans le cas d'une probabilité de mutation nulle baisse de façon très rapide. C'est à partir de la $20^{e}$ génération que le nombre de génomes reste stable. Couplé avec le graphique sur le nombre de robots morts, on en déduit une stabilisation rapide de la population. Ce qui se traduit visuellement par des agglomérats de robots, tournant sur eux-mêmes et ayant tous le même génome.\\
 Dans le cas d'une probabilité non nulle de mutation, on remarque que les probabilités de 0.4 et 0.6\% donnent les mêmes résultats : une population se diversifiant au cours des générations, sans parvenir à rester stable. On peut cependant remarquer qu'à partir de la $20^{e}$ génération, les 40 génomes différents de la population sont issus d'uniquement 5 à 6 parents différents. Cette diversité se fait donc principalement grâce aux mutations.
 \newpage
 \subsubsection{Comparaison avec expérience témoin}
@@ -638,15 +639,15 @@ Dans le cas d'une probabilité non nulle de mutation, on remarque que les probab
 		\caption{Résultat d'expérience mEDEA témoin sans bloc actif }
 	\end{minipage}
 \end{figure}
-Grâce aux exécutions répétées de mEDEA, on a pu observer un comportement récurrent des Kilobots près du bloc actif : Si dés le commencement de l'expérience, il n'y a pas de groupe de robot présent près du bloc actif  il est très peu probable de voir un agglomérat de Kilobots se former proche de ce bloc. Cependant, si un Kilobot génère un bon génome lui permettant de rester près de ce bloc, alors la dispersion de ce dernier dans la population permettra de voir rapidement se former un groupe près du bloc.\\
+Grâce aux exécutions répétées de mEDEA, on a pu observer un comportement récurrent des Kilobots près du bloc actif : Si dés le commencement de l'expérience, il n'y a pas de groupe de robots présent près du bloc actif  il est très peu probable de voir un agglomérat de Kilobots se former proche de ce bloc. Cependant, si un Kilobot génère un bon génome lui permettant de rester près de ce bloc, alors la dispersion de ce dernier dans la population permettra de voir rapidement se former un groupe près du bloc.\\
 On observe lors des expériences sans bloc actif (ici représenté par un Kilobot rouge ne faisant qu'émettre), que les murs "remplacent" ce bloc actif et permettent une agglomération efficace des robots.
 \newpage
 \section{Conclusion}
 L’agrégation et la couverture sont des comportements fondamentaux de la robotique en essaim. Les Kilobots offrent un moyen robuste d’étude de ces comportements par leur simplicité et accessibilité. Ils permettent une implémentation rapide d’un algorithme distribué tel que mEDEA. Ont été étudiés deux types d’agrégation, une couverture ainsi qu’un algorithme d’embodied evolution.
-\\ \\
+\\ \\%ATTENTION QUALITE COUPE MOTS
 L’analyse de ces comportements sur robots réels illustre l’avantage d’un simulateur. En effet, le calcul de la distance d’un message reçu peut être défaillant (en raison d’obstructions, de la qualité de la surface utilisée ou d’un défaut matériel) et entraîner une perturbation quant aux résultats obtenus. D’autres facteurs sont à prendre en compte lors de la comparaison de résultats obtenus sur simulateur et en réalité : le bloc actif n’est pas modélisable dans le simulateur et a été remplacé par un Kilobot immobile émettant le signal. Il est donc susceptible d’être heurté et déplacé, ce qui n’est pas possible sur le vrai modèle.
 \\ \\
-Les Kilobots ne possède pas de capteur de proximité, l’évitement d’obstacle est impossible : les robots en viennent à se bloquer entre eux ou contre les murs. Des bandes de LEDs (toujours en phase production à l’ISIR) permettraient aux Kilobots de recevoir des messages des obstacles et d'avoir ainsi une meilleure perception de l’environnement. Dans le cas de mEDEA, elles apporteraient une entrée supplémentaire au perceptron (et par la même, une solution au manque de capteurs constaté sur les Kilobots). Grâce à ce dispositif, l’étude des algorithmes déployés sera plus précise, ceux-ci contenant majoritairement une marche aléatoire destinée à l’exploration. 
+Les Kilobots ne possède pas de capteur de proximité, l’évitement d’obstacle est impossible : les robots en viennent à se bloquer entre eux ou contre les murs. Des bandes de LEDs (toujours en phase production à l’ISIR) permettraient aux Kilobots de recevoir des messages des obstacles et d'avoir ainsi une meilleure perception de l’environnement. Dans le cas de mEDEA, elles apporteraient une entrée supplémentaire au perceptron (et par là même, une solution au manque de capteurs constaté sur les Kilobots). Grâce à ce dispositif, l’étude des algorithmes déployés sera plus précise, ceux-ci contenant majoritairement une marche aléatoire destinée à l’exploration. 
 \\La probabilité de mutation constitue le point central de mEDEA dans l'analyse des résultats. Un plus grand nombre d'expériences est nécessaire pour obtenir une probabilité de mutation faisant la balance entre diversité génétique et stabilité de la population.
 \\ \\Enfin, un Docker (plateforme de conteneurisation) a été développé et utilisé tout au long du projet. Il contient les packages et applications à utiliser lors de la manipulation des Kilobots, du développement d'un programme à son envoi aux robots en passant par le simulateur. Cette plateforme, baptisée kilodocker, a pour but de faciliter la prise en main des robots et de ses outils pour le futur utilisateur.
 \newpage
